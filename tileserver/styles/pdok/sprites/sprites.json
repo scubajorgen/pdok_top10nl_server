@@ -1,0 +1,183 @@
+{
+  "loofbos": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 0
+  },
+  "naaldbos": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 0
+  },
+  "gemengdbos": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 0
+  },
+  "griend": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 0
+  },
+
+  "hunebed": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 0
+  },
+  "toren": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 0
+  },
+  "ruine": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 0
+  },
+  "bunker": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 0
+  },
+  "kerktoren": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 0
+  },
+
+  "vuurtoren": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 16
+  },
+  "kerk": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 16
+  },
+  "rd": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 16
+  },
+  "gps": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 16
+  },
+  "watertoren": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 16
+  },
+
+  "markantpunt": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 32
+  },
+
+
+  "boomgaard": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 16
+  },
+  "boomkwekerij": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 16
+  },
+  "fruitkwekerij": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 16
+  },
+  "populieren": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 16
+  },
+  "drasland": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 32
+  },
+  "rietland": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 32
+  },
+  "dodenakker": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 32
+  }
+}

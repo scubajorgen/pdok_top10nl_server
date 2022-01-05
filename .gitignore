@@ -1,0 +1,6 @@
+/downloads/*
+/maps/gpkg/*.gpkg
+/maps/merged_gpkg/*.gpkg
+/maps/mbtiles/*.mbtiles
+/maps/mbtiles/*.db
+/logs/*

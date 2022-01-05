@@ -1,0 +1,47 @@
+{
+  "options": {
+    "paths": {
+      "root": "/data",
+      "fonts": "tileserver/fonts",
+      "styles": "tileserver/styles",
+      "sprites": "",
+      "mbtiles": "maps/mbtiles"
+    },
+    "domains": [
+      "tiles.studioblueplanet.net"
+    ],
+    "formatQuality": {
+      "jpeg": 80,
+      "webp": 90
+    },
+    "maxScaleFactor": 3,
+    "maxSize": 2048,
+    "pbfAlias": "pbf",
+    "serveAllFonts": false,
+    "serveAllStyles": false,
+    "serveStaticMaps": true,
+    "tileMargin": 0
+  },
+  "styles": 
+  {
+    "PDOK BRT Top10NL": 
+    {
+      "style": "pdok/style_top10nl.json",
+      "tilejson": {
+        "bounds": [
+          1.9666667,
+          50.7480541,
+          8.5709549,
+          54.4229599
+        ]
+      }
+    }
+  },
+  "data": 
+  {
+    "PDOK Top10nl": 
+    {
+      "mbtiles": "top10nl.mbtiles"
+    }
+  }
+}
