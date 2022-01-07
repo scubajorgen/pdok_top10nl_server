@@ -31,6 +31,62 @@
     "x": 48,
     "y": 0
   },
+  "boomgaard": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 16
+  },
+  "boomkwekerij": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 16
+  },
+  "fruitkwekerij": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 16
+  },
+  "populieren": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 16
+  },
+  "drasland": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 32
+  },
+  "rietland": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 32
+  },
+  "dodenakker": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 32
+  },
 
   "hunebed": 
   {
@@ -122,62 +178,299 @@
     "x": 80,
     "y": 32
   },
+  "monument": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 32
+  },
+  "postkantoor": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 32
+  },
+  "gemeentehuis": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 32
+  },
+  "politiebureau": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 32
+  },
+
+  "gemaal": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 48
+  },
+  "wegwijzer": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 48
+  },
+  "kruis": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 48
+  },
+  "kapel": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 48
+  },
+  "vlampijp": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 48
+  },
+
+  "windmolen": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 64
+  },
+  "telescoop": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 64
+  },
+  "watermolen": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 64
+  },
+  "windmotor": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 64
+  },
+  "windturbine": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 64
+  },
 
 
-  "boomgaard": 
+  "oliepompinstallatie": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 0,
-    "y": 16
+    "x": 80,
+    "y": 80
   },
-  "boomkwekerij": 
+  "seinmast": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 16,
-    "y": 16
+    "x": 96,
+    "y": 80
   },
-  "fruitkwekerij": 
+  "zendmast": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 32,
-    "y": 16
+    "x": 112,
+    "y": 80
   },
-  "populieren": 
+  "grenspunt": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 48,
-    "y": 16
+    "x": 128,
+    "y": 80
   },
-  "drasland": 
+  "boom": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 0,
-    "y": 32
+    "x": 144,
+    "y": 80
   },
-  "rietland": 
+
+  "kampeerterrein": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 16,
-    "y": 32
+    "x": 80,
+    "y": 96
   },
-  "dodenakker": 
+  "ziekenhuis": 
   {
     "height": 16,
     "width": 16,
     "pixelRatio": 1,
-    "x": 32,
-    "y": 32
+    "x": 96,
+    "y": 96
+  },
+  "sportcomplex": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 96
+  },
+  "parkeerplaats": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 96
+  },
+  "tankstation": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 96
+  },
+
+  "scheepvaartlicht": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 112
+  },
+  "peilschaal": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 112
+  },
+  "kilometerraaibord": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 112,
+    "y": 112
+  },
+  "baak": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 112
+  },
+  "pontveer": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 112
+  },
+
+  "voetveer": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 80,
+    "y": 128
+  },
+  "hoogspanningsmast": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 128
+  },
+  "taludhoog": 
+  {
+    "height": 8,
+    "width": 8,
+    "pixelRatio": 1,
+    "x": 116,
+    "y": 132
+  },
+  "taludlaag": 
+  {
+    "height": 8,
+    "width": 8,
+    "pixelRatio": 1,
+    "x": 132,
+    "y": 132
+  },
+  "rand": 
+  {
+    "height": 8,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 132
+  },
+  "wal": 
+  {
+    "height": 8,
+    "width": 8,
+    "pixelRatio": 1,
+    "x": 84,
+    "y": 148
+  },
+  "hekwerk": 
+  {
+    "height": 8,
+    "width": 8,
+    "pixelRatio": 1,
+    "x": 100,
+    "y": 148
   }
 }
