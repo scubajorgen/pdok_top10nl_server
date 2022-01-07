@@ -76,4 +76,10 @@ Use Data 'Inspect' to watch the raw vector data.
 
 ## Known issues
 * The tiles at large scale (low zoom levels) are huge in size resulting in slow rendering at low zoom levels. I guess the reason is they are derived from the top10nl maps, which contains a large number of features. You can limit the size of the tiles on conversion (MAX_SIZE parameter in ogr2ogr), but than random features are ommited from the tiles. This often results in improper rendering of the map at low zoom levels (missing parts of the sea, etc). A work around is to ommit the low zoomlevels from the mbtiles file resulting in no rendering at all. For the Netherlands it does not make sense to have zoom levels lower than 6.
-I guess the best solution is to use larger scale maps (top50nl, top100nl, top250nl, top500nl, top1000nl) as source for the lower zoomlevels. A complicated factor is that layers are named differently at subsequent scales.
+I guess the best solution is to use larger scale maps (top50nl, top100nl, top250nl, top500nl, top1000nl) as source for the lower zoomlevels. This is a hell of a job: subsequent scales have their own layer names or ommit layers and higher scale maps do not have the all feature attributes. This means the styling at each zoomlevel must be specified separately.
+
+## Other links
+* [Vector Tiles: BRT and BGT](https://github.com/PDOK/vectortiles-bgt-brt)
+* [Serving your own PDOK maps](https://blog.studioblueplanet.net/?p=781)
+* [TileServer GL](https://github.com/maptiler/tileserver-gl) on github
+* [GDAL on docker](https://hub.docker.com/r/osgeo/gdal)
