@@ -39,8 +39,14 @@ date /t
 time /t
 
 REM zoomlevel 0-15, all 13 layers
-ogr2ogr.exe --debug ON -fieldTypeToString Date -gt 65536 -f MVT  ../maps/mbtiles/top10nl.mbtiles -dsco FORMAT=MBTILES -dsco MAXZOOM=15 -dsco MINZOOM=0 -dsco MAX_SIZE=100000000 -dsco MAX_FEATURES=20000000 -dsco NAME=Nederland2020 ../maps/merged_gpkg/merge.gpkg > ..\logs\log.txt 2>&1
+REM ogr2ogr.exe --debug ON -fieldTypeToString Date -gt 65536 -f MVT  ../maps/mbtiles/top10nl.mbtiles -dsco FORMAT=MBTILES  -dsco MINZOOM=13 -dsco MAXZOOM=15 -dsco MAX_SIZE=100000000 -dsco MAX_FEATURES=20000000 -dsco NAME=Nederland2020 ../maps/merged_gpkg/merge10.gpkg > ..\logs\log.txt 2>&1
 
+echo Processing top100nl
+ogr2ogr.exe --debug ON -fieldTypeToString Date -gt 65536 -f MVT  ../maps/mbtiles/top0100nl.mbtiles -dsco FORMAT=MBTILES  -dsco MINZOOM=1  -dsco MAXZOOM=10 -dsco MAX_SIZE=1000000 -dsco MAX_FEATURES=2000000 -dsco NAME=TopNL ../maps/merged_gpkg/merge0100.gpkg > ..\logs\log0100.txt 2>&1
+echo Processing top50nl
+ogr2ogr.exe --debug ON -fieldTypeToString Date -gt 65536 -f MVT  ../maps/mbtiles/top0050nl.mbtiles -dsco FORMAT=MBTILES  -dsco MINZOOM=11 -dsco MAXZOOM=12 -dsco MAX_SIZE=1000000 -dsco MAX_FEATURES=2000000 -dsco NAME=TopNL ../maps/merged_gpkg/merge0050.gpkg > ..\logs\log0050.txt 2>&1
+echo Processing top10nl
+ogr2ogr.exe --debug ON -fieldTypeToString Date -gt 65536 -f MVT  ../maps/mbtiles/top0010nl.mbtiles -dsco FORMAT=MBTILES  -dsco MINZOOM=13 -dsco MAXZOOM=15 -dsco MAX_SIZE=1000000 -dsco MAX_FEATURES=2000000 -dsco NAME=TopNL ../maps/merged_gpkg/merge0010.gpkg > ..\logs\log0010.txt 2>&1
 
 echo end
 date /t

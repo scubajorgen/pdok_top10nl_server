@@ -1,6 +1,12 @@
 /downloads/*
-/maps/gpkg/*.gpkg
+/maps/gpkg/top10nl/*.gpkg
+/maps/gpkg/top50nl/*.gpkg
+/maps/gpkg/top100nl/*.gpkg
+/maps/gpkg/top250nl/*.gpkg
+/maps/gpkg/top500nl/*.gpkg
+/maps/gpkg/top1000nl/*.gpkg
 /maps/merged_gpkg/*.gpkg
 /maps/mbtiles/*.mbtiles
 /maps/mbtiles/*.db
 /logs/*
+/temp

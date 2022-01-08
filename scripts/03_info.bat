@@ -1,7 +1,7 @@
 echo off
 REM ###################################################################################################################################
 REM #
-REM # Info on geopackages using the GDAL tools: it shows the layers
+REM # Info on geopackages using the GDAL tools: it shows the layers. It takes some time to run, since it parses all features...
 REM #
 REM ###################################################################################################################################
 
@@ -15,7 +15,7 @@ SET PATH=c:\program files\gdal\;%PATH%
 
 
 
-SET dir=..\maps\gpkg\top50nl
+SET dir=..\maps\gpkg\top100nl
 
 for /r %%i in (%dir%\*) do (
     echo File: %%i
@@ -23,7 +23,3 @@ for /r %%i in (%dir%\*) do (
     ogrinfo -al %%i | findstr /R /c:"\w*: [A-Z][a-z]* (" /c:"Layer name" 2> nul
     echo, 
 )
-
-
-
-
