@@ -10,3 +10,4 @@
 /maps/mbtiles/*.db
 /logs/*
 /temp
+/java/StyleConvert/target
