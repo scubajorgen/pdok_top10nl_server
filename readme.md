@@ -46,7 +46,10 @@ The processing is very data and disk intensive. Therefore
 1. Start a DOS cmd window
 1. Enter the _/scripts_ directory
 1. Run the script **01_merge_gpkg.bat**. This script merges a number of layers from the gpkg files into the files _/maps/merged_gpkg/merge0010.gpkg_ file. The operation takes about 10 minutes on an I7 processor with SSD
-1. Run the script **02_convert_gpkg_to_mbtiles.bat**. This script convers the merged gpkg file into a mbtiles file _/maps/mbtiles/top10nl.mbtiles_. This operation takes about 13 hours on an I7 processor with SSD (for zoom levels 0-15). Logging is written to _/logs/log.txt_ (check this: no features should be ommited ommited features). The resulting mbtiles file is 3-5 GByte in size.
+1. Run the script **02_convert_gpkg_to_mbtiles.bat**. This script convers the merged gpkg file into a mbtiles file _/maps/mbtiles/_. For each scale an mbtiles file is generated: _top0010nl.mbtiles_ (zoom level 1-10), _top0050nl.mbtiles_ (zoom level 11-12) resp. _top0100nl.mbtiles_  (zoom level 13-15). This operation takes about 13 hours on an I7 processor with SSD. Logging is written to _/logs/_ in separate log files (check the log files. No 'Recoding tile' should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features). 
+1. Run the script **03_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_. Not only all tiles are copied, also the metadata is merged. 
+
+Check the log files. No 'Recoding tile' should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features
 
 ## Running Tileserver-GL
 To run the tileserver proceed as follows, after generating the mbtiles map.
@@ -88,3 +91,4 @@ I guess the best solution is to use larger scale maps (top50nl, top100nl, top250
 * [Serving your own PDOK maps](https://blog.studioblueplanet.net/?p=781)
 * [TileServer GL](https://github.com/maptiler/tileserver-gl) on github
 * [GDAL on docker](https://hub.docker.com/r/osgeo/gdal)
+* [Map Style specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)
