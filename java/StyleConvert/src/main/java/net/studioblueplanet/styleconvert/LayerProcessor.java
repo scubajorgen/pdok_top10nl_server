@@ -28,7 +28,7 @@ import java.util.function.Consumer;
  * @author jorgen
  */
 public class LayerProcessor
-{
+{   private static final int MAXFIELDS=37;
     private static final String SEP=";";
     private Layer[] layers;
     
@@ -47,71 +47,67 @@ public class LayerProcessor
         this.layers = layers;
     }
 
-    private String addIfNotNull(String line, String str)
+    private String convertToString(String str)
     {
-        if (str!=null)
-        {
-            line+=str+SEP;
-        }
-        else
-        {
-            line+=SEP;
-        }
-        return line;
+        return str;
     }
 
-    private String addIfNotNull(String line, Boolean bool)
+    private String convertToString(Boolean bool)
     {
+        String string;
         if (bool!=null)
         {
-            line+=bool.toString()+SEP;
+            string=bool.toString();
         }
         else
         {
-            line+=SEP;
+            string=null;
         }
-        return line;
+        return string;
     }
 
-    private String addIfNotNull(String line, Float fl)
+    private String convertToString(Float fl)
     {
+        String string;
         if (fl!=null)
         {
-            line+=fl.toString()+SEP;
+            string=fl.toString();
         }
         else
         {
-            line+=SEP;
+            string=null;
         }
-        return line;
+        return string;
     }
 
-    private String addIfNotNull(String line, Integer i)
+    private String convertToString(Integer i)
     {
+        String string;
         if (i!=null)
         {
-            line+=i.toString()+SEP;
+            string=i.toString();
         }
         else
         {
-            line+=SEP;
+            string=null;
         }
-        return line;
+        return string;
     }
 
     
     
-    private String addIfNotNull(String line, JsonNode node)
+    private String convertToString(JsonNode node)
     {
+        String string;
         if (node!=null)
         {
-            line+=node.toString()+SEP;
+            string=node.toString();
         }
         else
         {
-            line+=SEP;
+            string=null;
         }
-        return line;
+        return string;
     }
     
     /** 
@@ -149,26 +145,43 @@ public class LayerProcessor
         line+="source"+SEP;
         line+="source-layer"+SEP;
         line+="filter"+SEP;
-        line+="line-cap"+SEP;
-        line+="line-join"+SEP;
-        line+="symbol-placement"+SEP;
-        line+="symbol-avoid-edges"+SEP;
-        line+="symbol-spacing"+SEP;
-        line+="icon-image"+SEP;
-        line+="icon-allow-overlap"+SEP;
-        line+="text-field"+SEP;
-        line+="text-font"+SEP;
-        line+="background-color"+SEP;
+        line+="minzoom"+SEP;
+        line+="maxzoom"+SEP;
+
         line+="fill-pattern"+SEP;
         line+="fill-color"+SEP;
         line+="fill-outline-color"+SEP;
+
+        line+="symbol-placement"+SEP;
+        line+="symbol-avoid-edges"+SEP;
+        line+="symbol-spacing"+SEP;
+
+        line+="line-cap"+SEP;
+        line+="line-join"+SEP;
         line+="line-color"+SEP;
         line+="line-width"+SEP;
         line+="line-opacity"+SEP;
+        line+="line-dasharray"+SEP;
+
+        line+="icon-image"+SEP;
+        line+="icon-allow-overlap"+SEP;
+        line+="icon-offset"+SEP;
+
+        line+="text-field"+SEP;
+        line+="text-font"+SEP;
+        line+="text-size"+SEP;
+        line+="text-offset"+SEP;
+        line+="text-anchor"+SEP;
+        line+="text-max-width"+SEP;
+        line+="text-transform"+SEP;
+        line+="text-allow-overlap"+SEP;
+        line+="text-line-height"+SEP;
         line+="text-color"+SEP;
         line+="text-halo-color"+SEP;
         line+="text-halo-width"+SEP;
         line+="text-halo-blur";
+
+        line+="background-color"+SEP;
         return line;
     }
     
@@ -179,10 +192,13 @@ public class LayerProcessor
     public void writeToCsvFile(String file)
     {
         int         i;
+        int         j;
         String      line;
         JsonNode    node;
         Layout      layout;
         Paint       paint;
+        
+        
         
         
         try 
@@ -194,53 +210,81 @@ public class LayerProcessor
             i=0;
             while (i<layers.length)
             {
-                line="";
-                line+=layers[i].getId()+SEP;
-                line+=layers[i].getType()+SEP;
-                line=addIfNotNull(line, layers[i].getSource());
-                line=addIfNotNull(line, layers[i].getSourceLayer());
-                line=addIfNotNull(line, layers[i].getFilter());
+                String[] items=new String[MAXFIELDS];
+                items[ 0]=layers[i].getId();
+if (items[0].equals("waterdeel_vlak_alles10"))
+{
+    System.out.println("");
+}
+                items[ 1]=layers[i].getType();
+                items[ 2]=convertToString(layers[i].getSource());
+                items[ 3]=convertToString(layers[i].getSourceLayer());
+                items[ 4]=convertToString(layers[i].getFilter());
+                items[ 5]=convertToString(layers[i].getMinzoom());
+                items[ 6]=convertToString(layers[i].getMaxzoom());
 
                 layout=layers[i].getLayout();
                 if (layout!=null)
                 {
-                    line=addIfNotNull(line, layout.getLineCap());
-                    line=addIfNotNull(line, layout.getLineJoin());
-                    line=addIfNotNull(line, layout.getSymbolPlacement());
-                    line=addIfNotNull(line, layout.getSymbolAvoidEdges());
-                    line=addIfNotNull(line, layout.getSymbolSpacing());
-                    line=addIfNotNull(line, layout.getIconImage());
-                    line=addIfNotNull(line, layout.getIconAllowOverlap());
-                    line=addIfNotNull(line, layout.getTextField());
-                    line=addIfNotNull(line, layout.getTextFont());
+                    items[11]=convertToString(layout.getSymbolPlacement());
+                    items[12]=convertToString(layout.getSymbolAvoidEdges());
+                    items[13]=convertToString(layout.getSymbolSpacing());
+                    
+                    items[14]=convertToString(layout.getLineCap());
+                    items[15]=convertToString(layout.getLineJoin());
+                    
+                    items[20]=convertToString(layout.getIconImage());
+                    items[21]=convertToString(layout.getIconAllowOverlap());
+                    items[22]=convertToString(layout.getIconOffset());
+                    
+                    items[23]=convertToString(layout.getTextField());
+                    items[24]=convertToString(layout.getTextFont());
+                    items[25]=convertToString(layout.getTextSize());
+                    items[26]=convertToString(layout.getTextOffset());
+                    items[27]=convertToString(layout.getTextAnchor());
+                    items[28]=convertToString(layout.getTextMaxWidth());
+                    items[29]=convertToString(layout.getTextTransform());
+                    items[30]=convertToString(layout.getTextAllowOverlap());
+                    items[31]=convertToString(layout.getTextLineHeight());
                 }
-                else
-                {
-                    line+=SEP+SEP+SEP+SEP+SEP+SEP+SEP+SEP+SEP;
-                }
+
 
                 paint=layers[i].getPaint();
                 if (paint!=null)
                 {
-                    line=addIfNotNull(line, paint.getBackgroundColor());
-                    line=addIfNotNull(line, paint.getFillPattern());
-                    line=addIfNotNull(line, paint.getFillColor());
-                    line=addIfNotNull(line, paint.getFillOutlineColor());
-                    line=addIfNotNull(line, paint.getLineColor());
-                    line=addIfNotNull(line, paint.getLineWidth());
-                    line=addIfNotNull(line, paint.getLineOpacity());
-                    line=addIfNotNull(line, paint.getTextColor());
-                    line=addIfNotNull(line, paint.getTextHaloColor());
-                    line=addIfNotNull(line, paint.getTextHaloWidth());
-                    line=addIfNotNull(line, paint.getTextHaloBlur());
-                }
-                else
-                {
-                    line+=SEP+SEP+SEP+SEP+SEP+SEP+SEP+SEP+SEP+SEP;
+                    items[ 7]=convertToString(paint.getFillPattern());
+                    items[ 8]=convertToString(paint.getFillColor());
+                    items[ 9]=convertToString(paint.getFillOutlineColor());
+                    items[10]=convertToString(paint.getFillOpacity());
+
+                    items[16]=convertToString(paint.getLineColor());
+                    items[17]=convertToString(paint.getLineWidth());
+                    items[18]=convertToString(paint.getLineOpacity());
+                    items[19]=convertToString(paint.getLineDasharray());
+
+                    items[32]=convertToString(paint.getTextColor());
+                    items[33]=convertToString(paint.getTextHaloColor());
+                    items[34]=convertToString(paint.getTextHaloWidth());
+                    items[35]=convertToString(paint.getTextHaloBlur());
+                    
+                    items[36]=convertToString(paint.getBackgroundColor());
                 }
 
+                j=0;
+                while (j<MAXFIELDS)
+                {
+                    if (items[j]!=null)
+                    {
+                        myWriter.write(items[j]);
+                    }
+                    if (j<MAXFIELDS-1)
+                    {
+                        myWriter.write(SEP);
+                    }
+                    j++;
+                }
                 
-                myWriter.write(line+"\n");
+                myWriter.write("\n");
                 i++;
             }
             myWriter.close();
@@ -338,25 +382,45 @@ public class LayerProcessor
             while (i<r.size())
             {
                 layer=new Layer();
+                
                 layerStrings=r.get(i);
+                
+                
+if (layerStrings[0].equals("waterdeel_vlak_alles10"))
+{
+    System.out.println("");
+}
                 
                 layer.setId(layerStrings[0]);
                 layer.setType(layerStrings[1]);
                 setString  (layerStrings[2], layer::setSource);
                 setString  (layerStrings[3], layer::setSourceLayer);
                 setJsonNode(layerStrings[4], layer::setFilter);
+                setFloat   (layerStrings[5], layer::setMinzoom);
+                setFloat   (layerStrings[6], layer::setMaxzoom);
                 
                 layout=new Layout();
                 isNotNull=false;
-                isNotNull |= setString  (layerStrings[5], layout::setLineCap);
-                isNotNull |= setString  (layerStrings[6], layout::setLineJoin);
-                isNotNull |= setString  (layerStrings[7], layout::setSymbolPlacement);
-                isNotNull |= setBoolean (layerStrings[8], layout::setSymbolAvoidEdges);
-                isNotNull |= setFloat   (layerStrings[9], layout::setSymbolSpacing);
-                isNotNull |= setString  (layerStrings[10], layout::setIconImage);
-                isNotNull |= setBoolean (layerStrings[11], layout::setIconAllowOverlap);
-                isNotNull |= setString  (layerStrings[12], layout::setTextField);
-                isNotNull |= setJsonNode(layerStrings[13], layout::setTextFont);
+                isNotNull |= setString  (layerStrings[11], layout::setSymbolPlacement);
+                isNotNull |= setBoolean (layerStrings[12], layout::setSymbolAvoidEdges);
+                isNotNull |= setFloat   (layerStrings[13], layout::setSymbolSpacing);
+                
+                isNotNull |= setString  (layerStrings[14], layout::setLineCap);
+                isNotNull |= setString  (layerStrings[15], layout::setLineJoin);
+                
+                isNotNull |= setString  (layerStrings[20], layout::setIconImage);
+                isNotNull |= setBoolean (layerStrings[21], layout::setIconAllowOverlap);
+                isNotNull |= setJsonNode(layerStrings[22], layout::setIconOffset);
+                
+                isNotNull |= setString  (layerStrings[23], layout::setTextField);
+                isNotNull |= setJsonNode(layerStrings[24], layout::setTextFont);
+                isNotNull |= setJsonNode(layerStrings[25], layout::setTextSize);
+                isNotNull |= setJsonNode(layerStrings[26], layout::setTextOffset);
+                isNotNull |= setString  (layerStrings[27], layout::setTextAnchor);
+                isNotNull |= setFloat   (layerStrings[28], layout::setTextMaxWidth);
+                isNotNull |= setString  (layerStrings[29], layout::setTextTransform);
+                isNotNull |= setBoolean (layerStrings[30], layout::setTextAllowOverlap);
+                isNotNull |= setJsonNode(layerStrings[31], layout::setTextLineHeight);
 
                 if (isNotNull)
                 {
@@ -365,23 +429,27 @@ public class LayerProcessor
                 
                 paint=new Paint();
                 isNotNull=false;
-                isNotNull |= setJsonNode(layerStrings[14], paint::setBackgroundColor);
-                isNotNull |= setString  (layerStrings[15], paint::setFillPattern);
-                isNotNull |= setJsonNode(layerStrings[16], paint::setFillColor);
-                isNotNull |= setJsonNode(layerStrings[17], paint::setFillOutlineColor);
-                isNotNull |= setJsonNode(layerStrings[18], paint::setLineColor);
-                isNotNull |= setJsonNode(layerStrings[19], paint::setLineWidth);
-                isNotNull |= setJsonNode(layerStrings[20], paint::setLineOpacity);
-                isNotNull |= setJsonNode(layerStrings[21], paint::setTextColor);
-                isNotNull |= setJsonNode(layerStrings[22], paint::setTextHaloColor);
-                isNotNull |= setFloat   (layerStrings[23], paint::setTextHaloWidth);
-                isNotNull |= setFloat   (layerStrings[24], paint::setTextHaloBlur);
+                isNotNull |= setString  (layerStrings[ 7], paint::setFillPattern);
+                isNotNull |= setJsonNode(layerStrings[ 8], paint::setFillColor);
+                isNotNull |= setJsonNode(layerStrings[ 9], paint::setFillOutlineColor);
+                isNotNull |= setJsonNode(layerStrings[10], paint::setFillOpacity);
+                
+                isNotNull |= setJsonNode(layerStrings[16], paint::setLineColor);
+                isNotNull |= setJsonNode(layerStrings[17], paint::setLineWidth);
+                isNotNull |= setJsonNode(layerStrings[18], paint::setLineOpacity);
+                isNotNull |= setJsonNode(layerStrings[19], paint::setLineDasharray);
+                
+                isNotNull |= setJsonNode(layerStrings[32], paint::setTextColor);
+                isNotNull |= setJsonNode(layerStrings[33], paint::setTextHaloColor);
+                isNotNull |= setFloat   (layerStrings[34], paint::setTextHaloWidth);
+                isNotNull |= setFloat   (layerStrings[35], paint::setTextHaloBlur);
+                
+                isNotNull |= setJsonNode(layerStrings[36], paint::setBackgroundColor);
 
                 if (isNotNull)
                 {
                     layer.setPaint(paint);
                 }
-                
                 
                 layers[i]=layer;
                 i++;

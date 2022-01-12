@@ -7,6 +7,7 @@ package net.studioblueplanet.styleconvert.data;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Iterator;
 /**
@@ -88,6 +89,7 @@ public class Style
      * Return the JSON node as list of sources
      * @return The source list. 
      */
+    @JsonIgnore
     public Source[] getSourceList()
     {
         Source[] sourceList;

@@ -23,12 +23,16 @@ public class Paint
     private JsonNode fillColor;
     @JsonProperty("fill-outline-color")
     private JsonNode fillOutlineColor;
+    @JsonProperty("fill-opacity")
+    private JsonNode fillOpacity;
     @JsonProperty("line-color")
     private JsonNode lineColor;
     @JsonProperty("line-width")
     private JsonNode lineWidth;
     @JsonProperty("line-opacity")
     private JsonNode lineOpacity;
+    @JsonProperty("line-dasharray")
+    private JsonNode lineDasharray;
     @JsonProperty("text-color")
     private JsonNode textColor;
     @JsonProperty("text-halo-color")
@@ -99,6 +103,14 @@ public class Paint
         this.lineOpacity = lineOpacity;
     }
 
+    public JsonNode getLineDasharray() {
+        return lineDasharray;
+    }
+
+    public void setLineDasharray(JsonNode lineDasharray) {
+        this.lineDasharray = lineDasharray;
+    }
+
     public JsonNode getTextColor()
     {
         return textColor;
@@ -145,5 +157,13 @@ public class Paint
 
     public void setFillPattern(String fillPattern) {
         this.fillPattern = fillPattern;
+    }
+
+    public JsonNode getFillOpacity() {
+        return fillOpacity;
+    }
+
+    public void setFillOpacity(JsonNode fillOpacity) {
+        this.fillOpacity = fillOpacity;
     }
 }

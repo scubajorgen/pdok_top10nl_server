@@ -16,14 +16,24 @@ import com.fasterxml.jackson.databind.JsonNode;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Layer
 {
+    @JsonProperty("id")
     private String      id;
+    @JsonProperty("type")
     private String      type;
+    @JsonProperty("source")
     private String      source;
     @JsonProperty("source-layer")
     private String      sourceLayer;
+    @JsonProperty("minzoom")
+    private Float       minzoom;
+    @JsonProperty("maxzoom")
+    private Float       maxzoom;
+    @JsonProperty("filter")
     private JsonNode    filter;
-    private Paint       paint;
+    @JsonProperty("layout")
     private Layout      layout;
+    @JsonProperty("paint")
+    private Paint       paint;
 
     public String getId()
     {
@@ -93,5 +103,21 @@ public class Layer
     public void setFilter(JsonNode filter)
     {
         this.filter = filter;
+    }
+
+    public Float getMinzoom() {
+        return minzoom;
+    }
+
+    public void setMinzoom(Float minzoom) {
+        this.minzoom = minzoom;
+    }
+
+    public Float getMaxzoom() {
+        return maxzoom;
+    }
+
+    public void setMaxzoom(Float maxzoom) {
+        this.maxzoom = maxzoom;
     }
 }

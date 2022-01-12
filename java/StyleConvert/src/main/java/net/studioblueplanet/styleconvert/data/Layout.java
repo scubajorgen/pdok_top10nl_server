@@ -20,21 +20,40 @@ public class Layout
     private String      lineCap;
     @JsonProperty("line-join")
     private String      lineJoin;
+    @JsonProperty("icon-image")
+    private String      iconImage;
+    @JsonProperty("icon-allow-overlap")
+    private Boolean     iconAllowOverlap;
+    @JsonProperty("icon-offset")
+    private JsonNode    iconOffset;
     @JsonProperty("symbol-placement")
     private String      symbolPlacement;
     @JsonProperty("symbol-avoid-edges")
     private Boolean     symbolAvoidEdges;
     @JsonProperty("symbol-spacing")
     private Float       symbolSpacing;
-    @JsonProperty("icon-image")
-    private String      iconImage;
-    @JsonProperty("icon-allow-overlap")
-    private Boolean     iconAllowOverlap;
     @JsonProperty("text-field")
     private String      textField;
     @JsonProperty("text-font")
     private JsonNode    textFont;
+    @JsonProperty("text-line-height")
+    private JsonNode    textLineHeight;
+    @JsonProperty("text-allow-overlap")
+    private Boolean     textAllowOverlap;
+    @JsonProperty("text-transform")
+    private String      textTransform;
+    
+    @JsonProperty("text-size")
+    private JsonNode    textSize;
+    @JsonProperty("text-offset")
+    private JsonNode    textOffset;
+    @JsonProperty("text-anchor")
+    private String      textAnchor;
+    @JsonProperty("text-max-width")
+    private Float       textMaxWidth;
 
+    
+    
     public String getLineCap() {
         return lineCap;
     }
@@ -107,4 +126,67 @@ public class Layout
         this.textFont = textFont;
     }
 
+    public JsonNode getTextSize() {
+        return textSize;
+    }
+
+    public void setTextSize(JsonNode textSize) {
+        this.textSize = textSize;
+    }
+
+    public JsonNode getTextOffset() {
+        return textOffset;
+    }
+
+    public void setTextOffset(JsonNode textOffset) {
+        this.textOffset = textOffset;
+    }
+
+    public String getTextAnchor() {
+        return textAnchor;
+    }
+
+    public void setTextAnchor(String textAnchor) {
+        this.textAnchor = textAnchor;
+    }
+
+    public Float getTextMaxWidth() {
+        return textMaxWidth;
+    }
+
+    public void setTextMaxWidth(Float textMaxWidth) {
+        this.textMaxWidth = textMaxWidth;
+    }
+
+    public JsonNode getIconOffset() {
+        return iconOffset;
+    }
+
+    public void setIconOffset(JsonNode iconOffset) {
+        this.iconOffset = iconOffset;
+    }
+
+    public String getTextTransform() {
+        return textTransform;
+    }
+
+    public void setTextTransform(String textTransform) {
+        this.textTransform = textTransform;
+    }
+
+    public JsonNode getTextLineHeight() {
+        return textLineHeight;
+    }
+
+    public void setTextLineHeight(JsonNode textLineHeight) {
+        this.textLineHeight = textLineHeight;
+    }
+
+    public Boolean getTextAllowOverlap() {
+        return textAllowOverlap;
+    }
+
+    public void setTextAllowOverlap(Boolean textAllowOverlap) {
+        this.textAllowOverlap = textAllowOverlap;
+    }
 }
