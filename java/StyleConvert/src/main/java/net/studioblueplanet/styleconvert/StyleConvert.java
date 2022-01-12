@@ -129,7 +129,8 @@ public class StyleConvert
         System.out.println("LAYER CONVERSION TOOL");
         
         StyleConvert instance=new StyleConvert();
-        
+      
+/*        
         style=instance.readJsonStyleFile("style_topnl_org.json");
         instance.writeJsonStyleFile("style_topnl_org_rewrite.json", style);
         
@@ -137,7 +138,7 @@ public class StyleConvert
         
         instance.exportLayersToCsvFile("style_topnl_org.json", "testlayers.csv");
         instance.insertLayersToStyleFile("style_topnl_org.json", "testlayers.csv", "style_topnl_test.json");
-/*        
+*/       
 
         error=false;
         if (args.length>0)
@@ -185,6 +186,5 @@ public class StyleConvert
             System.out.println("Inserts the layers from [LayerCsvInFile] into [StyleJsonInFile] and writes it to a new style file [StyleJsonOutFile]");
         }
         System.out.println("done");
-*/
     }
 }

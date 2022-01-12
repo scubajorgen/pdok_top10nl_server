@@ -151,6 +151,7 @@ public class LayerProcessor
         line+="fill-pattern"+SEP;
         line+="fill-color"+SEP;
         line+="fill-outline-color"+SEP;
+        line+="fill-opacity"+SEP;
 
         line+="symbol-placement"+SEP;
         line+="symbol-avoid-edges"+SEP;
@@ -179,9 +180,9 @@ public class LayerProcessor
         line+="text-color"+SEP;
         line+="text-halo-color"+SEP;
         line+="text-halo-width"+SEP;
-        line+="text-halo-blur";
+        line+="text-halo-blur"+SEP;
 
-        line+="background-color"+SEP;
+        line+="background-color";
         return line;
     }
     
