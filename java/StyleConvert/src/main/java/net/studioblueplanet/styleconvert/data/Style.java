@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.List;
 import java.util.Iterator;
 /**
  *
@@ -22,7 +23,7 @@ public class Style
     private String      glyphs;
     private JsonNode    sources;
     private String      sprite;
-    private Layer[]     layers;
+    private List<Layer> layers;
 
     public Integer getVersion()
     {
@@ -64,12 +65,12 @@ public class Style
         this.sprite = sprite;
     }
 
-    public Layer[] getLayers()
+    public List<Layer>getLayers()
     {
         return layers;
     }
 
-    public void setLayers(Layer[] layers)
+    public void setLayers(List<Layer>layers)
     {
         this.layers = layers;
     }

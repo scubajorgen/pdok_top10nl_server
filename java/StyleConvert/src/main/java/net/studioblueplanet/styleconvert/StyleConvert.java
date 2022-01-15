@@ -12,6 +12,7 @@ import net.studioblueplanet.styleconvert.data.Style;
 import net.studioblueplanet.styleconvert.data.Layer;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Quick and especially DIRTY conversion tool. Note that it was intended for
@@ -78,7 +79,7 @@ public class StyleConvert
 
     private void readCsvFile(String fileName, Style style)
     {
-        Layer[] layers;
+        List<Layer> layers;
         
         LayerProcessor processor=new LayerProcessor();
         processor.readCsv(fileName);
@@ -133,9 +134,7 @@ public class StyleConvert
 /*        
         style=instance.readJsonStyleFile("style_topnl_org.json");
         instance.writeJsonStyleFile("style_topnl_org_rewrite.json", style);
-        
-        
-        
+       
         instance.exportLayersToCsvFile("style_topnl_org.json", "testlayers.csv");
         instance.insertLayersToStyleFile("style_topnl_org.json", "testlayers.csv", "style_topnl_test.json");
 */       

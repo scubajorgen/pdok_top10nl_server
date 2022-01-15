@@ -29,6 +29,8 @@ public class Paint
     private JsonNode lineColor;
     @JsonProperty("line-width")
     private JsonNode lineWidth;
+    @JsonProperty("line-gap-width")
+    private JsonNode lineGapWidth;
     @JsonProperty("line-opacity")
     private JsonNode lineOpacity;
     @JsonProperty("line-dasharray")
@@ -91,6 +93,14 @@ public class Paint
     public void setLineWidth(JsonNode lineWidth)
     {
         this.lineWidth = lineWidth;
+    }
+
+    public JsonNode getLineGapWidth() {
+        return lineGapWidth;
+    }
+
+    public void setLineGapWidth(JsonNode lineGapWidth) {
+        this.lineGapWidth = lineGapWidth;
     }
 
     public JsonNode getLineOpacity()
