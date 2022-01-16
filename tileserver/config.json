@@ -24,9 +24,9 @@
   },
   "styles": 
   {
-    "PDOK BRT Top10NL": 
+    "PDOK BRT TopNL": 
     {
-      "style": "pdok/style_top10nl.json",
+      "style": "pdok/style_topnl.json",
       "tilejson": {
         "bounds": [
           1.9666667,
@@ -41,7 +41,7 @@
   {
     "PDOK Top10nl": 
     {
-      "mbtiles": "top10nl.mbtiles"
+      "mbtiles": "topnl.mbtiles"
     }
   }
 }
