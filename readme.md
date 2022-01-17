@@ -61,9 +61,10 @@ We map the various files on the zoomlevels to get tiles with roughly the same si
 | top10nl  |  13 | 15 |
 
 Note
-* MBTiles are generated at discrete zoomlevels. Tiles are rendered at continuous zoomlevels. Hence the zoomlevel 5 tiles are used for render inlevels 5.000-5.999.
+* MBTiles are generated at discrete zoomlevels. Tiles are rendered at continuous zoomlevels. Hence the zoomlevel 5 tiles are used for rendering levels 5.000-5.999.
 * With decreasing detail level features are ommited of course. However, layer and feature names are not the same in each. This complicates the styling: For each map detail level separate styling rules have to be defined.
 * On the first tries only the top10nl maps were used. This resulted in extremely large tiles sizes (in MByte) at low zoom levels and slow rendering speeds. A work around is to let GDAL shrink the tiles by ommitting features, however this resulted in badly rendered tiles (with holes and gaps) since features are ommitted randomly.
+* It is easy to define your own mapping between detail level and zoom level by adjusting the MINZOOM and MAXZOOM parameters in _02_convert_gpkg_to_mtiles.bat_. The style file defines style layers for each detail level, so styling is not needed to adjust.
 
 ### The conversion
 
@@ -73,7 +74,7 @@ Note
 1. Enter the _/scripts_ directory
 1. Run the script **01_merge_gpkg.bat**. This script merges a number of layers from the gpkg files into a file for each detail level in _/maps/merged_gpkg/_, for example _/maps/merged_gpkg/merge0010.gpkg_ for top10nl. The operation takes about 10 minutes on an I7 processor with SSD
 1. Run the script **02_convert_gpkg_to_mbtiles.bat**. This script converts the merged gpkg files into a mbtiles file _/maps/mbtiles/_. For each scale an mbtiles file is generated: _top0010nl.mbtiles_ ... _top01000nl.mbtiles_. This operation takes about 13 hours on an I7 processor with SSD. Logging is written to _/logs/_ in separate log files (check the log files. No 'Recoding tile' should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features). 
-1. Run the script **03_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_. Not only all tiles are copied, also the metadata is merged. This command must be run on a Linux machine and requires Tippecanoe.
+1. Run the script **03_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_ (2.2 GByte). Not only all tiles are copied, also the metadata is merged. This command must be run on a Linux machine and requires Tippecanoe.
 
 ## Style
 The style can be found in _/tileserver/styles/pdok_. The main file is _style_top10nl.json_. The main component is the layers component, containing a layer for each feature (200-300) layers. In order to facilitate editing the layers can be exported to and from CSV using the StyleConvert tool. This enables editing in excel, where each layer is one row (allowing for copying, etc). See the [readme](java/StyleConvert/readme.md).

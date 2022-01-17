@@ -1294,7 +1294,7 @@
       }
     }, 
     {
-      "id": "wegdeel_lijn_overig_casing",
+      "id": "wegdeel_lijn_overig_casing10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -1320,11 +1320,21 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 12, 0.5, 13, 1, 14, 3, 20, 11
+          ], 12, 0.5, 20, 8
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.1, 20, 1.5
         ],
         "line-opacity": 
         {
@@ -1332,17 +1342,133 @@
           [
             
             [
-              13, 0
+              12, 0
             ], 
             [
-              13.5, 1
+              12.5, 1
             ]
           ]
         }
       }
     }, 
     {
-      "id": "wegdeel_lijn_straat_casing",
+      "id": "wegdeel_lijn_overig_casing50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_weg", "overig"
+        ], 
+        [
+          "!=", "verhardingsbreedteklasse", "< 2 meter"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(240, 120, 88)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 8
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.1, 20, 1.5
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_overig_casing100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_weg", "overig"
+        ], 
+        [
+          "!=", "verhardingsbreedteklasse", "< 2 meter"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(240, 120, 88)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 8
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.1, 20, 1.5
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_straat_casing10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -1362,11 +1488,21 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 12, 0.5, 13, 1, 14, 4, 20, 15
+          ], 12, 0.5, 20, 11
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.1, 20, 1.5
         ],
         "line-opacity": 
         {
@@ -1374,17 +1510,121 @@
           [
             
             [
-              13, 0
+              12, 0
             ], 
             [
-              13.5, 1
+              12.5, 1
             ]
           ]
         }
       }
     }, 
     {
-      "id": "wegdeel_lijn_lokaal_casing",
+      "id": "wegdeel_lijn_straat_casing50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "in", "type_weg", "straat"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0, 0, 100)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 11
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.1, 20, 1.5
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_straat_casing100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "in", "type_weg", "straat"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0, 0, 100)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 11
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.1, 20, 1.5
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal_casing10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -1404,11 +1644,21 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 12, 0.5, 13, 1, 14, 4, 20, 20
+          ], 11, 0.5, 20, 18
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.1, 20, 2
         ],
         "line-opacity": 
         {
@@ -1416,17 +1666,225 @@
           [
             
             [
-              12, 0
+              11, 0
             ], 
             [
-              12.5, 1
+              11.5, 1
             ]
           ]
         }
       }
     }, 
     {
-      "id": "wegdeel_lijn_regionaal_casing",
+      "id": "wegdeel_lijn_lokaal_casing50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal_casing100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal_casing250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal_casing500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal_casing10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -1441,27 +1899,248 @@
       },
       "paint": 
       {
-        "line-color": "#D2D0CD",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 8, 1.5, 20, 17
+          ], 9, 0.5, 20, 19
         ],
-        "line-opacity": 
+        "line-gap-width": 
         [
           "interpolate", 
           [
-            "linear"
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 9, 0, 9.5, 1
-        ]
+          ], 9, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal_casing50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 19
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal_casing100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 19
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal_casing250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 19
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal_casing500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 19
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.1, 20, 2
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1480,7 +2159,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1502,15 +2181,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1529,7 +2211,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1551,15 +2233,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1578,7 +2263,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1600,15 +2285,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1627,7 +2315,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1649,15 +2337,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1676,7 +2367,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1698,15 +2389,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1725,7 +2419,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1747,15 +2441,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1774,7 +2471,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1796,15 +2493,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1823,7 +2523,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1845,15 +2545,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1872,7 +2575,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1894,15 +2597,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1921,7 +2627,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1943,15 +2649,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -1970,7 +2679,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -1992,15 +2701,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2019,7 +2731,7 @@
       },
       "paint": 
       {
-        "line-color": "#000000",
+        "line-color": "rgb(0,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2041,15 +2753,18 @@
           ], 6, 0.2, 20, 2
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2057,7 +2772,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_spoorbaandeel_lijn",
-      "minzoom": 9.0,
       "layout": 
       {
         "line-cap": "round",
@@ -2077,15 +2791,18 @@
           ], 6, 2, 18, 20
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2112,15 +2829,18 @@
           ], 6, 2, 18, 20
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2147,15 +2867,18 @@
           ], 6, 2, 18, 20
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2182,15 +2905,18 @@
           ], 6, 2, 18, 20
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2217,15 +2943,18 @@
           ], 6, 2, 18, 20
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2252,15 +2981,18 @@
           ], 6, 2, 18, 20
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2430,7 +3162,7 @@
       }
     }, 
     {
-      "id": "wegdeel_lijn_overig",
+      "id": "wegdeel_lijn_overig10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -2456,16 +3188,125 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 13.5, 0, 14, 1.8, 20, 8
-        ]
+          ], 12, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
-      "id": "wegdeel_lijn_veerverbinding",
+      "id": "wegdeel_lijn_overig50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_weg", "overig"
+        ], 
+        [
+          "!=", "verhardingsbreedteklasse", "< 2 meter"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(208, 144, 104)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_overig100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_weg", "overig"
+        ], 
+        [
+          "!=", "verhardingsbreedteklasse", "< 2 meter"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(208, 144, 104)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_veerverbinding10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -2482,31 +3323,25 @@
       {
         "line-color": "rgb(100, 100, 200)",
         "line-width": 
-        {
-          "stops": 
+        [
+          "interpolate", 
           [
-            
-            [
-              10, 1
-            ], 
-            [
-              11, 2
-            ], 
-            [
-              20, 3
-            ]
-          ]
-        },
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 8, 0.5, 20, 8
+        ],
         "line-opacity": 
         {
           "stops": 
           [
             
             [
-              10, 0
+              8, 0
             ], 
             [
-              10.5, 1
+              8.5, 1
             ]
           ]
         },
@@ -2517,7 +3352,237 @@
       }
     }, 
     {
-      "id": "wegdeel_lijn_straat",
+      "id": "wegdeel_lijn_veerverbinding50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "veerverbinding"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 200)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        },
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_veerverbinding100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "veerverbinding"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 200)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        },
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_veerverbinding250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "veerverbinding"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 200)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        },
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_veerverbinding500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "veerverbinding"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 200)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        },
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_veerverbinding1000",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "veerverbinding"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(100, 100, 200)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 8
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        },
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_straat10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
@@ -2537,20 +3602,116 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 13, 0, 14, 2.5, 20, 11.5
-        ]
+          ], 12, 0.5, 20, 11
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
-      "id": "wegdeel_lijn_lokaal",
+      "id": "wegdeel_lijn_straat50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "in", "type_weg", "straat"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(255, 255, 255)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 11
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "0wegdeel_lijn_straat10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "in", "type_weg", "straat"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(255, 255, 255)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 12, 0.5, 20, 11
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              12, 0
+            ], 
+            [
+              12.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 12.5,
       "filter": 
       [
         "==", "typeweg", "lokale weg"
@@ -2567,20 +3728,200 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 12, 0, 13, 2.5, 20, 18
-        ]
+          ], 11, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
-      "id": "wegdeel_lijn_regionaal",
+      "id": "wegdeel_lijn_lokaal50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(238, 232, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(238, 232, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(238, 232, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_lokaal500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "lokale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(238, 232, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 11, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              11, 0
+            ], 
+            [
+              11.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 9.5,
       "filter": 
       [
         "==", "typeweg", "regionale weg"
@@ -2592,17 +3933,198 @@
       },
       "paint": 
       {
-        "line-color": "#FBB400",
+        "line-color": "rgb(251, 180, 0)",
         "line-width": 
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 6.5, 0, 8, 0.5, 20, 13
-        ]
+          ], 9, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(251, 180, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(251, 180, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(251, 180, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_regionaal500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_wegdeel_lijn",
+      "filter": 
+      [
+        "==", "type_weg", "regionale weg"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(251, 180, 0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 9, 0.5, 20, 18
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              9, 0
+            ], 
+            [
+              9.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2610,7 +4132,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "typeweg", "hoofdweg"
@@ -2622,7 +4143,7 @@
       },
       "paint": 
       {
-        "line-color": "#FF0000",
+        "line-color": "rgb(255,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2634,15 +4155,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2650,7 +4174,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -2662,7 +4185,7 @@
       },
       "paint": 
       {
-        "line-color": "#FF0000",
+        "line-color": "rgb(255,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2674,15 +4197,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2690,7 +4216,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -2702,7 +4227,7 @@
       },
       "paint": 
       {
-        "line-color": "#FF0000",
+        "line-color": "rgb(255,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2714,15 +4239,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2730,7 +4258,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -2742,7 +4269,7 @@
       },
       "paint": 
       {
-        "line-color": "#FF0000",
+        "line-color": "rgb(255,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2754,15 +4281,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2770,7 +4300,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top500nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -2782,7 +4311,7 @@
       },
       "paint": 
       {
-        "line-color": "#FF0000",
+        "line-color": "rgb(255,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2794,15 +4323,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2810,7 +4342,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -2822,7 +4353,7 @@
       },
       "paint": 
       {
-        "line-color": "#FF0000",
+        "line-color": "rgb(255,0,0)",
         "line-width": 
         [
           "interpolate", 
@@ -2834,15 +4365,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2850,7 +4384,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "typeweg", "autosnelweg"
@@ -2874,15 +4407,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2890,7 +4426,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -2914,15 +4449,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2930,7 +4468,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -2954,15 +4491,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -2970,7 +4510,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -2994,15 +4533,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -3010,7 +4552,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top500nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -3034,15 +4575,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -3050,7 +4594,6 @@
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 6.0,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -3074,15 +4617,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ]
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
       }
     }, 
     {
@@ -3101,7 +4647,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3113,15 +4659,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           2.5, 2.5
@@ -3144,7 +4693,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3156,15 +4705,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           5, 5
@@ -3183,7 +4735,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3195,15 +4747,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           5, 5
@@ -3222,7 +4777,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3234,15 +4789,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           5, 5
@@ -3261,7 +4819,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3273,15 +4831,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           5, 5
@@ -3300,7 +4861,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3312,15 +4873,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           5, 5
@@ -3339,7 +4903,7 @@
       },
       "paint": 
       {
-        "line-color": "#FFFFFF",
+        "line-color": "rgb(255,255,255)",
         "line-width": 
         [
           "interpolate", 
@@ -3351,15 +4915,18 @@
           ], 6, 1, 20, 18
         ],
         "line-opacity": 
-        [
-          "interpolate", 
+        {
+          "stops": 
           [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 6, 0, 8, 1
-        ],
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        },
         "line-dasharray": 
         [
           5, 5
@@ -4590,11 +6157,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 6.5, 0, 8, 0.5, 20, 3
+          ], 10, 0.5, 20, 3
         ]
       }
     }, 
@@ -4641,11 +6208,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.2
+            "exponential", 1.5
           ], 
           [
             "zoom"
-          ], 6.5, 0, 8, 0.5, 20, 3
+          ], 10, 0.5, 20, 3
         ]
       }
     }, 
