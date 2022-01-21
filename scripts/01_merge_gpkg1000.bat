@@ -1,4 +1,4 @@
-echo off
+@echo off
 REM ###################################################################################################################################
 REM #
 REM # Merge a selection of layers from the top1000NL geopackages into one geopackage using the GDAL tools

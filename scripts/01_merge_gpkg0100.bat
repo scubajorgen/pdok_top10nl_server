@@ -1,4 +1,4 @@
-echo off
+@echo off
 REM ###################################################################################################################################
 REM #
 REM # Merge a selection of layers from the top100NL geopackages into one geopackage using the GDAL tools
@@ -37,6 +37,7 @@ echo 5 - InrichtingsElement
 ogr2ogr -update -f GPKG -select type_inrichtingselement,nederlandse_naam,nummer,status ..\maps\merged_gpkg\merge0100.gpkg ..\maps\gpkg\top100nl\top100nl_Inrichtingselement.gpkg top100nl_inrichtingselement_punt
 ogr2ogr -update -f GPKG -select type_inrichtingselement,nederlandse_naam,nummer,status ..\maps\merged_gpkg\merge0100.gpkg ..\maps\gpkg\top100nl\top100nl_Inrichtingselement.gpkg top100nl_inrichtingselement_lijn
 echo 6 - Plaats
+REM missing!
 echo 7 - Plantopografie
 echo 8 - RegistratiefGebied
 ogr2ogr -update -f GPKG -select type_registratief_gebied,nederlandse_naam,nummer ..\maps\merged_gpkg\merge0100.gpkg ..\maps\gpkg\top100nl\top100nl_RegistratiefGebied.gpkg top100nl_registratief_gebied_vlak
