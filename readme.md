@@ -80,7 +80,7 @@ Note
 1. Run the script **04_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_ (2.3 GByte). Not only all tiles are copied, also the metadata is merged. This command must be run on a Linux machine and requires Tippecanoe. Takes a few minutes at most.
 
 ---
-Instead of running scripts 01 and 02 you can choose to run **03_convert_original_gpkg_to_mbtiles.bat**. This script parses the gpkg directories and converts all TopNL files to a corresponding mbtiles file, without the filtering. After running the **04_merge_mbtiles.sh** script you end up with a topnl.mbtiles file that is 3.5 GByte in size, but that contains all TopNL features and attributes.
+Instead of running scripts 01 and 02 you can choose to run **03_convert_original_gpkg_to_mbtiles.bat**. This script parses the gpkg directories and converts all TopNL files to a corresponding mbtiles file, without the filtering. After running the **04_merge_mbtiles.sh** script you end up with a topnl.mbtiles file that is 3.5 GByte in size, but that contains all TopNL features and attributes. Takes about 4 hours on the I7 with SSD.
 
 ---
 
