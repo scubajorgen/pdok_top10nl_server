@@ -5,6 +5,7 @@
  */
 package net.studioblueplanet.styleconvert.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -35,6 +36,9 @@ public class Layer
     @JsonProperty("paint")
     private Paint       paint;
 
+    @JsonIgnore
+    private String      comment;
+    
     public String getId()
     {
         return id;
@@ -119,5 +123,15 @@ public class Layer
 
     public void setMaxzoom(Float maxzoom) {
         this.maxzoom = maxzoom;
+    }
+
+    public String getComment()
+    {
+        return comment;
+    }
+
+    public void setComment(String comment)
+    {
+        this.comment = comment;
     }
 }

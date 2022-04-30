@@ -387,67 +387,74 @@ public class LayerProcessor
                 if (!layerStrings[0].equals(""))
                 {
                     layer=new Layer();
-                    layer.setId(layerStrings[0]);
-                    layer.setType(layerStrings[1]);
-                    setString  (layerStrings[2], layer::setSource);
-                    setString  (layerStrings[3], layer::setSourceLayer);
-                    setJsonNode(layerStrings[4], layer::setFilter);
-                    setFloat   (layerStrings[5], layer::setMinzoom);
-                    setFloat   (layerStrings[6], layer::setMaxzoom);
-
-                    layout=new Layout();
-                    isNotNull=false;
-                    isNotNull |= setString  (layerStrings[11], layout::setSymbolPlacement);
-                    isNotNull |= setBoolean (layerStrings[12], layout::setSymbolAvoidEdges);
-                    isNotNull |= setFloat   (layerStrings[13], layout::setSymbolSpacing);
-
-                    isNotNull |= setString  (layerStrings[14], layout::setLineCap);
-                    isNotNull |= setString  (layerStrings[15], layout::setLineJoin);
-
-                    isNotNull |= setString  (layerStrings[21], layout::setIconImage);
-                    isNotNull |= setBoolean (layerStrings[22], layout::setIconAllowOverlap);
-                    isNotNull |= setJsonNode(layerStrings[23], layout::setIconOffset);
-
-                    isNotNull |= setString  (layerStrings[24], layout::setTextField);
-                    isNotNull |= setJsonNode(layerStrings[25], layout::setTextFont);
-                    isNotNull |= setJsonNode(layerStrings[26], layout::setTextSize);
-                    isNotNull |= setJsonNode(layerStrings[27], layout::setTextOffset);
-                    isNotNull |= setString  (layerStrings[28], layout::setTextAnchor);
-                    isNotNull |= setFloat   (layerStrings[29], layout::setTextMaxWidth);
-                    isNotNull |= setString  (layerStrings[30], layout::setTextTransform);
-                    isNotNull |= setBoolean (layerStrings[31], layout::setTextAllowOverlap);
-                    isNotNull |= setJsonNode(layerStrings[32], layout::setTextLineHeight);
-
-                    if (isNotNull)
+                    if (layerStrings[0].startsWith("#"))
                     {
-                        layer.setLayout(layout);
+                        layer.setComment(layerStrings[0]);
                     }
-
-                    paint=new Paint();
-                    isNotNull=false;
-                    isNotNull |= setString  (layerStrings[ 7], paint::setFillPattern);
-                    isNotNull |= setJsonNode(layerStrings[ 8], paint::setFillColor);
-                    isNotNull |= setJsonNode(layerStrings[ 9], paint::setFillOutlineColor);
-                    isNotNull |= setJsonNode(layerStrings[10], paint::setFillOpacity);
-
-                    isNotNull |= setJsonNode(layerStrings[16], paint::setLineColor);
-                    isNotNull |= setJsonNode(layerStrings[17], paint::setLineWidth);
-                    isNotNull |= setJsonNode(layerStrings[18], paint::setLineGapWidth);
-                    isNotNull |= setJsonNode(layerStrings[19], paint::setLineOpacity);
-                    isNotNull |= setJsonNode(layerStrings[20], paint::setLineDasharray);
-
-                    isNotNull |= setJsonNode(layerStrings[33], paint::setTextColor);
-                    isNotNull |= setJsonNode(layerStrings[34], paint::setTextHaloColor);
-                    isNotNull |= setFloat   (layerStrings[35], paint::setTextHaloWidth);
-                    isNotNull |= setFloat   (layerStrings[36], paint::setTextHaloBlur);
-
-                    isNotNull |= setJsonNode(layerStrings[37], paint::setBackgroundColor);
-
-                    if (isNotNull)
+                    else
                     {
-                        layer.setPaint(paint);
-                    }
+                        layer.setId(layerStrings[0]);
+                        layer.setType(layerStrings[1]);
+                        setString  (layerStrings[2], layer::setSource);
+                        setString  (layerStrings[3], layer::setSourceLayer);
+                        setJsonNode(layerStrings[4], layer::setFilter);
+                        setFloat   (layerStrings[5], layer::setMinzoom);
+                        setFloat   (layerStrings[6], layer::setMaxzoom);
 
+                        layout=new Layout();
+                        isNotNull=false;
+                        isNotNull |= setString  (layerStrings[11], layout::setSymbolPlacement);
+                        isNotNull |= setBoolean (layerStrings[12], layout::setSymbolAvoidEdges);
+                        isNotNull |= setFloat   (layerStrings[13], layout::setSymbolSpacing);
+
+                        isNotNull |= setString  (layerStrings[14], layout::setLineCap);
+                        isNotNull |= setString  (layerStrings[15], layout::setLineJoin);
+
+                        isNotNull |= setString  (layerStrings[21], layout::setIconImage);
+                        isNotNull |= setBoolean (layerStrings[22], layout::setIconAllowOverlap);
+                        isNotNull |= setJsonNode(layerStrings[23], layout::setIconOffset);
+
+                        isNotNull |= setString  (layerStrings[24], layout::setTextField);
+                        isNotNull |= setJsonNode(layerStrings[25], layout::setTextFont);
+                        isNotNull |= setJsonNode(layerStrings[26], layout::setTextSize);
+                        isNotNull |= setJsonNode(layerStrings[27], layout::setTextOffset);
+                        isNotNull |= setString  (layerStrings[28], layout::setTextAnchor);
+                        isNotNull |= setFloat   (layerStrings[29], layout::setTextMaxWidth);
+                        isNotNull |= setString  (layerStrings[30], layout::setTextTransform);
+                        isNotNull |= setBoolean (layerStrings[31], layout::setTextAllowOverlap);
+                        isNotNull |= setJsonNode(layerStrings[32], layout::setTextLineHeight);
+
+                        if (isNotNull)
+                        {
+                            layer.setLayout(layout);
+                        }
+
+                        paint=new Paint();
+                        isNotNull=false;
+                        isNotNull |= setString  (layerStrings[ 7], paint::setFillPattern);
+                        isNotNull |= setJsonNode(layerStrings[ 8], paint::setFillColor);
+                        isNotNull |= setJsonNode(layerStrings[ 9], paint::setFillOutlineColor);
+                        isNotNull |= setJsonNode(layerStrings[10], paint::setFillOpacity);
+
+                        isNotNull |= setJsonNode(layerStrings[16], paint::setLineColor);
+                        isNotNull |= setJsonNode(layerStrings[17], paint::setLineWidth);
+                        isNotNull |= setJsonNode(layerStrings[18], paint::setLineGapWidth);
+                        isNotNull |= setJsonNode(layerStrings[19], paint::setLineOpacity);
+                        isNotNull |= setJsonNode(layerStrings[20], paint::setLineDasharray);
+
+                        isNotNull |= setJsonNode(layerStrings[33], paint::setTextColor);
+                        isNotNull |= setJsonNode(layerStrings[34], paint::setTextHaloColor);
+                        isNotNull |= setFloat   (layerStrings[35], paint::setTextHaloWidth);
+                        isNotNull |= setFloat   (layerStrings[36], paint::setTextHaloBlur);
+
+                        isNotNull |= setJsonNode(layerStrings[37], paint::setBackgroundColor);
+
+                        if (isNotNull)
+                        {
+                            layer.setPaint(paint);
+                        }
+
+                    }
                     layers.add(layer);
                 }
                 i++;
