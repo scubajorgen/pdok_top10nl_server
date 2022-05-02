@@ -21,8 +21,8 @@ import java.util.List;
  */
 public class StyleConvert
 {
-    private ObjectMapper            objectMapper;
-    JsonNode jsonNode;
+    private ObjectMapper    objectMapper;
+    private JsonNode        jsonNode;
     
     /**
      * Read a map style from JSON file

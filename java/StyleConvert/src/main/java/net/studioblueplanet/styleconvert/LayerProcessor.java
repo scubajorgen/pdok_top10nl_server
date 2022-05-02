@@ -215,63 +215,70 @@ public class LayerProcessor
             {
                 layer=it.next();
                 String[] items=new String[MAXFIELDS];
-                items[ 0]=layer.getId();
-
-                items[ 1]=layer.getType();
-                items[ 2]=convertToString(layer.getSource());
-                items[ 3]=convertToString(layer.getSourceLayer());
-                items[ 4]=convertToString(layer.getFilter());
-                items[ 5]=convertToString(layer.getMinzoom());
-                items[ 6]=convertToString(layer.getMaxzoom());
-
-                layout=layer.getLayout();
-                if (layout!=null)
+                String comment=layer.getComment();
+                if (comment!=null)
                 {
-                    items[11]=convertToString(layout.getSymbolPlacement());
-                    items[12]=convertToString(layout.getSymbolAvoidEdges());
-                    items[13]=convertToString(layout.getSymbolSpacing());
-                    
-                    items[14]=convertToString(layout.getLineCap());
-                    items[15]=convertToString(layout.getLineJoin());
-                    
-                    items[21]=convertToString(layout.getIconImage());
-                    items[22]=convertToString(layout.getIconAllowOverlap());
-                    items[23]=convertToString(layout.getIconOffset());
-                    
-                    items[24]=convertToString(layout.getTextField());
-                    items[25]=convertToString(layout.getTextFont());
-                    items[26]=convertToString(layout.getTextSize());
-                    items[27]=convertToString(layout.getTextOffset());
-                    items[28]=convertToString(layout.getTextAnchor());
-                    items[29]=convertToString(layout.getTextMaxWidth());
-                    items[30]=convertToString(layout.getTextTransform());
-                    items[31]=convertToString(layout.getTextAllowOverlap());
-                    items[32]=convertToString(layout.getTextLineHeight());
+                    items[0]=comment;
                 }
-
-
-                paint=layer.getPaint();
-                if (paint!=null)
+                else
                 {
-                    items[ 7]=convertToString(paint.getFillPattern());
-                    items[ 8]=convertToString(paint.getFillColor());
-                    items[ 9]=convertToString(paint.getFillOutlineColor());
-                    items[10]=convertToString(paint.getFillOpacity());
+                    items[ 0]=layer.getId();
 
-                    items[16]=convertToString(paint.getLineColor());
-                    items[17]=convertToString(paint.getLineWidth());
-                    items[18]=convertToString(paint.getLineGapWidth());
-                    items[19]=convertToString(paint.getLineOpacity());
-                    items[20]=convertToString(paint.getLineDasharray());
+                    items[ 1]=layer.getType();
+                    items[ 2]=convertToString(layer.getSource());
+                    items[ 3]=convertToString(layer.getSourceLayer());
+                    items[ 4]=convertToString(layer.getFilter());
+                    items[ 5]=convertToString(layer.getMinzoom());
+                    items[ 6]=convertToString(layer.getMaxzoom());
 
-                    items[33]=convertToString(paint.getTextColor());
-                    items[34]=convertToString(paint.getTextHaloColor());
-                    items[35]=convertToString(paint.getTextHaloWidth());
-                    items[36]=convertToString(paint.getTextHaloBlur());
-                    
-                    items[37]=convertToString(paint.getBackgroundColor());
+                    layout=layer.getLayout();
+                    if (layout!=null)
+                    {
+                        items[11]=convertToString(layout.getSymbolPlacement());
+                        items[12]=convertToString(layout.getSymbolAvoidEdges());
+                        items[13]=convertToString(layout.getSymbolSpacing());
+
+                        items[14]=convertToString(layout.getLineCap());
+                        items[15]=convertToString(layout.getLineJoin());
+
+                        items[21]=convertToString(layout.getIconImage());
+                        items[22]=convertToString(layout.getIconAllowOverlap());
+                        items[23]=convertToString(layout.getIconOffset());
+
+                        items[24]=convertToString(layout.getTextField());
+                        items[25]=convertToString(layout.getTextFont());
+                        items[26]=convertToString(layout.getTextSize());
+                        items[27]=convertToString(layout.getTextOffset());
+                        items[28]=convertToString(layout.getTextAnchor());
+                        items[29]=convertToString(layout.getTextMaxWidth());
+                        items[30]=convertToString(layout.getTextTransform());
+                        items[31]=convertToString(layout.getTextAllowOverlap());
+                        items[32]=convertToString(layout.getTextLineHeight());
+                    }
+
+
+                    paint=layer.getPaint();
+                    if (paint!=null)
+                    {
+                        items[ 7]=convertToString(paint.getFillPattern());
+                        items[ 8]=convertToString(paint.getFillColor());
+                        items[ 9]=convertToString(paint.getFillOutlineColor());
+                        items[10]=convertToString(paint.getFillOpacity());
+
+                        items[16]=convertToString(paint.getLineColor());
+                        items[17]=convertToString(paint.getLineWidth());
+                        items[18]=convertToString(paint.getLineGapWidth());
+                        items[19]=convertToString(paint.getLineOpacity());
+                        items[20]=convertToString(paint.getLineDasharray());
+
+                        items[33]=convertToString(paint.getTextColor());
+                        items[34]=convertToString(paint.getTextHaloColor());
+                        items[35]=convertToString(paint.getTextHaloWidth());
+                        items[36]=convertToString(paint.getTextHaloBlur());
+
+                        items[37]=convertToString(paint.getBackgroundColor());
+                    }
                 }
-
                 j=0;
                 while (j<MAXFIELDS)
                 {
@@ -453,7 +460,6 @@ public class LayerProcessor
                         {
                             layer.setPaint(paint);
                         }
-
                     }
                     layers.add(layer);
                 }
