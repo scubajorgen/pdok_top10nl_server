@@ -1,25 +1,25 @@
 # PDOK BRT TOPNL Tileserver Project
 ## Introduction
 PDOK (Publieke Dienstverlening op Kaart) is the Kadaster organisation in the Netherlands that provides topographic maps. One of their products publicly available is the Basisregistratie Topografie (BRT) TOPNL. PDOK provides these maps on various scales. Maps are provided in two vector formats (GML and GPKG) without styling.
-This project prepares the [PDOK TOPNL topographic maps of the Netherlands](https://www.pdok.nl/downloads/-/article/basisregistratie-topografie-brt-topnl) for serving and rendering with the the [Tileserver GL](https://tileserver.org/) mapserver. Tileserver GL is an [open-source mapserver project on github](https://github.com/maptiler/tileserver-gl) and can be run as [docker container](https://hub.docker.com/r/maptiler/tileserver-gl). It is meant to serve vector and raster based maps in the MBTILES format.
+**This project** prepares the [PDOK TOPNL topographic maps of the Netherlands](https://www.pdok.nl/downloads/-/article/basisregistratie-topografie-brt-topnl) for serving and rendering with the the [Tileserver GL](https://tileserver.org/) mapserver. Tileserver GL is an [open-source mapserver project on github](https://github.com/maptiler/tileserver-gl) and can be run as [docker container](https://hub.docker.com/r/maptiler/tileserver-gl). It is meant to serve vector and raster based maps in the MBTILES format.
 
 Refer to [my blog page](https://blog.studioblueplanet.net/?p=781) on this subject for more and detailed information.
 
 This project offers
-* scripts for converting the PDOK TOPNL Geopackages into mbtiles. It uses various scales (top10nl, top50nl and top100nl) vor the various zoomlevels
+* scripts for converting the PDOK TOPNL Geopackages into mbtiles. It uses various scales (top10nl, top50nl, top100nl, top250nl, top500nl and top1000nl) for the various zoomlevels
 * scripts for getting the Tileserver GL up and running as docker container
 * the configuration files for Tileserver GL
 * style files for rendering the TOPNL content as close as possible to the rasterized [TOPraster maps](https://www.pdok.nl/introductie/-/article/dataset-basisregistratie-topografie-brt-topraster).
-* A tool (in Java) that allows conversion of the JSON style file to CSV and back so that it can be edited in Excel
+* a tool (in Java) that allows conversion of the JSON style file to CSV and back so that it can be edited in Excel (which makes it more easy than editing JSON)
 
-The scripts use the excellent [GDAL tools](https://gdal.org/) (Geospatial Data Abstraction Library). This site contains a manual for the used functions. For merging mbtiles file we use [Mapbox Tippercanoe](https://github.com/mapbox/tippecanoe). Both tools are used as command-line tools.
+The scripts use the excellent [GDAL tools](https://gdal.org/) (Geospatial Data Abstraction Library). This site contains a manual for the used functions. For merging mbtiles file we use [Mapbox Tippercanoe](https://github.com/mapbox/tippecanoe) or the better maintained [Felt Tippercanoe](https://github.com/felt/tippecanoe). Both tools are used as command-line tools.
 
 This project does not offer
 * the PDOK files; these must be downloaded from the [PDOK site](https://www.pdok.nl/downloads/-/article/basisregistratie-topografie-brt-topnl). We use the geopackage ATOM files.
 * the converted mbtiles file itself
-* the Tileserver GL software. We use it from the docker repo.
+* the Tileserver GL software. We use it from the [docker repo](https://hub.docker.com/r/maptiler/tileserver-gl).
 * The GDAL tools. These can be downloaded from [GisInternals](https://www.gisinternals.com/query.html?content=filelist&file=release-1911-x64-gdal-mapserver.zip). We use [gdal-303-1916-core.msi](https://download.gisinternals.com/sdk/downloads/release-1916-gdal-3-3-3-mapserver-7-6-4/gdal-303-1916-core.msi)
-* The [Mapbox Tippercanoe](https://github.com/mapbox/tippecanoe) tools. 
+* The [Mapbox Tippercanoe](https://github.com/mapbox/tippecanoe) or [Felt Tippercanoe](https://github.com/felt/tippecanoe) tools. 
 
 ![](images/vectors2.png)
 _Resulting map rendering_
@@ -38,8 +38,8 @@ The handy develop can also use GDAL in a docker container on Linux. However, scr
 
 GDAL tools do not allow *updating/merging* of mbtiles file. This is possible for gpkg files though. Therefore we first merge at gkpg level and than convert to mbtiles.
 
-### Mapbox Tippercanoe
-This tool is available on [github](https://github.com/mapbox/tippecanoe). Download and build under Linux. It requires the libsqlite3 libraries (libsqlite3-dev (Debian) or libsqlite3x-devel (Centos)). We only need _tile-join_ for merging the mbtiles files into one large mbtiles file.
+### Mapbox/Felt Tippercanoe
+This tool is available on github: [Mapbox Tippercanoe](https://github.com/mapbox/tippecanoe) or [Felt Tippercanoe](https://github.com/felt/tippecanoe). The latter appears better maintained, the former refers to the latter. Download and build under Linux. It requires the libsqlite3 libraries (libsqlite3-dev (Debian) or libsqlite3x-devel (Centos)). We only need _tile-join_ for merging the mbtiles files into one large mbtiles file.
 
 ### Disk
 The processing is very data and disk intensive. Therefore 
@@ -47,11 +47,11 @@ The processing is very data and disk intensive. Therefore
 
 ## Converting PDOK maps
 ### detail levels and zoom levels
-MBTiles are generated for various zoomlevels (1-15). MBTiles tiles always have the same size in pixels. However, the smaller the zoomlevel, the larger geographical area is covered by one tile.
+MBTiles are generated for various zoomlevels (1-15). MBTiles tiles always have the same size in pixels. However, the smaller the zoomlevel, the larger geographical area is covered by one tile. While at first I used the most detailed top10nl for all zoom levels, this resulted in huge tile sizes at low zoomlevels/high scales.
 
-PDOK supplies the maps on various detail levels: top10nl (most detail), top50nl, top100nl, top250nl, top500nl, top1000nl (least detail). The numbers suggest regular map scales: top10nl = 1:10.000, ...
+PDOK however supplies the maps on various detail levels: top10nl (most detail), top50nl, top100nl, top250nl, top500nl, top1000nl (least detail). The numbers suggest regular map scales: top10nl = 1:10.000, ...
 
-We map the various files on the zoomlevels to get tiles with roughly the same size in MBytes (0.5-1 MByte):
+We map the various files on the zoomlevels to get tiles with roughly the same size in MBytes (0.5-1 MByte; done in _02_convert_merged_gpkg_to_mbtiles.bat_ and _03_convert_merged_gpkg_to_mbtiles.bat_):
 
 | map | Minzoom  | Maxzoom  |
 |----|---|---|
@@ -71,16 +71,16 @@ Note
 * The **city names** layers (plaats_punt and plaats_vlak) are missing in top50nl and top100nl. However, we would need to show the city names at corresponding zoom levels. Therefore, the city names from top250nl are used for the zoom levels 7-12 by using a work-around.
 
 ### The conversion
-1. Download the geopackages ATOM PDOK TOP10NL, TOP50NL, TOP100NL, TOP250NL, TOP500NL and TOP1000NL maps (zip) on the [PDOK site](https://www.pdok.nl/downloads/-/article/basisregistratie-topografie-brt-topnl) and put them in the _/downloads_ directory
-1. Extract the subsequent gpkg files to _/maps/gpkg/top10nl_, _/maps/gpkg/top50nl_ ... _/maps/gpkg/top1000nl_. Note that this requires about 15 GByte of space (Top10NL: 10 GByte, Top50NL: 3 GByte, Top100NL: 1 GByte, ...)
+1. Download the geopackages TOP10NL, TOP50NL, TOP100NL, TOP250NL, TOP500NL and TOP1000NL maps  on the [PDOK site](https://www.pdok.nl/downloads/-/article/basisregistratie-topografie-brt-topnl) and put them in the _/maps/gpkg_ directory. Note that this requires about 15 GByte of space (Top10NL: 10 GByte, Top50NL: 3 GByte, Top100NL: 1 GByte, ...).
+The files are named: _top[N]nl_Compleet.gpkg_ (Note: previously the layers of the TOP10 and Top50 were split up over multiple files, reducing the file size of the individual files; apparently now they are also served for each level as a 'Compleet' file)
 1. Start a DOS cmd window
 1. Enter the _/scripts_ directory
-1. Run the script **01_merge_gpkg.bat**. This script merges a number of layers from the gpkg files into a file for each detail level in _/maps/merged_gpkg/_, for example _/maps/merged_gpkg/merge0010.gpkg_ for top10nl. These scripts filter the most relevant information while omitting the information that is not used, resulting in a size reduction of 34%. The operation takes about 14 minutes on an I7 processor with SSD
-1. Run the script **02_convert_merged_gpkg_to_mbtiles.bat**. This script converts the merged gpkg files into a mbtiles file _/maps/mbtiles/_. For each scale an mbtiles file is generated: _top0010nl.mbtiles_ ... _top01000nl.mbtiles_. This operation takes about 3.5 hours on an I7 processor with SSD. Logging is written to _/logs/_ in separate log files (check the log files. No 'Recoding tile' should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features). 
-1. Run the script **04_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_ (2.3 GByte). Not only all tiles are copied, also the metadata is merged. This command must be run on a Linux machine and requires Tippecanoe. Takes a few minutes at most.
+1. Run the script **01_merge_gpkg.bat**. This script merges a selected number of layers from the gpkg files into a file for each detail level in _/maps/merged_gpkg/_, for example _/maps/merged_gpkg/merge0010.gpkg_ for top10nl. These scripts filter the most relevant information while omitting the information that is not used, resulting in a size reduction of 34%. The operation takes about 14 minutes on an I7 processor with SSD
+1. Run the script **02_convert_merged_gpkg_to_mbtiles.bat**. This script converts the merged gpkg files into a mbtiles file _/maps/mbtiles/_. For each scale an mbtiles file is generated: _top0010nl.mbtiles_ ... _top01000nl.mbtiles_. This operation takes about 3.5 hours on an I7 processor with SSD. Logging is written to _/logs/_ in separate log files (check the log files. No 'Recoding tile' warnings should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features). 
+1. Run on Linux the script **04_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_ (2.3 GByte). Not only all tiles are copied, also the metadata is merged. This command must be run on a Linux machine and requires Tippecanoe. Takes a few minutes at most.
 
 ---
-Instead of running scripts 01 and 02 you can choose to run **03_convert_original_gpkg_to_mbtiles.bat**. This script parses the gpkg directories and converts all TopNL files to a corresponding mbtiles file, without the filtering. After running the **04_merge_mbtiles.sh** script you end up with a topnl.mbtiles file that is 3.5 GByte in size, but that contains all TopNL features and attributes. Takes about 4 hours on the I7 with SSD.
+Instead of running scripts 01 and 02 you can choose to run **03_convert_original_gpkg_to_mbtiles.bat**. This script parses the gpkg directories and converts all TopNL information (layers, features) to a corresponding mbtiles file, without the filtering. After running the **04_merge_mbtiles.sh** script you end up with a topnl.mbtiles file that is 3.5 GByte in size, but that contains all TopNL features and attributes. Takes about 4 hours on the I7 with SSD. It writes the GDAL logging to the _/logs_ directory (showing layers, features and queries)
 
 ---
 
@@ -103,7 +103,7 @@ Starting server
 Listening at http://[::]:80/
 Startup complete
 ```
-Use a browser to connect to port 8080 on the host. You are expected to see following:
+Use a browser to connect to port 8080 on the host. Use http, not https (you need a reverse proxy for https). You are expected to see following:
 
 ![](images/output.png)
 _The tileserver-gl landing page_
@@ -112,8 +112,59 @@ Use Styles 'Viewer' to watch the rendered vector image using the style enclosed
 
 Use Data 'Inspect' to watch the raw vector data.
 
+---
+The file _/tileserver/config.json_ defines the maps that are showns and the styles that are used.
+
+The directory _/tileserver/pdok/_ contains the style definition for the PDOK files. 
+
+---
+
+## Versions
+
+### v3.0 04-2024
+* The software assumes that .gpkg files for all scales are delived as a single file _top[N]nl_Compleet.gpkg_ ([N] is 10, 50, 100, 250, 500, 1000).
+* Style update - ongoing...
+
+### v2.0 01-2022
+The version is used for PDOK gpkg files in which the layers for the lower scales (10, 50) are distributed over multiple .gpkg files
+* Added higher scale (250, 500, 100)
+* Improved scripting
+* Bugs
+
+### v1.0 01-2022
+Initial Version
+
 ## Known issues
 * top50nl_terrein seems to contain a few invalid geometries
+* I use tileserver 3.1.1. I haven't got the latest version working; working on it...
+* The 04 script gives warnings like ``` Warning: mismatched maxzooms: 6 in ../maps/mbtiles/top500nl_Compleet.mbtiles vs previous 4 ```. Have to sort this out. It doesn't seem to affect the end result.
+
+## Commenting
+Leave comments on [github](https://github.com/scubajorgen/pdok_topnl_server/issues) if you have comments or questions.
+
+## License
+This software is published under the MIT license:
+
+Copyright (c) 2024 Jörgen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 
 ## Other links
 * [Vector Tiles: BRT and BGT](https://github.com/PDOK/vectortiles-bgt-brt)
