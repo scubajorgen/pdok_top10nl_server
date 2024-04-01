@@ -1,4 +1,5 @@
-/downloads/*
+/downloads/*.zip
+/downloads/*.gpkg
 /maps/gpkg/*.gpkg
 /maps/merged_gpkg/*.gpkg
 /maps/mbtiles/*.mbtiles
