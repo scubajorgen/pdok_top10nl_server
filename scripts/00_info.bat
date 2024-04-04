@@ -15,7 +15,7 @@ SET PATH=c:\program files\gdal\;%PATH%
 
 
 
-SET dir=..\maps\gpkg\top10nl
+SET dir=..\maps\gpkg
 
 for /r %%i in (%dir%\*) do (
     echo File: %%i
