@@ -39,7 +39,7 @@
     "x": 0,
     "y": 16
   },
-  "boomkwekerij": 
+  "fruitkwekerij": 
   {
     "height": 16,
     "width": 16,
@@ -47,7 +47,7 @@
     "x": 16,
     "y": 16
   },
-  "fruitkwekerij": 
+  "boomkwekerij": 
   {
     "height": 16,
     "width": 16,
@@ -471,6 +471,14 @@
     "width": 8,
     "pixelRatio": 1,
     "x": 100,
+    "y": 148
+  },
+  "kogelvanger": 
+  {
+    "height": 8,
+    "width": 8,
+    "pixelRatio": 1,
+    "x": 116,
     "y": 148
   }
 }
