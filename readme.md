@@ -64,17 +64,32 @@ The [Arcgis site 'Zoomlevels and Scale'](https://developers.arcgis.com/documenta
 
 In this way we find that zoomlevel 13.0 cooresponds to scale 1:18,056. I measured the scale of a map at zoomlevel 13.0 on a 25" monitor (HP 2510i) and found scale 1:19,925. So pretty good correspondence (+10%). Hence we use the formula to derive zoomlevels given the PDOK scales.
 
-The tooling requires _discrete_ zoomlevels, so we have to round off. Mapbox GL use the minimum zoomlevels as absolute limit: map isn't shown at zoomlevels smaller than the minimum zoomlevel. The maximum zoomlevel is not absolute: at higher levels the map is shown (zoomed further in).
+--- 
+_The tooling requires _discrete_ zoomlevels, that is, a minimum and maximum zoomlevel. Tiles are created for discrete zoomlevels from the minimum zoomlevel to and including the maximum zoomlevel. So if we define minimum zoomlevel 3 and maximum zoomlevel 5, tiles are generated for zoomlevels 3, 4 and 5._
+
+_In Mapbox GL tiles of a given zoomlevel are used from this zoomlevel up to the next zoomlevel (hence tiles for zoomlevel 3 are used from 3.000 to 3.999 if also tiles exists with zoomlevel 4). So when we have tiles for zoomlevels 3, 4 and 5 in the above example, they are used for 3.000 to 5.999._
+
+_If no tiles exist for higher zoomlevels, Mapbox will use tiles with the highest zoomlevel. So in the example tiles with zoomlevel 5 are also used for zoomlevels 6.000 and higher, if no other tiles exist._
+
+_Mapbox GL use the minimum zoomlevels as absolute limit: tiles are never used for zoomlevels smaller than the minimum zoomlevel. In our example, if we have tiles for 3, 4 and 5, if we show the map at zoomlevel 2.999, it disappears._
+
+_So we have to round off the continuous min and max zoomlevel. We can choose to round down min and max (which means smaller scale tiles are used for lower zoomlevels; upper in next picture) or round up (which means larger scale tiles are used for higher zoomlevels; lower). The latter gives a better fit with the specification (middle)_
+
+![](images/zoom.png)
+
+_Zoomlevels of subsequent scales should not overlap. If we have tiles at zoomlevel 7 for Top1000NL as well as Top500NL, it becomes unpredictable which tiles are going to be shown for zoomlevels 7.000-7.999._
+
+---
 
 
 | map | Scale min (PDOK) | Scale max (PDOK) | Minzoom | Maxzoom | Minzoom rounded | Maxzoom rounded |
 |----|---|---|---|---|---|---|
-| top1000nl | 1:750.000 | 1:1.500.000 |  6.6 |  7.6 |  1 |  8 |
-| top500nl  | 1:350.000 |   1:750.000 |  7.6 |  8.7 |  8 |  9 |
-| top250nl  | 1:150.000 |   1:350.000 |  8.7 |  9.9 |  9 | 10 |
-| top100nl  |  1:75.000 |   1:150.000 |  9.9 | 10.9 | 10 | 11 |
-| top50nl   |  1:25.000 |    1:75.000 | 10.9 | 12.5 | 11 | 13 |
-| top10nl   |    1:5000 |    1:25.000 | 12.5 | 14.9 | 13 | 15 |
+| Top1000NL | 1:750.000 | 1:1.500.000 |  6.6 |  7.6 |  1 |  7 |
+| Top500NL  | 1:350.000 |   1:750.000 |  7.6 |  8.7 |  8 |  8 |
+| Top250NL  | 1:150.000 |   1:350.000 |  8.7 |  9.9 |  9 |  9 |
+| Top100NL  |  1:75.000 |   1:150.000 |  9.9 | 10.9 | 10 | 11 |
+| Top50NL   |  1:25.000 |    1:75.000 | 10.9 | 12.5 | 11 | 13 |
+| Top10NL   |    1:5000 |    1:25.000 | 12.5 | 14.9 | 13 | 15 |
 
 We map the various files on the zoomlevels to get tiles with roughly the same size in MBytes (0.5-1.5 MByte; done in _02_convert_merged_gpkg_to_mbtiles.bat_ and _03_convert_merged_gpkg_to_mbtiles.bat_):
 
@@ -92,7 +107,7 @@ The files are named: _top[N]nl_Compleet.gpkg_ (Note: previously the layers of th
 1. Start a DOS cmd window
 1. Enter the _/scripts_ directory
 1. Run the script **01_merge_gpkg.bat**. This script merges a selected number of layers from the gpkg files into a file for each detail level in _/maps/merged_gpkg/_, for example _/maps/merged_gpkg/merge0010.gpkg_ for top10nl. These scripts filter the most relevant information while omitting the information that is not used, resulting in a size reduction of 34%. The operation takes about 6.5 minutes on an I7 processor with SSD
-1. Run the script **02_convert_merged_gpkg_to_mbtiles.bat**. This script converts the merged gpkg files into a mbtiles file _/maps/mbtiles/_. For each scale an mbtiles file is generated: _top0010nl.mbtiles_ ... _top01000nl.mbtiles_. This operation takes about 4 hours on an I7 processor with SSD. Logging is written to _/logs/_ in separate log files (check the log files. No 'Recoding tile' warnings should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features). 
+1. Run the script **02_convert_merged_gpkg_to_mbtiles.bat**. This script converts the merged gpkg files into a mbtiles file _/maps/mbtiles/_. For each scale an mbtiles file is generated: _top0010nl.mbtiles_ ... _top01000nl.mbtiles_. This operation takes about 3.5 hours on an I7 processor with SSD. Logging is written to _/logs/_ in separate log files (check the log files. No 'Recoding tile' warnings should be present. Apparently this is done when the maximum tile size is exceeded and it results in ommiting features). 
 1. Run on Linux the script **04_merge_mbtiles.sh**. This merges the mbtiles into one file: _/maps/mbtiles/topnl.mbtiles_ (2.3 GByte). Not only all tiles are copied, also the metadata is merged. This command must be run on a Linux machine and requires Tippecanoe. Takes a few minutes at most.
 
 ---
