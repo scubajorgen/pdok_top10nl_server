@@ -87,6 +87,22 @@
     "x": 32,
     "y": 32
   },
+  "drasrietland": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 32
+  },
+  "droogvallend": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 48
+  },
 
   "hunebed": 
   {
@@ -480,5 +496,29 @@
     "pixelRatio": 1,
     "x": 116,
     "y": 148
+  },
+  "sneltramhalte": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 144
+  },
+  "metrostation": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 144,
+    "y": 144
+  },
+  "treinstation": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 64,
+    "y": 144
   }
 }
