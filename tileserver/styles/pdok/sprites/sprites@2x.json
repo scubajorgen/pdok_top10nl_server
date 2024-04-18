@@ -40,7 +40,7 @@
     "x": 0,
     "y": 32
   },
-  "boomkwekerij": 
+  "fruitkwekerij": 
   {
     "height": 32,
     "width": 32,
@@ -48,7 +48,7 @@
     "x": 32,
     "y": 32
   },
-  "fruitkwekerij": 
+  "boomkwekerij": 
   {
     "height": 32,
     "width": 32,
@@ -87,6 +87,22 @@
     "pixelRatio": 1,
     "x": 64,
     "y": 64
+  },
+  "drasrietland": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 96,
+    "y": 64
+  },
+  "droogvallend": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 96
   },
 
   "hunebed": 
@@ -473,5 +489,37 @@
     "pixelRatio": 1,
     "x": 200,
     "y": 296
+  },
+  "kogelvanger": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 232,
+    "y": 296
+  },
+  "sneltramhalte": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 256,
+    "y": 288
+  },
+  "metrostation": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 288,
+    "y": 288
+  },
+  "treinstation": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 288
   }
 }

@@ -1,4 +1,4 @@
-/downloads/*.zip
+/downloads/*
 /downloads/*.gpkg
 /maps/gpkg/*.gpkg
 /maps/merged_gpkg/*.gpkg
