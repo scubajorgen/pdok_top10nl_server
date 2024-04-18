@@ -29,12 +29,12 @@ import net.studioblueplanet.styleconvert.data.Paint;
  */
 public class LayerProcessor
 {   private static final int    MAXFIELDS=38;
-    private static final String SEP=";";
+    private final String        csvSeparator;
     private List<Layer>         layers;
     
-    public LayerProcessor()
+    public LayerProcessor(String csvSeparator)
     {
-        
+        this.csvSeparator=csvSeparator;
     }
 
     public List<Layer>getLayers()
@@ -140,48 +140,48 @@ public class LayerProcessor
         String line;
         
         line=new String();
-        line+="id"+SEP;
-        line+="type"+SEP;
-        line+="source"+SEP;
-        line+="source-layer"+SEP;
-        line+="filter"+SEP;
-        line+="minzoom"+SEP;
-        line+="maxzoom"+SEP;
+        line+="id"+csvSeparator;
+        line+="type"+csvSeparator;
+        line+="source"+csvSeparator;
+        line+="source-layer"+csvSeparator;
+        line+="filter"+csvSeparator;
+        line+="minzoom"+csvSeparator;
+        line+="maxzoom"+csvSeparator;
 
-        line+="fill-pattern"+SEP;
-        line+="fill-color"+SEP;
-        line+="fill-outline-color"+SEP;
-        line+="fill-opacity"+SEP;
+        line+="fill-pattern"+csvSeparator;
+        line+="fill-color"+csvSeparator;
+        line+="fill-outline-color"+csvSeparator;
+        line+="fill-opacity"+csvSeparator;
 
-        line+="symbol-placement"+SEP;
-        line+="symbol-avoid-edges"+SEP;
-        line+="symbol-spacing"+SEP;
+        line+="symbol-placement"+csvSeparator;
+        line+="symbol-avoid-edges"+csvSeparator;
+        line+="symbol-spacing"+csvSeparator;
 
-        line+="line-cap"+SEP;
-        line+="line-join"+SEP;
-        line+="line-color"+SEP;
-        line+="line-width"+SEP;
-        line+="line-gap-width"+SEP;
-        line+="line-opacity"+SEP;
-        line+="line-dasharray"+SEP;
+        line+="line-cap"+csvSeparator;
+        line+="line-join"+csvSeparator;
+        line+="line-color"+csvSeparator;
+        line+="line-width"+csvSeparator;
+        line+="line-gap-width"+csvSeparator;
+        line+="line-opacity"+csvSeparator;
+        line+="line-dasharray"+csvSeparator;
 
-        line+="icon-image"+SEP;
-        line+="icon-allow-overlap"+SEP;
-        line+="icon-offset"+SEP;
+        line+="icon-image"+csvSeparator;
+        line+="icon-allow-overlap"+csvSeparator;
+        line+="icon-offset"+csvSeparator;
 
-        line+="text-field"+SEP;
-        line+="text-font"+SEP;
-        line+="text-size"+SEP;
-        line+="text-offset"+SEP;
-        line+="text-anchor"+SEP;
-        line+="text-max-width"+SEP;
-        line+="text-transform"+SEP;
-        line+="text-allow-overlap"+SEP;
-        line+="text-line-height"+SEP;
-        line+="text-color"+SEP;
-        line+="text-halo-color"+SEP;
-        line+="text-halo-width"+SEP;
-        line+="text-halo-blur"+SEP;
+        line+="text-field"+csvSeparator;
+        line+="text-font"+csvSeparator;
+        line+="text-size"+csvSeparator;
+        line+="text-offset"+csvSeparator;
+        line+="text-anchor"+csvSeparator;
+        line+="text-max-width"+csvSeparator;
+        line+="text-transform"+csvSeparator;
+        line+="text-allow-overlap"+csvSeparator;
+        line+="text-line-height"+csvSeparator;
+        line+="text-color"+csvSeparator;
+        line+="text-halo-color"+csvSeparator;
+        line+="text-halo-width"+csvSeparator;
+        line+="text-halo-blur"+csvSeparator;
 
         line+="background-color";
         return line;
@@ -288,7 +288,7 @@ public class LayerProcessor
                     }
                     if (j<MAXFIELDS-1)
                     {
-                        myWriter.write(SEP);
+                        myWriter.write(csvSeparator);
                     }
                     j++;
                 }
@@ -376,8 +376,8 @@ public class LayerProcessor
         
         try 
         {
-            CSVParser csvParser = new CSVParserBuilder().withSeparator(';').build(); // custom separator
-            CSVReader reader = new CSVReaderBuilder(new FileReader(fileName))
+            CSVParser csvParser = new CSVParserBuilder().withSeparator(csvSeparator.charAt(0)).build(); // custom separator
+            CSVReader reader    = new CSVReaderBuilder(new FileReader(fileName))
                     .withCSVParser(csvParser)   // custom CSV parser
                     .withSkipLines(1)           // skip the first line, header info
                     .build();

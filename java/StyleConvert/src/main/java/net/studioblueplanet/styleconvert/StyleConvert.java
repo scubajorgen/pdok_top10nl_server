@@ -7,12 +7,13 @@ package net.studioblueplanet.styleconvert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
 import net.studioblueplanet.styleconvert.data.Style;
 import net.studioblueplanet.styleconvert.data.Layer;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Quick and especially DIRTY conversion tool. Note that it was intended for
@@ -21,8 +22,28 @@ import java.util.List;
  */
 public class StyleConvert
 {
-    private ObjectMapper    objectMapper;
-    private JsonNode        jsonNode;
+    private ObjectMapper        objectMapper;
+    private final static String propertyFileName="StyleConvert.properties";
+    private String              csvSeparator;
+    private static final String DEFAULT_CSV_SEPARATOR=";";
+    
+    private void readSettings()
+    {
+        Properties properties=new Properties();
+        try
+        {
+            properties.load(new FileInputStream(propertyFileName)); 
+            csvSeparator=properties.getProperty("csvSeparator");
+            if (csvSeparator==null)
+            {
+                csvSeparator=DEFAULT_CSV_SEPARATOR;
+            }
+        }
+        catch(IOException e)
+        {
+            csvSeparator=DEFAULT_CSV_SEPARATOR;
+        }
+    }
     
     /**
      * Read a map style from JSON file
@@ -72,7 +93,7 @@ public class StyleConvert
      */
     private void writeCsvFile(String fileName, Style style)
     {
-        LayerProcessor processor=new LayerProcessor();
+        LayerProcessor processor=new LayerProcessor(csvSeparator);
         processor.setLayers(style.getLayers());
         processor.writeToCsvFile(fileName);        
     }
@@ -81,7 +102,7 @@ public class StyleConvert
     {
         List<Layer> layers;
         
-        LayerProcessor processor=new LayerProcessor();
+        LayerProcessor processor=new LayerProcessor(csvSeparator);
         processor.readCsv(fileName);
         layers=processor.getLayers();
         style.setLayers(layers);
@@ -130,6 +151,7 @@ public class StyleConvert
         System.out.println("LAYER CONVERSION TOOL");
         
         StyleConvert instance=new StyleConvert();
+        instance.readSettings();
       
 /*        
         style=instance.readJsonStyleFile("style_topnl_org.json");
