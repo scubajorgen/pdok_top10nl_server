@@ -12,9 +12,12 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import java.io.FileWriter;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.Reader;
+import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.Iterator;
@@ -191,7 +194,7 @@ public class LayerProcessor
      * Write the layers to CSV file, so they can be edited in Excel
      * @param file The filename of the file write to
      */
-    public void writeToCsvFile(String file)
+    public void writeToCsvFile(Writer writer)
     {
         int             j;
         String          line;
@@ -200,15 +203,10 @@ public class LayerProcessor
         Paint           paint;
         Iterator<Layer> it;
         Layer           layer;
-        
-        
-        
-        
+
         try 
         {
-            FileWriter myWriter = new FileWriter(file);
-            
-            myWriter.write(constructHeader()+"\n");
+            writer.write(constructHeader()+"\n");
 
             it=layers.iterator();
             while (it.hasNext())
@@ -284,18 +282,16 @@ public class LayerProcessor
                 {
                     if (items[j]!=null)
                     {
-                        myWriter.write(items[j]);
+                        writer.write(items[j]);
                     }
                     if (j<MAXFIELDS-1)
                     {
-                        myWriter.write(csvSeparator);
+                        writer.write(csvSeparator);
                     }
                     j++;
                 }
-                
-                myWriter.write("\n");
+                writer.write("\n");
             }
-            myWriter.close();
             System.out.println("Successfully wrote to the file.");
         } 
         catch (IOException e) 
@@ -377,13 +373,16 @@ public class LayerProcessor
         try 
         {
             CSVParser csvParser = new CSVParserBuilder().withSeparator(csvSeparator.charAt(0)).build(); // custom separator
-            CSVReader reader    = new CSVReaderBuilder(new FileReader(fileName))
+            
+            // Apparently we need ISO_8859_1 to read Excel generated CSVs...
+            Reader fileReader=new InputStreamReader(new FileInputStream(fileName), StandardCharsets.ISO_8859_1);
+            CSVReader reader    = new CSVReaderBuilder(fileReader)
                     .withCSVParser(csvParser)   // custom CSV parser
                     .withSkipLines(1)           // skip the first line, header info
                     .build();
              
             List<String[]> r = reader.readAll();
-            
+         
             layers=new ArrayList<>();
             
             i=0;
@@ -393,13 +392,15 @@ public class LayerProcessor
                 
                 if (!layerStrings[0].equals(""))
                 {
-                    layer=new Layer();
+                    
                     if (layerStrings[0].startsWith("#"))
                     {
-                        layer.setComment(layerStrings[0]);
+                        // TO DO: Do something sensible with comment
+                        System.out.println(layerStrings[0]);
                     }
                     else
                     {
+                        layer=new Layer();
                         layer.setId(layerStrings[0]);
                         layer.setType(layerStrings[1]);
                         setString  (layerStrings[2], layer::setSource);
@@ -460,8 +461,8 @@ public class LayerProcessor
                         {
                             layer.setPaint(paint);
                         }
+                        layers.add(layer);
                     }
-                    layers.add(layer);
                 }
                 i++;
             }

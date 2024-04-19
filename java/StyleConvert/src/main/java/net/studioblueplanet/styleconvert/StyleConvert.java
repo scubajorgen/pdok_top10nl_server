@@ -5,14 +5,15 @@
  */
 package net.studioblueplanet.styleconvert;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.DeserializationFeature;
+
 import net.studioblueplanet.styleconvert.data.Style;
-import net.studioblueplanet.styleconvert.data.Layer;
-import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 /**
@@ -22,17 +23,16 @@ import java.util.Properties;
  */
 public class StyleConvert
 {
-    private ObjectMapper        objectMapper;
-    private final static String propertyFileName="StyleConvert.properties";
+    private final static String PROPERTY_FILE_NAME      ="StyleConvert.properties";
     private String              csvSeparator;
-    private static final String DEFAULT_CSV_SEPARATOR=";";
+    private static final String DEFAULT_CSV_SEPARATOR   =";";
     
     private void readSettings()
     {
         Properties properties=new Properties();
         try
         {
-            properties.load(new FileInputStream(propertyFileName)); 
+            properties.load(new FileInputStream(PROPERTY_FILE_NAME      )); 
             csvSeparator=properties.getProperty("csvSeparator");
             if (csvSeparator==null)
             {
@@ -44,70 +44,7 @@ public class StyleConvert
             csvSeparator=DEFAULT_CSV_SEPARATOR;
         }
     }
-    
-    /**
-     * Read a map style from JSON file
-     * @param fileName Name of the Json file
-     * @return The style read or null if failed
-     */
-    private Style readJsonStyleFile(String fileName)
-    {
-        Style style;
-        style=null;
-        try
-        {
-            objectMapper = new ObjectMapper();
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            style=objectMapper.readValue(new File(fileName), Style.class);
-        }
-        catch(IOException e)
-        {
-            System.err.println("Error reading JSON: "+e.getMessage());
-        }
-        return style;
-    }
-    
-    /**
-     * Write a map style to json file. null values are not written
-     * @param fileName Name of the JSON file to write to
-     * @param style The style to write
-     */
-    private void writeJsonStyleFile(String fileName, Style style)
-    {
-        try
-        {
-            objectMapper = new ObjectMapper();
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            objectMapper.writer(new JsonPrettyPrinter()).writeValue(new File(fileName), style);
-        }
-        catch(IOException e)
-        {
-            System.err.println("Error reading JSON: "+e.getMessage());
-        }
-    }
 
-    /**
-     * Write layers in the style file to CSV
-     * @param fileName Name of the CSV file
-     * @param style Style of which the layers to write
-     */
-    private void writeCsvFile(String fileName, Style style)
-    {
-        LayerProcessor processor=new LayerProcessor(csvSeparator);
-        processor.setLayers(style.getLayers());
-        processor.writeToCsvFile(fileName);        
-    }
-
-    private void readCsvFile(String fileName, Style style)
-    {
-        List<Layer> layers;
-        
-        LayerProcessor processor=new LayerProcessor(csvSeparator);
-        processor.readCsv(fileName);
-        layers=processor.getLayers();
-        style.setLayers(layers);
-    }
-    
     /**
      * Reads the JSON style file and exports the layers in it to CSV
      * @param jsonStyleFile Input file
@@ -115,10 +52,20 @@ public class StyleConvert
      */
     private void exportLayersToCsvFile(String jsonStyleFile, String csvLayerFile)
     {
-        Style style;
+        FileProcessor processor=new FileProcessor();
         
-        style=readJsonStyleFile(jsonStyleFile);
-        writeCsvFile(csvLayerFile, style);        
+        Style style=processor.readJsonStyleFile(jsonStyleFile);
+        try
+        {
+            Writer writer=new OutputStreamWriter(new FileOutputStream(csvLayerFile), StandardCharsets.UTF_8);
+            processor.writeCsvFile(writer, style);    
+            writer.flush();
+            writer.close();
+        }
+        catch (IOException e)
+        {
+            System.err.println("Error creating file "+csvLayerFile+": "+e.getMessage());
+        }
     }
     
     /**
@@ -130,12 +77,22 @@ public class StyleConvert
      */
     private void insertLayersToStyleFile(String jsonStyleFile, String csvLayerFile, String outputJsonStyleFile)
     {
-        Style style;
+        FileProcessor processor=new FileProcessor();
         
-        style=readJsonStyleFile(jsonStyleFile);
-        readCsvFile(csvLayerFile, style);
-
-        writeJsonStyleFile(outputJsonStyleFile, style);        
+        Style style=processor.readJsonStyleFile(jsonStyleFile);
+        processor.readCsvFile(csvLayerFile, style);
+        
+        try
+        {
+            Writer writer=new OutputStreamWriter(new FileOutputStream(outputJsonStyleFile), StandardCharsets.UTF_8);
+            processor.writeJsonStyleFile(writer, style);
+            writer.flush();
+            writer.close();
+        }
+        catch (IOException e)
+        {
+            System.err.println("Error creating file "+csvLayerFile+": "+e.getMessage());
+        }
     }
     
     

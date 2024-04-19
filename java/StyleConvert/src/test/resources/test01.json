@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "PDOK BRT TopNL DEVELOP",
+  "glyphs": "{fontstack}/{range}.pbf",
+  "sources": 
+  {
+    "brt_topnl": 
+    {
+      "type": "vector",
+      "url": "mbtiles://{Nederland_TopNL_2024}"
+    }
+  },
+  "sprite": "{styleJsonFolder}/sprites/sprites",
+  "layers": 
+  [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": 
+      {
+        "background-color": "#EFEFEF"
+      }
+    }, 
+    {
+      "id": "terrein_vlak_aanlegsteiger10",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_terrein_vlak",
+      "filter": 
+      [
+        "==", "typelandgebruik", "aanlegsteïger"
+      ],
+      "paint": 
+      {
+        "fill-color": "rgb(0, 0, 0)",
+        "fill-outline-color": "rgb(50, 50, 50)"
+      }
+    }
+  ]
+}
