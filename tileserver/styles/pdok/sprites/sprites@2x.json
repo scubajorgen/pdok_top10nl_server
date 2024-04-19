@@ -104,6 +104,22 @@
     "x": 0,
     "y": 96
   },
+  "basalt": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 96
+  },
+  "overig": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 64,
+    "y": 96
+  },
 
   "hunebed": 
   {
@@ -452,27 +468,27 @@
   },
   "taludhoog": 
   {
-    "height": 16,
+    "height": 32,
     "width": 16,
     "pixelRatio": 1,
     "x": 232,
-    "y": 264
+    "y": 256
   },
   "taludlaag": 
   {
-    "height": 16,
+    "height": 32,
     "width": 16,
     "pixelRatio": 1,
     "x": 264,
-    "y": 264
+    "y": 256
   },
   "rand": 
   {
-    "height": 16,
+    "height": 32,
     "width": 16,
     "pixelRatio": 1,
     "x": 296,
-    "y": 264
+    "y": 256
   },
   "wal": 
   {

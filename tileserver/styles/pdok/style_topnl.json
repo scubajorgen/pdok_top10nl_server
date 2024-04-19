@@ -22,51 +22,6 @@
       }
     }, 
     {
-      "id": "terrein_vlak_aanlegsteiger10",
-      "type": "fill",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_terrein_vlak",
-      "filter": 
-      [
-        "==", "typelandgebruik", "aanlegsteiger"
-      ],
-      "paint": 
-      {
-        "fill-color": "rgb(0, 0, 0)",
-        "fill-outline-color": "rgb(50, 50, 50)"
-      }
-    }, 
-    {
-      "id": "terrein_vlak_aanlegsteiger50",
-      "type": "fill",
-      "source": "brt_topnl",
-      "source-layer": "top50nl_terrein_vlak",
-      "filter": 
-      [
-        "==", "typeland_gebruik", "aanlegsteiger"
-      ],
-      "paint": 
-      {
-        "fill-color": "rgb(0, 0, 0)",
-        "fill-outline-color": "rgb(50, 50, 50)"
-      }
-    }, 
-    {
-      "id": "terrein_vlak_aanlegsteiger100",
-      "type": "fill",
-      "source": "brt_topnl",
-      "source-layer": "top100nl_terrein_vlak",
-      "filter": 
-      [
-        "==", "typeland_gebruik", "aanlegsteiger"
-      ],
-      "paint": 
-      {
-        "fill-color": "rgb(0, 0, 0)",
-        "fill-outline-color": "rgb(50, 50, 50)"
-      }
-    }, 
-    {
       "id": "terrein_vlak_akkerland10",
       "type": "fill",
       "source": "brt_topnl",
@@ -120,8 +75,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(164, 164, 164)",
-        "fill-outline-color": "rgb(100, 100, 100)"
+        "fill-pattern": "basalt"
       }
     }, 
     {
@@ -640,17 +594,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(255,255,255)",
-        "fill-outline-color": 
-        [
-          "interpolate", 
-          [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 10, "#FFFFFF", 11, "#CCCCAA"
-        ]
+        "fill-pattern": "overig"
       }
     }, 
     {
@@ -664,7 +608,17 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(255,255,255)"
+        "fill-color": "rgb(255,255,255)",
+        "fill-outline-color": 
+        [
+          "interpolate", 
+          [
+            "linear"
+          ], 
+          [
+            "zoom"
+          ], 10, "#FFFFFF", 11, "#CCCCAA"
+        ]
       }
     }, 
     {
@@ -998,7 +952,7 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_hoogte_lijn",
-      "minzoom": 15.0,
+      "minzoom": 14.0,
       "filter": 
       [
         "==", "typehoogte", "hoogtelijn"
@@ -1017,6 +971,32 @@
       "paint": 
       {
         "text-color": "rgb(169,58,23)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 5.0,
+        "text-halo-blur": 2.0
+      }
+    }, 
+    {
+      "id": "hoogte_punt_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_hoogte_punt",
+      "filter": 
+      [
+        "==", "typehoogte", "hoogtepunt"
+      ],
+      "layout": 
+      {
+        "text-field": "{hoogte}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 10
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,255)",
         "text-halo-width": 5.0,
         "text-halo-blur": 2.0
@@ -1472,7 +1452,7 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_hoogte_lijn",
-      "minzoom": 15.0,
+      "minzoom": 14.0,
       "filter": 
       [
         "==", "typehoogte", "dieptelijn"
@@ -1490,9 +1470,35 @@
       },
       "paint": 
       {
-        "text-color": "rgb(169,58,23)",
+        "text-color": "rgb(0, 100,200)",
         "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
+        "text-halo-width": 2.0,
+        "text-halo-blur": 2.0
+      }
+    }, 
+    {
+      "id": "diepte_punt_diepte10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_hoogte_punt",
+      "filter": 
+      [
+        "==", "typehoogte", "dieptepunt"
+      ],
+      "layout": 
+      {
+        "text-field": "{hoogte}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 10
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0, 100,200)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 2.0,
         "text-halo-blur": 2.0
       }
     }, 
@@ -1585,9 +1591,9 @@
       },
       "paint": 
       {
-        "text-color": "rgb(169,58,23)",
+        "text-color": "rgb(0, 100,200)",
         "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
+        "text-halo-width": 2.0,
         "text-halo-blur": 2.0
       }
     }, 
@@ -1680,9 +1686,9 @@
       },
       "paint": 
       {
-        "text-color": "rgb(169,58,23)",
+        "text-color": "rgb(0, 100,200)",
         "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
+        "text-halo-width": 2.0,
         "text-halo-blur": 2.0
       }
     }, 
@@ -1772,6 +1778,138 @@
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 4.0
+      }
+    }, 
+    {
+      "id": "terrein_vlak_aanlegsteiger_10",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_terrein_vlak",
+      "filter": 
+      [
+        "==", "typelandgebruik", "aanlegsteiger"
+      ],
+      "paint": 
+      {
+        "fill-color": "rgb(255, 255, 255)",
+        "fill-outline-color": "rgb(50, 50, 50)"
+      }
+    }, 
+    {
+      "id": "terrein_vlak_aanlegsteiger_50",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_terrein_vlak",
+      "filter": 
+      [
+        "==", "type_landgebruik", "aanlegsteiger"
+      ],
+      "paint": 
+      {
+        "fill-color": "rgb(255, 255, 255)",
+        "fill-outline-color": "rgb(50, 50, 50)"
+      }
+    }, 
+    {
+      "id": "terrein_vlak_aanlegsteiger_100",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_terrein_vlak",
+      "filter": 
+      [
+        "==", "type_landgebruik", "aanlegsteiger"
+      ],
+      "paint": 
+      {
+        "fill-color": "rgb(255, 255, 255)",
+        "fill-outline-color": "rgb(50, 50, 50)"
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_aanlegsteiger_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "aanlegsteiger"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 10, 0.8, 20, 6
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_aanlegsteiger_50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "type_inrichtingselement", "aanlegsteiger"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 10, 0.8, 20, 6
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_aanlegsteiger_100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "type_inrichtingselement", "aanlegsteiger"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 10, 0.8, 20, 6
+        ]
       }
     }, 
     {
@@ -3158,20 +3296,7 @@
           [
             "zoom"
           ], 7, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              7, 0
-            ], 
-            [
-              7.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3210,20 +3335,7 @@
           [
             "zoom"
           ], 7, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              7, 0
-            ], 
-            [
-              7.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3262,20 +3374,7 @@
           [
             "zoom"
           ], 7, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              7, 0
-            ], 
-            [
-              7.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3314,20 +3413,7 @@
           [
             "zoom"
           ], 7, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              7, 0
-            ], 
-            [
-              7.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3561,20 +3647,7 @@
           [
             "zoom"
           ], 6, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              6, 0
-            ], 
-            [
-              6.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3613,20 +3686,7 @@
           [
             "zoom"
           ], 6, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              6, 0
-            ], 
-            [
-              6.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3665,20 +3725,7 @@
           [
             "zoom"
           ], 6, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              6, 0
-            ], 
-            [
-              6.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3717,20 +3764,7 @@
           [
             "zoom"
           ], 6, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              6, 0
-            ], 
-            [
-              6.5, 1
-            ]
-          ]
-        }
+        ]
       }
     }, 
     {
@@ -3769,181 +3803,6 @@
           [
             "zoom"
           ], 6, 0.2, 20, 2
-        ],
-        "line-opacity": 
-        {
-          "stops": 
-          [
-            
-            [
-              6, 0
-            ], 
-            [
-              6.5, 1
-            ]
-          ]
-        }
-      }
-    }, 
-    {
-      "id": "spoorbaandeel_lijn_casing10",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_spoorbaandeel_lijn",
-      "filter": 
-      [
-        "==", "typespoorbaan", "trein"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(50, 50, 50)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 2, 18, 20
-        ]
-      }
-    }, 
-    {
-      "id": "spoorbaandeel_lijn_casing50",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top50nl_spoorbaandeel_lijn",
-      "filter": 
-      [
-        "==", "type_spoorbaan", "trein"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(50, 50, 50)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 2, 18, 20
-        ]
-      }
-    }, 
-    {
-      "id": "spoorbaandeel_lijn_casing100",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top100nl_spoorbaandeel_lijn",
-      "filter": 
-      [
-        "==", "type_spoorbaan", "trein"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(50, 50, 50)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 2, 18, 20
-        ]
-      }
-    }, 
-    {
-      "id": "spoorbaandeel_lijn_casing250",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_spoorbaandeel_lijn",
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(50, 50, 50)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 2, 18, 20
-        ]
-      }
-    }, 
-    {
-      "id": "spoorbaandeel_lijn_casing500",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top500nl_spoorbaandeel_lijn",
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(50, 50, 50)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 2, 18, 20
-        ]
-      }
-    }, 
-    {
-      "id": "spoorbaandeel_lijn_casing1000",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_spoorbaandeel_lijn",
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(50, 50, 50)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 6, 2, 18, 20
         ],
         "line-opacity": 
         {
@@ -6050,6 +5909,236 @@
       }
     }, 
     {
+      "id": "spoorbaandeel_lijn_casing10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typespoorbaan", "trein"
+        ], 
+        [
+          "!=", "fysiekvoorkomen", "in tunnel"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 2, 18, 20
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_casing_tunnel_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typespoorbaan", "trein"
+        ], 
+        [
+          "==", "fysiekvoorkomen", "in tunnel"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 0.5, 18, 3
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 1, 18, 14
+        ],
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_casing50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "==", "type_spoorbaan", "trein"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 2, 18, 20
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_casing100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "==", "type_spoorbaan", "trein"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 2, 18, 20
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_casing250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_spoorbaandeel_lijn",
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 2, 18, 20
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_casing500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_spoorbaandeel_lijn",
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 2, 18, 20
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_casing1000",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_spoorbaandeel_lijn",
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 2, 18, 20
+        ],
+        "line-opacity": 
+        {
+          "stops": 
+          [
+            
+            [
+              6, 0
+            ], 
+            [
+              6.5, 1
+            ]
+          ]
+        }
+      }
+    }, 
+    {
       "id": "spoorbaandeel_lijn_spoorenkel10",
       "type": "line",
       "source": "brt_topnl",
@@ -6062,6 +6151,9 @@
         ], 
         [
           "==", "aantalsporen", "enkel"
+        ], 
+        [
+          "!=", "fysiekvoorkomen", "in tunnel"
         ]
       ],
       "layout": 
@@ -6101,6 +6193,9 @@
         ], 
         [
           "!=", "aantalsporen", "enkel"
+        ], 
+        [
+          "!=", "fysiekvoorkomen", "in tunnel"
         ]
       ],
       "layout": 
@@ -7107,7 +7202,7 @@
       "minzoom": 13.0,
       "filter": 
       [
-        "in", "typegebouw", "gemaal|windmolen", "gemaal|windmolen: watermolen", "overig|windmolen", "ru�ne|windmolen: korenmolen", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
+        "in", "typegebouw", "gemaal|windmolen", "gemaal|windmolen: watermolen", "overig|windmolen", "ruïne|windmolen: korenmolen", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
       ],
       "layout": 
       {
