@@ -416,7 +416,7 @@
     "x": 80,
     "y": 112
   },
-  "peilschaal": 
+  "kilometerraaibord": 
   {
     "height": 16,
     "width": 16,
@@ -424,7 +424,7 @@
     "x": 96,
     "y": 112
   },
-  "kilometerraaibord": 
+  "peilschaal": 
   {
     "height": 16,
     "width": 16,
