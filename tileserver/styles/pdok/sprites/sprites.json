@@ -536,5 +536,13 @@
     "pixelRatio": 1,
     "x": 64,
     "y": 144
+  },
+  "uitzichtpunt": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 144
   }
 }

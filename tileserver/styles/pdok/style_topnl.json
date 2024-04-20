@@ -4711,6 +4711,50 @@
       }
     }, 
     {
+      "id": "wegdeel_lijn_veerverbinding_pontveer10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_wegdeel_hartlijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typeweg", "veerverbinding"
+        ], 
+        [
+          "==", "hoofdverkeersgebruik", "gemengd verkeer"
+        ]
+      ],
+      "layout": 
+      {
+        "icon-image": "pontveer",
+        "symbol-placement": "line",
+        "symbol-spacing": 100.0
+      }
+    }, 
+    {
+      "id": "wegdeel_lijn_veerverbinding_voetveer10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_wegdeel_hartlijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typeweg", "veerverbinding"
+        ], 
+        [
+          "!=", "hoofdverkeersgebruik", "gemengd verkeer"
+        ]
+      ],
+      "layout": 
+      {
+        "icon-image": "voetveer",
+        "symbol-placement": "line",
+        "symbol-spacing": 100.0
+      }
+    }, 
+    {
       "id": "wegdeel_lijn_veerverbinding50",
       "type": "line",
       "source": "brt_topnl",
@@ -7840,6 +7884,24 @@
       "layout": 
       {
         "icon-image": "treinstation",
+        "icon-offset": 
+        [
+          0, 0
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_uitzichtpunt",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "uitzichtpunt"
+      ],
+      "layout": 
+      {
+        "icon-image": "uitzichtpunt",
         "icon-offset": 
         [
           0, 0
