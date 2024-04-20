@@ -966,7 +966,7 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-size": 10
+        "text-size": 11
       },
       "paint": 
       {
@@ -992,7 +992,7 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 10
+        "text-size": 11
       },
       "paint": 
       {
@@ -1000,6 +1000,94 @@
         "text-halo-color": "rgb(255,255,255)",
         "text-halo-width": 5.0,
         "text-halo-blur": 2.0
+      }
+    }, 
+    {
+      "id": "relief_lijn_wal",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_relief_lijn",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typerelief", "wal"
+      ],
+      "layout": 
+      {
+        "icon-image": "wal",
+        "icon-allow-overlap": true,
+        "symbol-placement": "line",
+        "symbol-avoid-edges": true,
+        "symbol-spacing": 8.0
+      }
+    }, 
+    {
+      "id": "relief_lijn_taludhoog",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "hoogteklasse", "> 2,5 meter"
+        ], 
+        [
+          "==", "typerelief", "talud, hoogteverschil"
+        ]
+      ],
+      "layout": 
+      {
+        "icon-image": "taludhoog",
+        "icon-allow-overlap": true,
+        "symbol-placement": "line",
+        "symbol-avoid-edges": true,
+        "symbol-spacing": 8.0
+      }
+    }, 
+    {
+      "id": "relief_lijn_taludlaag",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "hoogteklasse", "1 - 2,5 meter"
+        ], 
+        [
+          "==", "typerelief", "talud, hoogteverschil"
+        ]
+      ],
+      "layout": 
+      {
+        "icon-image": "taludlaag",
+        "icon-allow-overlap": true,
+        "symbol-placement": "line",
+        "symbol-avoid-edges": true,
+        "symbol-spacing": 8.0
+      }
+    }, 
+    {
+      "id": "relief_lijn_steilerand",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typerelief", "steile rand, aardrand"
+      ],
+      "layout": 
+      {
+        "icon-image": "rand",
+        "icon-allow-overlap": true,
+        "symbol-placement": "line",
+        "symbol-avoid-edges": true,
+        "symbol-spacing": 4.0
       }
     }, 
     {
@@ -1466,7 +1554,7 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-size": 10
+        "text-size": 11
       },
       "paint": 
       {
@@ -1492,7 +1580,89 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 10
+        "text-size": 11
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0, 100,200)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 2.0,
+        "text-halo-blur": 2.0
+      }
+    }, 
+    {
+      "id": "diepte_punt_peil_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_hoogte_punt",
+      "filter": 
+      [
+        "==", "typehoogte", "peil"
+      ],
+      "layout": 
+      {
+        "text-field": "( peil: {hoogte} )",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 11
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0, 100,200)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 2.0,
+        "text-halo-blur": 2.0
+      }
+    }, 
+    {
+      "id": "diepte_punt_winterpeil_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_hoogte_punt",
+      "filter": 
+      [
+        "==", "typehoogte", "peil: winterpeil"
+      ],
+      "layout": 
+      {
+        "text-field": "( winterpeil: {hoogte} )",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 11
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0, 100,200)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 2.0,
+        "text-halo-blur": 2.0
+      }
+    }, 
+    {
+      "id": "diepte_punt_zomerpeil_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_hoogte_punt",
+      "filter": 
+      [
+        "==", "typehoogte", "peil: zomerpeil"
+      ],
+      "layout": 
+      {
+        "text-field": "( zomerpeil: {hoogte} )",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 11,
+        "text-offset": 
+        [
+          0, 2
+        ]
       },
       "paint": 
       {
@@ -1587,7 +1757,7 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-size": 10
+        "text-size": 11
       },
       "paint": 
       {
@@ -1682,7 +1852,7 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-size": 10
+        "text-size": 11
       },
       "paint": 
       {
@@ -1690,94 +1860,6 @@
         "text-halo-color": "rgb(255,255,255)",
         "text-halo-width": 2.0,
         "text-halo-blur": 2.0
-      }
-    }, 
-    {
-      "id": "relief_lijn_wal",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_relief_lijn",
-      "minzoom": 15.0,
-      "filter": 
-      [
-        "==", "typerelief", "wal"
-      ],
-      "layout": 
-      {
-        "icon-image": "wal",
-        "icon-allow-overlap": true,
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 8.0
-      }
-    }, 
-    {
-      "id": "relief_lijn_taludhoog",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
-      "minzoom": 15.0,
-      "filter": 
-      [
-        "all", 
-        [
-          "==", "hoogteklasse", "> 2,5 meter"
-        ], 
-        [
-          "==", "typerelief", "talud, hoogteverschil"
-        ]
-      ],
-      "layout": 
-      {
-        "icon-image": "taludhoog",
-        "icon-allow-overlap": true,
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 8.0
-      }
-    }, 
-    {
-      "id": "relief_lijn_taludlaag",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
-      "minzoom": 15.0,
-      "filter": 
-      [
-        "all", 
-        [
-          "==", "hoogteklasse", "1 - 2,5 meter"
-        ], 
-        [
-          "==", "typerelief", "talud, hoogteverschil"
-        ]
-      ],
-      "layout": 
-      {
-        "icon-image": "taludlaag",
-        "icon-allow-overlap": true,
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 8.0
-      }
-    }, 
-    {
-      "id": "relief_lijn_steilerand",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
-      "minzoom": 15.0,
-      "filter": 
-      [
-        "==", "typerelief", "steile rand, aardrand"
-      ],
-      "layout": 
-      {
-        "icon-image": "rand",
-        "icon-allow-overlap": true,
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 4.0
       }
     }, 
     {
@@ -6572,6 +6654,21 @@
       }
     }, 
     {
+      "id": "gebouw_vlak_dok_10",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_gebouw_vlak",
+      "filter": 
+      [
+        "in", "typegebouw", "dok", "dok|werf"
+      ],
+      "paint": 
+      {
+        "fill-color": "rgb(255,255,255)",
+        "fill-outline-color": "rgb(255,0,0)"
+      }
+    }, 
+    {
       "id": "gebouw_punt_toren",
       "type": "symbol",
       "source": "brt_topnl",
@@ -10133,11 +10230,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.5
+            "exponential", 2
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 6
+          ], 1, 1, 20, 9
         ],
         "line-dasharray": 
         [
@@ -10166,11 +10263,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.5
+            "exponential", 2
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 6
+          ], 1, 1, 20, 9
         ],
         "line-dasharray": 
         [
@@ -10199,11 +10296,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.5
+            "exponential", 2
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 6
+          ], 1, 1, 20, 9
         ],
         "line-dasharray": 
         [
@@ -10232,11 +10329,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.5
+            "exponential", 2
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 6
+          ], 1, 1, 20, 9
         ],
         "line-dasharray": 
         [
@@ -10265,11 +10362,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.5
+            "exponential", 2
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 6
+          ], 1, 1, 20, 9
         ],
         "line-dasharray": 
         [
@@ -10298,11 +10395,11 @@
         [
           "interpolate", 
           [
-            "exponential", 1.5
+            "exponential", 2
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 6
+          ], 1, 1, 20, 9
         ],
         "line-dasharray": 
         [
