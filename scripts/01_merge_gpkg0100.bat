@@ -42,8 +42,6 @@ REM ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied 
 REM ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0100.gpkg ..\maps\gpkg\top100nl_Compleet.gpkg top100nl_plaats_vlak
 echo 7 - Plantopografie
 REM missing!
-
-
 echo 8 - RegistratiefGebied
 ogr2ogr -update -f GPKG -select type_registratief_gebied,nederlandse_naam,nummer ..\maps\merged_gpkg\merge0100.gpkg ..\maps\gpkg\top100nl_Compleet.gpkg top100nl_registratief_gebied_vlak
 echo 9 - Relief
