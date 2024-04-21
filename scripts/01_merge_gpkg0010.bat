@@ -33,7 +33,6 @@ echo 2 - Gebouw
 ogr2ogr -update -f GPKG -select typegebouw,fysiekvoorkomen,hoogteklasse,hoogteniveau,hoogte,status,soortnaam,naam,gebruiksdoel ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_gebouw_punt
 ogr2ogr -update -f GPKG -select typegebouw,fysiekvoorkomen,hoogteklasse,hoogteniveau,hoogte,status,soortnaam,naam,gebruiksdoel ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_gebouw_vlak
 echo 3 - GeografischGebied
-ogr2ogr -update -f GPKG -select typegeografischgebied,naamnl ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_geografisch_gebied_punt
 ogr2ogr -update -f GPKG -select typegeografischgebied,naamnl ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_geografisch_gebied_vlak
 ogr2ogr -update -f GPKG -select typegeografischgebied,naamnl ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_geografisch_gebied_multivlak
 echo 4 - Hoogte
@@ -53,7 +52,6 @@ ogr2ogr -update -f GPKG -select typeregistratiefgebied,naamofficieel,naamnl,numm
 ogr2ogr -update -f GPKG -select typeregistratiefgebied,naamofficieel,naamnl,nummer ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_registratief_gebied_multivlak
 echo 9 - Relief
 ogr2ogr -update -f GPKG -select typerelief,hoogteklasse,hoogteniveau,functie ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_relief_talud_hoge_zijde_lijn
-REM ogr2ogr -update -f GPKG -select typerelief,hoogteklasse,hoogteniveau,functie ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_relief_talud_lage_zijde_lijn
 ogr2ogr -update -f GPKG -select typerelief,hoogteklasse,hoogteniveau,functie ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_relief_lijn
 echo 10 - Spoorbaandeel
 ogr2ogr -update -f GPKG -select spoorbreedte,aantalsporen,vervoerfunctie,elektrificatie,brugnaam,tunnelnaam,baanvaknaam,typespoorbaan,hoofdspoor,hoogteniveau,typeinfrastructuur,fysiekvoorkomen,status ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_spoorbaandeel_punt
