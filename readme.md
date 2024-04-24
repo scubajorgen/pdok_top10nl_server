@@ -116,7 +116,7 @@ Instead of running scripts 01 and 02 you can choose to run **03_convert_original
 ---
 
 ## Style
-The style can be found in _/tileserver/styles/pdok_. The main file is _style_topnl.json_. The main component is the layers component, containing a layer for each feature (200-300) layers. In order to facilitate editing the layers can be exported to and from CSV using the StyleConvert tool. This enables editing in MS Excel, where each layer is one row (allowing for copying, etc). See the [readme](java/StyleConvert/readme.md).
+The style can be found in _/tileserver/styles/pdok_. The main file is _style_topnl.json_. The main component is the layers component, containing a layer for each feature (200-300) layers. In order to facilitate editing the layers can be exported to and from CSV using the StyleConvert tool. This enables editing in MS Excel, where each layer is one row (allowing for copying, etc). See the [readme](java/StyleConvert/readme.md). See the document about the [PDOK BRT TopNl Styling Project](ThePdokStylingProject.md) for details about the styling.
 
 ## Running Mapbox Tileserver-GL
 ### Containers
