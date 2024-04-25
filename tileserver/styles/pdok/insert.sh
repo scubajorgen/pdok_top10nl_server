@@ -1,1 +1,1 @@
-java -jar StyleConvert.jar INSERTLAYERS style_topnlDevelop.json.org layers.csv style_topnlDevelop.json
+java -jar StyleConvert.jar INSERTLAYERS template.json layers.xlsx style_topnl.json

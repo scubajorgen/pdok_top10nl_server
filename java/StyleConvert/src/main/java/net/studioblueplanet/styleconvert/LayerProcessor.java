@@ -13,9 +13,11 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.Reader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -25,36 +27,112 @@ import java.util.List;
 import net.studioblueplanet.styleconvert.data.Layer;
 import net.studioblueplanet.styleconvert.data.Layout;
 import net.studioblueplanet.styleconvert.data.Paint;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
  * @author jorgen
  */
 public class LayerProcessor
-{   private static final int    MAXFIELDS=38;
+{   
+    private final static Logger LOGGER = LogManager.getLogger(LayerProcessor.class);
+    private static final int    MAXFIELDS=38;
+    
+    private static final int    COLUMN_ID              =0;
+    private static final int    COLUMN_TYPE            =1;
+    private static final int    COLUMN_SOURCE          =2;
+    private static final int    COLUMN_SOURCELAYER     =3;
+    private static final int    COLUMN_FILTER          =4;
+    private static final int    COLUMN_MINZOOM         =5;
+    private static final int    COLUMN_MAXZOOM         =6;
+    
+    // Paint
+    private static final int    COLUMN_FILLPATTERN     =7;
+    private static final int    COLUMN_FILLCOLOR       =8;
+    private static final int    COLUMN_FILLOUTLINECOLOR=9;
+    private static final int    COLUMN_FILLOPACITY     =10;
+    private static final int    COLUMN_LINECOLOR       =16;
+    private static final int    COLUMN_LINEWIDTH       =17;
+    private static final int    COLUMN_LINEGAPWIDTH    =18;
+    private static final int    COLUMN_LINEOPACITY     =19;
+    private static final int    COLUMN_LINEDASHARRAY   =20;
+    private static final int    COLUMN_TEXTCOLOR       =33;
+    private static final int    COLUMN_TEXTHALOCOLOR   =34;
+    private static final int    COLUMN_TEXTHALOWIDTH   =35;
+    private static final int    COLUMN_TEXTHALOBLUR    =36;
+    private static final int    COLUMN_BACKGROUNDCOLOR =37;
+    
+    // Layout
+    private static final int    COLUMN_SYMBOLPLACEMENT =11;
+    private static final int    COLUMN_SYMBOLAVOIDEDGES=12;
+    private static final int    COLUMN_SYMBOLSPACING   =13;
+    private static final int    COLUMN_LINECAP         =14;
+    private static final int    COLUMN_LINEJOIN        =15;
+    private static final int    COLUMN_ICONIMAGE       =21;
+    private static final int    COLUMN_ICONALLOWOVERLAP=22;
+    private static final int    COLUMN_ICONOFFSET      =23;
+    private static final int    COLUMN_TEXTFIELD       =24;
+    private static final int    COLUMN_TEXTFONT        =25;
+    private static final int    COLUMN_TEXTSIZE        =26;
+    private static final int    COLUMN_TEXTOFFSET      =27;
+    private static final int    COLUMN_TEXTANCHOR      =28;
+    private static final int    COLUMN_TEXTMAXWIDTH    =29;
+    private static final int    COLUMN_TEXTTRANSFORM   =30;
+    private static final int    COLUMN_TEXTALLOWOVERLAP=31;
+    private static final int    COLUMN_TEXTLINEHEIGHT  =32;
+    
     private final String        csvSeparator;
     private List<Layer>         layers;
     
+    /**
+     * Constructor
+     * @param csvSeparator Separator character to use for CSV files
+     */
     public LayerProcessor(String csvSeparator)
     {
         this.csvSeparator=csvSeparator;
     }
 
-    public List<Layer>getLayers()
+    /**
+     * Returns the list of layers
+     * @return The list of layers
+     */
+    public List<Layer>  getLayers()
     {
         return layers;
     }
 
+    /**
+     * Defines the list of layers; existing layers are scratched
+     * @param layers The new list of layers
+     */
     public void setLayers(List<Layer>layers)
     {
         this.layers = layers;
     }
 
+    /**
+     * Convert string to string
+     * @param str String to convert
+     * @return The string
+     */
     private String convertToString(String str)
     {
         return str;
     }
 
+    /**
+     * Converts boolean to string
+     * @param bool Boolean to convert
+     * @return The converted boolean or null 
+     */
     private String convertToString(Boolean bool)
     {
         String string;
@@ -69,6 +147,11 @@ public class LayerProcessor
         return string;
     }
 
+    /**
+     * Convert float to string
+     * @param fl Float to convert
+     * @return The string or null
+     */
     private String convertToString(Float fl)
     {
         String string;
@@ -83,6 +166,11 @@ public class LayerProcessor
         return string;
     }
 
+    /**
+     * Convert integer to string
+     * @param i Integer to convert
+     * @return The string or null
+     */
     private String convertToString(Integer i)
     {
         String string;
@@ -98,7 +186,11 @@ public class LayerProcessor
     }
 
     
-    
+    /**
+     * Convert JSON node to string
+     * @param node The node to convert
+     * @return The node as string or null if the node was null
+     */
     private String convertToString(JsonNode node)
     {
         String string;
@@ -129,7 +221,7 @@ public class LayerProcessor
         }
         catch (JsonProcessingException e)
         {
-            System.err.println("Error parsing string for JsonNode: "+e.getMessage());
+            LOGGER.error("Error parsing string for JsonNode: {}", e.getMessage());
         }   
         return actualObj;
     }
@@ -220,61 +312,61 @@ public class LayerProcessor
                 }
                 else
                 {
-                    items[ 0]=layer.getId();
+                    items[COLUMN_ID]            =layer.getId();
 
-                    items[ 1]=layer.getType();
-                    items[ 2]=convertToString(layer.getSource());
-                    items[ 3]=convertToString(layer.getSourceLayer());
-                    items[ 4]=convertToString(layer.getFilter());
-                    items[ 5]=convertToString(layer.getMinzoom());
-                    items[ 6]=convertToString(layer.getMaxzoom());
+                    items[COLUMN_TYPE]          =layer.getType();
+                    items[COLUMN_SOURCE]        =convertToString(layer.getSource());
+                    items[COLUMN_SOURCELAYER]   =convertToString(layer.getSourceLayer());
+                    items[COLUMN_FILTER]        =convertToString(layer.getFilter());
+                    items[COLUMN_MINZOOM]       =convertToString(layer.getMinzoom());
+                    items[COLUMN_MAXZOOM]       =convertToString(layer.getMaxzoom());
 
                     layout=layer.getLayout();
                     if (layout!=null)
                     {
-                        items[11]=convertToString(layout.getSymbolPlacement());
-                        items[12]=convertToString(layout.getSymbolAvoidEdges());
-                        items[13]=convertToString(layout.getSymbolSpacing());
+                        items[COLUMN_SYMBOLPLACEMENT]   =convertToString(layout.getSymbolPlacement());
+                        items[COLUMN_SYMBOLAVOIDEDGES]  =convertToString(layout.getSymbolAvoidEdges());
+                        items[COLUMN_SYMBOLSPACING]     =convertToString(layout.getSymbolSpacing());
 
-                        items[14]=convertToString(layout.getLineCap());
-                        items[15]=convertToString(layout.getLineJoin());
+                        items[COLUMN_LINECAP]           =convertToString(layout.getLineCap());
+                        items[COLUMN_LINEJOIN]          =convertToString(layout.getLineJoin());
 
-                        items[21]=convertToString(layout.getIconImage());
-                        items[22]=convertToString(layout.getIconAllowOverlap());
-                        items[23]=convertToString(layout.getIconOffset());
+                        items[COLUMN_ICONIMAGE]         =convertToString(layout.getIconImage());
+                        items[COLUMN_ICONALLOWOVERLAP]  =convertToString(layout.getIconAllowOverlap());
+                        items[COLUMN_ICONOFFSET]        =convertToString(layout.getIconOffset());
 
-                        items[24]=convertToString(layout.getTextField());
-                        items[25]=convertToString(layout.getTextFont());
-                        items[26]=convertToString(layout.getTextSize());
-                        items[27]=convertToString(layout.getTextOffset());
-                        items[28]=convertToString(layout.getTextAnchor());
-                        items[29]=convertToString(layout.getTextMaxWidth());
-                        items[30]=convertToString(layout.getTextTransform());
-                        items[31]=convertToString(layout.getTextAllowOverlap());
-                        items[32]=convertToString(layout.getTextLineHeight());
+                        items[COLUMN_TEXTFIELD]         =convertToString(layout.getTextField());
+                        items[COLUMN_TEXTFONT]          =convertToString(layout.getTextFont());
+                        items[COLUMN_TEXTSIZE]          =convertToString(layout.getTextSize());
+                        items[COLUMN_TEXTOFFSET]        =convertToString(layout.getTextOffset());
+                        items[COLUMN_TEXTANCHOR]        =convertToString(layout.getTextAnchor());
+                        items[COLUMN_TEXTMAXWIDTH]      =convertToString(layout.getTextMaxWidth());
+                        items[COLUMN_TEXTTRANSFORM]     =convertToString(layout.getTextTransform());
+                        items[COLUMN_TEXTALLOWOVERLAP]  =convertToString(layout.getTextAllowOverlap());
+                        items[COLUMN_TEXTLINEHEIGHT]    =convertToString(layout.getTextLineHeight());
                     }
 
 
                     paint=layer.getPaint();
                     if (paint!=null)
                     {
-                        items[ 7]=convertToString(paint.getFillPattern());
-                        items[ 8]=convertToString(paint.getFillColor());
-                        items[ 9]=convertToString(paint.getFillOutlineColor());
-                        items[10]=convertToString(paint.getFillOpacity());
+                        items[COLUMN_FILLPATTERN]       =convertToString(paint.getFillPattern());
+                        items[COLUMN_FILLCOLOR]         =convertToString(paint.getFillColor());
+                        items[COLUMN_FILLOUTLINECOLOR]  =convertToString(paint.getFillOutlineColor());
+                        items[COLUMN_FILLOPACITY]       =convertToString(paint.getFillOpacity());
 
-                        items[16]=convertToString(paint.getLineColor());
-                        items[17]=convertToString(paint.getLineWidth());
-                        items[18]=convertToString(paint.getLineGapWidth());
-                        items[19]=convertToString(paint.getLineOpacity());
-                        items[20]=convertToString(paint.getLineDasharray());
+                        items[COLUMN_LINECOLOR]         =convertToString(paint.getLineColor());
+                        items[COLUMN_LINEWIDTH]         =convertToString(paint.getLineWidth());
+                        items[COLUMN_LINEGAPWIDTH]      =convertToString(paint.getLineGapWidth());
+                        items[COLUMN_LINEOPACITY]       =convertToString(paint.getLineOpacity());
+                        items[COLUMN_LINEDASHARRAY]     =convertToString(paint.getLineDasharray());
 
-                        items[33]=convertToString(paint.getTextColor());
-                        items[34]=convertToString(paint.getTextHaloColor());
-                        items[35]=convertToString(paint.getTextHaloWidth());
-                        items[36]=convertToString(paint.getTextHaloBlur());
+                        items[COLUMN_TEXTCOLOR]         =convertToString(paint.getTextColor());
+                        items[COLUMN_TEXTHALOCOLOR]     =convertToString(paint.getTextHaloColor());
+                        items[COLUMN_TEXTHALOWIDTH]     =convertToString(paint.getTextHaloWidth());
+                        items[COLUMN_TEXTHALOBLUR]      =convertToString(paint.getTextHaloBlur());
 
-                        items[37]=convertToString(paint.getBackgroundColor());
+                        items[COLUMN_BACKGROUNDCOLOR]   =convertToString(paint.getBackgroundColor());
                     }
                 }
                 j=0;
@@ -292,11 +384,11 @@ public class LayerProcessor
                 }
                 writer.write("\n");
             }
-            System.out.println("Successfully wrote to the file.");
+            LOGGER.info("Successfully wrote to the file.");
         } 
         catch (IOException e) 
         {
-            System.err.println("An error occurred: "+e.getMessage());
+            LOGGER.error("An error occurred: {}", e.getMessage());
         }        
             
     }
@@ -325,6 +417,18 @@ public class LayerProcessor
         return isSet;
     }
 
+    private boolean setBoolean(Boolean value, Consumer<Boolean> setter)
+    {
+        boolean isSet;
+        isSet=false;
+        if (value!=null)
+        {
+            setter.accept(value);
+            isSet=true;
+        }
+        return isSet;
+    }
+
     private boolean setFloat(String string, Consumer<Float> setter)
     {
         boolean isSet;
@@ -332,6 +436,18 @@ public class LayerProcessor
         if (!string.equals(""))
         {
             setter.accept(Float.valueOf(string));
+            isSet=true;
+        }
+        return isSet;
+    }
+
+    private boolean setFloat(Float value, Consumer<Float> setter)
+    {
+        boolean isSet;
+        isSet=false;
+        if (value!=null)
+        {
+            setter.accept(value);
             isSet=true;
         }
         return isSet;
@@ -390,47 +506,47 @@ public class LayerProcessor
             {
                 layerStrings=r.get(i);
                 
-                if (!layerStrings[0].equals(""))
+                if (!layerStrings[COLUMN_ID].equals(""))
                 {
                     
-                    if (layerStrings[0].startsWith("#"))
+                    if (layerStrings[COLUMN_ID].startsWith("#"))
                     {
                         // TO DO: Do something sensible with comment
-                        System.out.println(layerStrings[0]);
+                        LOGGER.info(layerStrings[COLUMN_ID]);
                     }
                     else
                     {
                         layer=new Layer();
-                        layer.setId(layerStrings[0]);
-                        layer.setType(layerStrings[1]);
-                        setString  (layerStrings[2], layer::setSource);
-                        setString  (layerStrings[3], layer::setSourceLayer);
-                        setJsonNode(layerStrings[4], layer::setFilter);
-                        setFloat   (layerStrings[5], layer::setMinzoom);
-                        setFloat   (layerStrings[6], layer::setMaxzoom);
+                        layer.setId(layerStrings[COLUMN_ID]);
+                        layer.setType(layerStrings[COLUMN_TYPE]);
+                        setString  (layerStrings[COLUMN_SOURCE]         , layer::setSource);
+                        setString  (layerStrings[COLUMN_SOURCELAYER]    , layer::setSourceLayer);
+                        setJsonNode(layerStrings[COLUMN_FILTER]         , layer::setFilter);
+                        setFloat   (layerStrings[COLUMN_MINZOOM]        , layer::setMinzoom);
+                        setFloat   (layerStrings[COLUMN_MAXZOOM]        , layer::setMaxzoom);
 
                         layout=new Layout();
                         isNotNull=false;
-                        isNotNull |= setString  (layerStrings[11], layout::setSymbolPlacement);
-                        isNotNull |= setBoolean (layerStrings[12], layout::setSymbolAvoidEdges);
-                        isNotNull |= setFloat   (layerStrings[13], layout::setSymbolSpacing);
+                        isNotNull |= setString  (layerStrings[COLUMN_SYMBOLPLACEMENT]   , layout::setSymbolPlacement);
+                        isNotNull |= setBoolean (layerStrings[COLUMN_SYMBOLAVOIDEDGES]  , layout::setSymbolAvoidEdges);
+                        isNotNull |= setFloat   (layerStrings[COLUMN_SYMBOLSPACING]     , layout::setSymbolSpacing);
 
-                        isNotNull |= setString  (layerStrings[14], layout::setLineCap);
-                        isNotNull |= setString  (layerStrings[15], layout::setLineJoin);
+                        isNotNull |= setString  (layerStrings[COLUMN_LINECAP]           , layout::setLineCap);
+                        isNotNull |= setString  (layerStrings[COLUMN_LINEJOIN]          , layout::setLineJoin);
 
-                        isNotNull |= setString  (layerStrings[21], layout::setIconImage);
-                        isNotNull |= setBoolean (layerStrings[22], layout::setIconAllowOverlap);
-                        isNotNull |= setJsonNode(layerStrings[23], layout::setIconOffset);
+                        isNotNull |= setString  (layerStrings[COLUMN_ICONIMAGE]         , layout::setIconImage);
+                        isNotNull |= setBoolean (layerStrings[COLUMN_ICONALLOWOVERLAP]  , layout::setIconAllowOverlap);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_ICONOFFSET]        , layout::setIconOffset);
 
-                        isNotNull |= setString  (layerStrings[24], layout::setTextField);
-                        isNotNull |= setJsonNode(layerStrings[25], layout::setTextFont);
-                        isNotNull |= setJsonNode(layerStrings[26], layout::setTextSize);
-                        isNotNull |= setJsonNode(layerStrings[27], layout::setTextOffset);
-                        isNotNull |= setString  (layerStrings[28], layout::setTextAnchor);
-                        isNotNull |= setFloat   (layerStrings[29], layout::setTextMaxWidth);
-                        isNotNull |= setString  (layerStrings[30], layout::setTextTransform);
-                        isNotNull |= setBoolean (layerStrings[31], layout::setTextAllowOverlap);
-                        isNotNull |= setJsonNode(layerStrings[32], layout::setTextLineHeight);
+                        isNotNull |= setString  (layerStrings[COLUMN_TEXTFIELD]         , layout::setTextField);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTFONT]          , layout::setTextFont);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTSIZE]          , layout::setTextSize);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTOFFSET]        , layout::setTextOffset);
+                        isNotNull |= setString  (layerStrings[COLUMN_TEXTANCHOR]        , layout::setTextAnchor);
+                        isNotNull |= setFloat   (layerStrings[COLUMN_TEXTMAXWIDTH]      , layout::setTextMaxWidth);
+                        isNotNull |= setString  (layerStrings[COLUMN_TEXTTRANSFORM]     , layout::setTextTransform);
+                        isNotNull |= setBoolean (layerStrings[COLUMN_TEXTALLOWOVERLAP]  , layout::setTextAllowOverlap);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTLINEHEIGHT]    , layout::setTextLineHeight);
 
                         if (isNotNull)
                         {
@@ -439,23 +555,23 @@ public class LayerProcessor
 
                         paint=new Paint();
                         isNotNull=false;
-                        isNotNull |= setString  (layerStrings[ 7], paint::setFillPattern);
-                        isNotNull |= setJsonNode(layerStrings[ 8], paint::setFillColor);
-                        isNotNull |= setJsonNode(layerStrings[ 9], paint::setFillOutlineColor);
-                        isNotNull |= setJsonNode(layerStrings[10], paint::setFillOpacity);
+                        isNotNull |= setString  (layerStrings[COLUMN_FILLPATTERN]       , paint::setFillPattern);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_FILLCOLOR]         , paint::setFillColor);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_FILLOUTLINECOLOR]  , paint::setFillOutlineColor);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_FILLOPACITY]       , paint::setFillOpacity);
 
-                        isNotNull |= setJsonNode(layerStrings[16], paint::setLineColor);
-                        isNotNull |= setJsonNode(layerStrings[17], paint::setLineWidth);
-                        isNotNull |= setJsonNode(layerStrings[18], paint::setLineGapWidth);
-                        isNotNull |= setJsonNode(layerStrings[19], paint::setLineOpacity);
-                        isNotNull |= setJsonNode(layerStrings[20], paint::setLineDasharray);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_LINECOLOR]         , paint::setLineColor);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_LINEWIDTH]         , paint::setLineWidth);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_LINEGAPWIDTH]      , paint::setLineGapWidth);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_LINEOPACITY]       , paint::setLineOpacity);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_LINEDASHARRAY]     , paint::setLineDasharray);
 
-                        isNotNull |= setJsonNode(layerStrings[33], paint::setTextColor);
-                        isNotNull |= setJsonNode(layerStrings[34], paint::setTextHaloColor);
-                        isNotNull |= setFloat   (layerStrings[35], paint::setTextHaloWidth);
-                        isNotNull |= setFloat   (layerStrings[36], paint::setTextHaloBlur);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTCOLOR]         , paint::setTextColor);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTHALOCOLOR]     , paint::setTextHaloColor);
+                        isNotNull |= setFloat   (layerStrings[COLUMN_TEXTHALOWIDTH]     , paint::setTextHaloWidth);
+                        isNotNull |= setFloat   (layerStrings[COLUMN_TEXTHALOBLUR]      , paint::setTextHaloBlur);
 
-                        isNotNull |= setJsonNode(layerStrings[37], paint::setBackgroundColor);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_BACKGROUNDCOLOR]   , paint::setBackgroundColor);
 
                         if (isNotNull)
                         {
@@ -466,11 +582,260 @@ public class LayerProcessor
                 }
                 i++;
             }
-            System.out.println("Lines read: "+i+", layers written: "+layers.size());
+            LOGGER.info("Lines read: {}, layers written: {}", i, layers.size());
         }
         catch (Exception e)
         {
-            System.err.println("An error occurred while importing CSV: "+e.getMessage());
+            LOGGER.error("An error occurred while importing CSV: {}", e.getMessage());
         }
+    }
+    
+    
+    
+    /**
+     * Helper, gets cell value as string
+     * @param cell The cell to process
+     * @return The value as string or null if an error occurred
+     */
+    private String getCellStringValue(Cell cell)
+    {
+        String returnValue="";
+        
+        if (cell!=null && cell.getCellType()==CellType.STRING && cell.getStringCellValue().length()>0)
+        {
+            returnValue=cell.getStringCellValue();
+            if (returnValue==null)
+            {
+                LOGGER.error("Null string");
+            }
+            returnValue=returnValue.trim();
+            if (returnValue==null)
+            {
+                LOGGER.error("Null string after trim");
+            }
+        }       
+        else if (cell!=null && cell.getCellType()==CellType.NUMERIC)
+        {
+            returnValue=Double.toString(cell.getNumericCellValue());
+        }
+        else
+        {
+            if (cell!=null)
+            {
+                LOGGER.debug("Cell {} is not a string or is empty", cell.getColumnIndex());
+            }
+            else
+            {
+                LOGGER.debug("Cell is null");
+            }
+        }
+        return returnValue;
+    }
+    
+    /**
+     * Helper, gets cell value as int value
+     * @param cell The cell to process
+     * @return The value as int or null if an error occurred
+     */
+    private Long    getCellIntValue(Cell cell)
+    {
+        Long    returnValue=null;
+        
+        if (cell!=null && cell.getCellType()==CellType.NUMERIC)
+        {
+            returnValue=Math.round(cell.getNumericCellValue());
+        }        
+        else
+        {
+            if (cell!=null)
+            {
+                LOGGER.debug("Cell {} is not a numerical", cell.getColumnIndex());
+            }
+            else
+            {
+                LOGGER.debug("Cell is null");
+            }
+        }
+        return returnValue;
+    }
+
+    /**
+     * Helper, gets cell value as int value
+     * @param cell The cell to process
+     * @return The value as int or null if an error occurred
+     */
+    private Boolean    getCellBooleanValue(Cell cell)
+    {
+        Boolean    returnValue=null;
+        
+        if (cell!=null && cell.getCellType()==CellType.BOOLEAN)
+        {
+            returnValue=cell.getBooleanCellValue();
+        }        
+        else
+        {
+            if (cell!=null)
+            {
+                LOGGER.debug("Cell {} is not a boolean", cell.getColumnIndex());
+            }
+            else
+            {
+                LOGGER.debug("Cell is null");
+            }
+        }
+        return returnValue;
+    }
+    
+    /**
+     * Helper, gets cell value as float value
+     * @param cell The cell to process
+     * @return The value as float or null if an error occurred
+     */
+    private Float    getCellFloatValue(Cell cell)
+    {
+        Float    returnValue=null;
+        
+        if (cell!=null && cell.getCellType()==CellType.NUMERIC)
+        {
+            returnValue=(float)cell.getNumericCellValue();
+        }        
+        else if (cell!=null && cell.getCellType()==CellType.STRING && cell.getStringCellValue().length()>0)
+        {
+            returnValue=Float.parseFloat(cell.getStringCellValue());
+        }
+        else
+        {
+            if (cell!=null)
+            {
+                LOGGER.debug("Cell {} is not a numerical or something like it", cell.getColumnIndex());
+            }
+            else
+            {
+                LOGGER.debug("Cell is null");
+            }
+        }
+        return returnValue;
+    }    
+    
+    /**
+     * Process one valid row of the layers excel file
+     * @param row Row to process
+     */
+    private void processRow(Row row)
+    {
+        String id=getCellStringValue(row.getCell(COLUMN_ID));
+        if (id.startsWith("#"))
+        {
+            // TO DO: Do something sensible with comment
+            LOGGER.info(id);
+        }
+        else if (!id.equals(""))
+        {
+            Layer layer=new Layer();
+            layer.setId(id);
+            layer.setType(getCellStringValue(row.getCell(COLUMN_TYPE)));
+            setString  (getCellStringValue(row.getCell(COLUMN_SOURCE))      , layer::setSource);
+            setString  (getCellStringValue(row.getCell(COLUMN_SOURCELAYER)) , layer::setSourceLayer);
+            setJsonNode(getCellStringValue(row.getCell(COLUMN_FILTER))      , layer::setFilter);
+            layer.setMinzoom(getCellFloatValue(row.getCell(COLUMN_MINZOOM)));
+            layer.setMaxzoom(getCellFloatValue(row.getCell(COLUMN_MAXZOOM)));
+
+            Layout layout=new Layout();
+            boolean isNotNull=false;
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_SYMBOLPLACEMENT))    , layout::setSymbolPlacement);
+            isNotNull |= setBoolean (getCellBooleanValue(row.getCell(COLUMN_SYMBOLAVOIDEDGES))  , layout::setSymbolAvoidEdges);
+            isNotNull |= setFloat   (getCellFloatValue(row.getCell(COLUMN_SYMBOLSPACING))       , layout::setSymbolSpacing);
+
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_LINECAP))            , layout::setLineCap);
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_LINEJOIN))           , layout::setLineJoin);
+
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_ICONIMAGE))          , layout::setIconImage);
+            isNotNull |= setBoolean (getCellBooleanValue(row.getCell(COLUMN_ICONALLOWOVERLAP))  , layout::setIconAllowOverlap);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_ICONOFFSET))         , layout::setIconOffset);
+
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_TEXTFIELD))          , layout::setTextField);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTFONT))           , layout::setTextFont);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTSIZE))           , layout::setTextSize);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTOFFSET))         , layout::setTextOffset);
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_TEXTANCHOR))         , layout::setTextAnchor);
+            isNotNull |= setFloat   (getCellFloatValue (row.getCell(COLUMN_TEXTMAXWIDTH))       , layout::setTextMaxWidth);
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_TEXTTRANSFORM))      , layout::setTextTransform);
+            isNotNull |= setBoolean (getCellBooleanValue(row.getCell(COLUMN_TEXTALLOWOVERLAP))  , layout::setTextAllowOverlap);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTLINEHEIGHT))     , layout::setTextLineHeight);
+
+            if (isNotNull)
+            {
+                layer.setLayout(layout);
+            }
+            Paint paint=new Paint();
+            isNotNull=false;
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_FILLPATTERN))        , paint::setFillPattern);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_FILLCOLOR))          , paint::setFillColor);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_FILLOUTLINECOLOR))   , paint::setFillOutlineColor);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_FILLOPACITY))        , paint::setFillOpacity);
+
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_LINECOLOR))          , paint::setLineColor);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_LINEWIDTH))          , paint::setLineWidth);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_LINEGAPWIDTH))       , paint::setLineGapWidth);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_LINEOPACITY))        , paint::setLineOpacity);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_LINEDASHARRAY))      , paint::setLineDasharray);
+
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTCOLOR))          , paint::setTextColor);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTHALOCOLOR))      , paint::setTextHaloColor);
+            isNotNull |= setFloat   (getCellFloatValue(row.getCell(COLUMN_TEXTHALOWIDTH))       , paint::setTextHaloWidth);
+            isNotNull |= setFloat   (getCellFloatValue(row.getCell(COLUMN_TEXTHALOBLUR))        , paint::setTextHaloBlur);
+
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_BACKGROUNDCOLOR))    , paint::setBackgroundColor);
+
+            if (isNotNull)
+            {
+                layer.setPaint(paint);
+            }
+
+            layers.add(layer);
+        }
+    }
+    
+    /**
+     * Read the layers excel file
+     * @param fileName Filename of the excel
+     */
+    public void readExcel(String fileName)
+    {
+        layers=new ArrayList<>();
+        try
+        {
+            InputStream file = new FileInputStream(fileName);
+            if (file!=null)
+            {
+                Workbook workbook   = new XSSFWorkbook(file);
+                
+                Sheet sheet         =workbook.getSheetAt(0);
+                int maxRow          =sheet.getLastRowNum();
+                int errorCount      =0;
+                for (int i=1; i<=maxRow; i++) 
+                {
+                    Row row=sheet.getRow(i);
+                    if (row!=null)
+                    {
+                        processRow(row);
+                    }
+                    else
+                    {
+                        LOGGER.debug("Empty row: {}",i);
+                    }
+                }
+                LOGGER.info("Lines read: {}, layers written: {}", maxRow, layers.size());
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            LOGGER.error("File {} not found: {}", fileName, e.getMessage());
+        }
+        catch (IOException e)
+        {
+            LOGGER.error("Error reading file {}: {}", fileName, e.getMessage());
+        }
+        
     }
 }

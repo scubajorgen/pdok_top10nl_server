@@ -10,11 +10,12 @@ import net.studioblueplanet.styleconvert.data.Style;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Quick and especially DIRTY conversion tool. Note that it was intended for
@@ -23,6 +24,7 @@ import java.util.Properties;
  */
 public class StyleConvert
 {
+    private final static Logger LOGGER = LogManager.getLogger(LayerProcessor.class);
     private final static String PROPERTY_FILE_NAME      ="StyleConvert.properties";
     private String              csvSeparator;
     private static final String DEFAULT_CSV_SEPARATOR   =";";
@@ -64,7 +66,7 @@ public class StyleConvert
         }
         catch (IOException e)
         {
-            System.err.println("Error creating file "+csvLayerFile+": "+e.getMessage());
+            LOGGER.error("Error creating file {}: {} ", csvLayerFile, e.getMessage());
         }
     }
     
@@ -72,16 +74,28 @@ public class StyleConvert
      * This method inserts layers read from CSV into a JSON style file.
      * Existing layers are replaced
      * @param jsonStyleFile Input JSON style file
-     * @param csvLayerFile Input layers CSV file
+     * @param layerFile Input layers CSV file
      * @param outputJsonStyleFile Output file
      */
-    private void insertLayersToStyleFile(String jsonStyleFile, String csvLayerFile, String outputJsonStyleFile)
+    private void insertLayersToStyleFile(String jsonStyleFile, String layerFile, String outputJsonStyleFile)
     {
         FileProcessor processor=new FileProcessor();
         
         Style style=processor.readJsonStyleFile(jsonStyleFile);
-        processor.readCsvFile(csvLayerFile, style);
         
+        if (layerFile.toLowerCase().endsWith(".csv"))
+        {
+            processor.readCsvFile(layerFile, style);
+        }
+        else if (layerFile.toLowerCase().endsWith(".xlsx"))
+        {
+            processor.readExcelFile(layerFile, style);
+        }
+        else
+        {
+            LOGGER.error("Unknown file format, please provide .xlsx of .csv file");
+        }
+            
         try
         {
             Writer writer=new OutputStreamWriter(new FileOutputStream(outputJsonStyleFile), StandardCharsets.UTF_8);
@@ -91,7 +105,7 @@ public class StyleConvert
         }
         catch (IOException e)
         {
-            System.err.println("Error creating file "+csvLayerFile+": "+e.getMessage());
+            LOGGER.error("Error creating file {}: {} ", layerFile, e.getMessage());
         }
     }
     
@@ -105,18 +119,10 @@ public class StyleConvert
         Style   style;
         boolean error;
         
-        System.out.println("LAYER CONVERSION TOOL");
+        LOGGER.info("LAYER CONVERSION TOOL");
         
         StyleConvert instance=new StyleConvert();
         instance.readSettings();
-      
-/*        
-        style=instance.readJsonStyleFile("style_topnl_org.json");
-        instance.writeJsonStyleFile("style_topnl_org_rewrite.json", style);
-       
-        instance.exportLayersToCsvFile("style_topnl_org.json", "testlayers.csv");
-        instance.insertLayersToStyleFile("style_topnl_org.json", "testlayers.csv", "style_topnl_test.json");
-*/       
 
         error=false;
         if (args.length>0)
@@ -125,7 +131,7 @@ public class StyleConvert
             {
                 if (args.length==4)
                 {
-                    System.out.println("Inserting layers from "+args[2]+" into "+args[1]+", write result to "+args[3]);
+                    LOGGER.info("Inserting layers from {} into {}, write result to {}", args[2], args[1], args[3]);
                     instance.insertLayersToStyleFile(args[1], args[2], args[3]);
                 }
                 else
@@ -137,7 +143,7 @@ public class StyleConvert
             {
                 if (args.length==3)
                 {
-                    System.out.println("Exporting layers from "+args[1]+" to "+args[2]);
+                    LOGGER.info("Exporting layers from {} to {}", args[1], args[2]);
                     instance.exportLayersToCsvFile(args[1], args[2]);
                 }
                 else
@@ -157,12 +163,12 @@ public class StyleConvert
         
         if (error)
         {
-            System.out.println("Usage:");
-            System.out.println("java -jar StyleConvert EXTRACTLAYERS [StyleJsonInFile] [LayerCsvOutFile]");
-            System.out.println("Extracts the layers out the [StyleJsonInFile] and writes them to [LayerCsvOutFile]");
-            System.out.println("java -jar StyleConvert INSERTLAYERS [StyleJsonInFile] [LayerCsvInFile] [StyleJsonOutFile]");
-            System.out.println("Inserts the layers from [LayerCsvInFile] into [StyleJsonInFile] and writes it to a new style file [StyleJsonOutFile]");
+            LOGGER.info("Usage:");
+            LOGGER.info("java -jar StyleConvert EXTRACTLAYERS [StyleJsonInFile] [LayerCsvOutFile]");
+            LOGGER.info("Extracts the layers out the [StyleJsonInFile] and writes them to [LayerCsvOutFile]");
+            LOGGER.info("java -jar StyleConvert INSERTLAYERS [StyleJsonInFile] [LayerInFile] [StyleJsonOutFile]");
+            LOGGER.info("Inserts the layers from [LayerInFile] into [StyleJsonInFile] and writes it to a new style file [StyleJsonOutFile]");
         }
-        System.out.println("done");
+        LOGGER.info("done");
     }
 }

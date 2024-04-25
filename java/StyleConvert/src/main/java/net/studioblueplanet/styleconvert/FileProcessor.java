@@ -13,6 +13,8 @@ import java.io.Writer;
 import java.util.List;
 import net.studioblueplanet.styleconvert.data.Layer;
 import net.studioblueplanet.styleconvert.data.Style;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -20,6 +22,7 @@ import net.studioblueplanet.styleconvert.data.Style;
  */
 public class FileProcessor
 {
+    private final static Logger LOGGER = LogManager.getLogger(FileProcessor.class);
     private ObjectMapper        objectMapper;
     private final static String PROPERTY_FILE_NAME="StyleConvert.properties";
     private static final String DEFAULT_CSV_SEPARATOR=";";   
@@ -42,14 +45,14 @@ public class FileProcessor
         }
         catch(IOException e)
         {
-            System.err.println("Error reading JSON: "+e.getMessage());
+            LOGGER.error("Error reading JSON: {}", e.getMessage());
         }
         return style;
     }
     
     /**
      * Write a map style to json file. null values are not written
-     * @param fileName Name of the JSON file to write to
+     * @param writer Writer to use to write the file
      * @param style The style to write
      */
     public void writeJsonStyleFile(Writer writer, Style style)
@@ -63,13 +66,13 @@ public class FileProcessor
         }
         catch(IOException e)
         {
-            System.err.println("Error reading JSON: "+e.getMessage());
+            LOGGER.error("Error reading JSON: {}", e.getMessage());
         }
     }
 
     /**
      * Write layers in the style file to CSV
-     * @param fileName Name of the CSV file
+     * @param writer Writer to use to write the file
      * @param style Style of which the layers to write
      */
     public void writeCsvFile(Writer writer, Style style)
@@ -79,12 +82,32 @@ public class FileProcessor
         processor.writeToCsvFile(writer);   
     }
 
+    /**
+     * Read layers from the CSV file and add them to the style passed
+     * @param fileName File to read layers from
+     * @param style Style to add the layers to; existing layers are overwritten
+     */
     public void readCsvFile(String fileName, Style style)
     {
         List<Layer> layers;
         
         LayerProcessor processor=new LayerProcessor(csvSeparator);
         processor.readCsv(fileName);
+        layers=processor.getLayers();
+        style.setLayers(layers);
+    }
+
+    /**
+     * Read layers from the Excel file and add them to the style passed
+     * @param fileName File to read layers from
+     * @param style Style to add the layers to; existing layers are overwritten
+     */    
+    public void readExcelFile(String fileName, Style style)
+    {
+        List<Layer> layers;
+        
+        LayerProcessor processor=new LayerProcessor(csvSeparator);
+        processor.readExcel(fileName);
         layers=processor.getLayers();
         style.setLayers(layers);
     }
