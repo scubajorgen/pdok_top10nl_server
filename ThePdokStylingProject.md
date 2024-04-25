@@ -66,3 +66,9 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 ![](images/example03.jpg)
 
 ![](images/example04.jpg)
+
+## Known issues
+* We don't have roads with separate lanes on higher scales ('gescheiden rijbanen'). Zooming in to scale 1:10.000 shows lanes seperately.
+* Culverts ('duikers') cannot be rendered, since MapBox does not allow symbol placement at the end of a line. Rendered as red dashed line.
+* Typelandgebruik 'Overig' is white with red dots
+* Typelandgebruik 'Spoorbaanlichaam' is grey i.s.o. white

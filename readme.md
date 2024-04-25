@@ -82,14 +82,14 @@ _Zoomlevels of subsequent scales should not overlap. If we have tiles at zoomlev
 ---
 
 
-| map | Scale min (PDOK) | Scale max (PDOK) | Minzoom | Maxzoom | Minzoom rounded | Maxzoom rounded |
-|----|---|---|---|---|---|---|
-| Top1000NL | 1:750.000 | 1:1.500.000 |  6.6 |  7.6 |  1 |  7 |
-| Top500NL  | 1:350.000 |   1:750.000 |  7.6 |  8.7 |  8 |  8 |
-| Top250NL  | 1:150.000 |   1:350.000 |  8.7 |  9.9 |  9 |  9 |
-| Top100NL  |  1:75.000 |   1:150.000 |  9.9 | 10.9 | 10 | 11 |
-| Top50NL   |  1:25.000 |    1:75.000 | 10.9 | 12.5 | 11 | 13 |
-| Top10NL   |    1:5000 |    1:25.000 | 12.5 | 14.9 | 13 | 15 |
+| map | Scale min (PDOK) | Scale max (PDOK) | Minzoom | Maxzoom | Minzoom rounded | Maxzoom rounded | Used for zoomlevels |
+|----|---|---|---|---|---|---|---|
+| Top1000NL | 1:750.000 | 1:1.500.000 |  6.6 |  7.6 |  1 |  7 |  1.00-7.99
+| Top500NL  | 1:350.000 |   1:750.000 |  7.6 |  8.7 |  8 |  8 |  8.00-8.99
+| Top250NL  | 1:150.000 |   1:350.000 |  8.7 |  9.9 |  9 |  9 |  9.00-9.99
+| Top100NL  |  1:75.000 |   1:150.000 |  9.9 | 10.9 | 10 | 10 | 10.00-10.99
+| Top50NL   |  1:25.000 |    1:75.000 | 10.9 | 12.5 | 11 | 12 | 11.00-12.99
+| Top10NL   |    1:5000 |    1:25.000 | 12.5 | 14.9 | 13 | 15 | 13.00-20.00
 
 We map the various files on the zoomlevels to get tiles with roughly the same size in MBytes (0.5-1.5 MByte; done in _02_convert_merged_gpkg_to_mbtiles.bat_ and _03_convert_merged_gpkg_to_mbtiles.bat_):
 
