@@ -17,6 +17,7 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 /**
  * Quick and especially DIRTY conversion tool. Note that it was intended for
  * own use. Not all style fields and attributes are supported. Only a subset
