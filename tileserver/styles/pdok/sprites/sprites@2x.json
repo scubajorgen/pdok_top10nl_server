@@ -530,12 +530,30 @@
     "x": 288,
     "y": 288
   },
-  "treinstation": 
+
+
+  "wreck": 
   {
     "height": 32,
     "width": 32,
     "pixelRatio": 1,
-    "x": 128,
+    "x": 0,
+    "y": 288
+  },
+  "kilometerpaal": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 288
+  },
+  "bron": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 64,
     "y": 288
   },
   "uitzichtpunt": 
@@ -544,6 +562,14 @@
     "width": 32,
     "pixelRatio": 1,
     "x": 96,
+    "y": 288
+  },
+  "treinstation": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 128,
     "y": 288
   }
 }

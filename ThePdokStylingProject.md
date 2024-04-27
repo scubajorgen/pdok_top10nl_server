@@ -67,8 +67,21 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 
 ![](images/example04.jpg)
 
-## Known issues
+## Known issues/deviations
 * We don't have roads with separate lanes on higher scales ('gescheiden rijbanen'). Zooming in to scale 1:10.000 shows lanes seperately.
-* Culverts ('duikers') cannot be rendered, since MapBox does not allow symbol placement at the end of a line. Rendered as red dashed line.
-* Typelandgebruik 'Overig' is white with red dots
-* Typelandgebruik 'Spoorbaanlichaam' is grey i.s.o. white
+* Culverts ('duikers') cannot be rendered, since MapBox does not allow symbol placement at the end of a line. Rendered as red line.
+* ```typelandgebruik``` 'Overig' is white with red dots
+* ```typelandgebruik``` 'Spoorbaanlichaam' is grey i.s.o. white
+* Roads with ```status``` 'buiten gebruik' are have a dashed red casing, long dashes
+* Bunkers (```typeinrichtingselement``` 'bunker') are shown
+* Viewpoints (```typeinrichtingselement``` 'uitzichtpunt') are shown
+* Wrecks (```typeinrichtingselement``` 'zichtbaar wrak') are shown
+* ```typeinrichtingselement``` 'paalwerk' is shown as 'strekdam' but dashed, small dashes
+* Water with ```functie``` 'vloeiveld' has a dark blue outline color, like 'waterzuivering' has a red outline color
+* Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain...
+* To Do: Metro: add small gray/black blocks
+* To Do: duikers, sluizen en dammen
+* To Do: kilometer paal, aantal rijstroken, wegafsluiting
+* To Do: bomenrij, heg/haag, paal, grenspunt, houtwal
+* To Do: check grenzen, check wegnummering, berijdbare dijk, ingegraven holle weg
+* To Do: aquaduct, brug op peilers
