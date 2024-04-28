@@ -68,23 +68,30 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 ![](images/example04.jpg)
 
 ## Known issues/deviations
-* We don't have roads with separate lanes on higher scales ('gescheiden rijbanen'). Zooming in to scale 1:10.000 shows lanes seperately.
-* Culverts ('duikers') cannot be rendered, since MapBox does not allow symbol placement at the end of a line. Rendered as red line.
-* ```typelandgebruik``` 'Overig' is white with red dots
-* ```typelandgebruik``` 'Spoorbaanlichaam' is grey i.s.o. white
-* Roads with ```status``` 'buiten gebruik' are have a dashed red casing, long dashes
+### Extras
 * Bunkers (```typeinrichtingselement``` 'bunker') are shown
 * Viewpoints (```typeinrichtingselement``` 'uitzichtpunt') are shown
 * Wrecks (```typeinrichtingselement``` 'zichtbaar wrak') are shown
 * ```typeinrichtingselement``` 'paalwerk' is shown as 'strekdam' but dashed, small dashes
 * Water with ```functie``` 'vloeiveld' has a dark blue outline color, like 'waterzuivering' has a red outline color
+* Roads with ```status``` 'buiten gebruik' have a dashed red casing, long dashes ('in uitvoering' are black long dashes)
+
+### Deviations
+* We don't have roads with separate lanes on higher scales ('gescheiden rijbanen'). Zooming in to scale 1:10.000 shows lanes seperately.
+* Culverts ('duikers') cannot be rendered, since MapBox does not allow symbol placement at the end of a line. Therefore rendered as darkblue line.
+* ```typelandgebruik``` 'Overig' is white with red dots
+* ```typelandgebruik``` 'Spoorbaanlichaam' is grey i.s.o. white
+
+### Issues
 * Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain...
-* Only GPS kernnetpunt, not plain white RD points...
-* ```typeinrichtingselement``` 'stuw' (small ones) are not aligned to water
-* Issue: ```typeweg``` 'hoofdweg' on ```fysiekvoorkomen```'op beweegbaar deel van brug' not drawn at #17/53.226297/6.612613 whereas it is shown on raster maps
-* To Do: tram: add small gray/black blocks (tramhaltes?)
-* To Do: review duikers
-* To Do: kilometer paal, aantal rijstroken, wegafsluiting
-* To Do: bomenrij, heg/haag, grenspunt, houtwal
-* To Do: check grenzen, check wegnummering, berijdbare dijk, ingegraven holle weg
-* To Do: aquaduct, brug op peilers
+* Only GPS kernnetpunt, not plain white RD points... (not found yet)
+* ```typeinrichtingselement``` 'stuw' (small ones; points; grey rectangle) are not aligned to waterway
+* Issue: ```typeweg``` 'hoofdweg' on ```fysiekvoorkomen```'op beweegbaar deel van brug' not drawn at #17/53.226297/6.612613 whereas it is shown on raster maps; unclear why
+
+### To do
+* Tram: add small gray/black blocks (tramhaltes?)
+* Review duikers
+* Kilometer paal, aantal rijstroken, wegafsluiting
+* Bomenrij, heg/haag, grenspunt, houtwal
+* Check grenzen, check wegnummering, berijdbare dijk, ingegraven holle weg
+* Aquaduct, brug op peilers
