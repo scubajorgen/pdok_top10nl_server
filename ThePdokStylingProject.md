@@ -79,9 +79,12 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 * ```typeinrichtingselement``` 'paalwerk' is shown as 'strekdam' but dashed, small dashes
 * Water with ```functie``` 'vloeiveld' has a dark blue outline color, like 'waterzuivering' has a red outline color
 * Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain...
-* To Do: Metro: add small gray/black blocks
-* To Do: duikers, sluizen en dammen
+* Only GPS kernnetpunt, not plain white RD points...
+* ```typeinrichtingselement``` 'stuw' (small ones) are not aligned to water
+* Issue: ```typeweg``` 'hoofdweg' on ```fysiekvoorkomen```'op beweegbaar deel van brug' not drawn at #17/53.226297/6.612613 whereas it is shown on raster maps
+* To Do: tram: add small gray/black blocks (tramhaltes?)
+* To Do: review duikers
 * To Do: kilometer paal, aantal rijstroken, wegafsluiting
-* To Do: bomenrij, heg/haag, paal, grenspunt, houtwal
+* To Do: bomenrij, heg/haag, grenspunt, houtwal
 * To Do: check grenzen, check wegnummering, berijdbare dijk, ingegraven holle weg
 * To Do: aquaduct, brug op peilers

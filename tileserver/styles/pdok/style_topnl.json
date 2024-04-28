@@ -6213,7 +6213,7 @@
       }
     }, 
     {
-      "id": "spoorbaandeel_lijn_casing_10",
+      "id": "spoorbaandeel_lijn_trein_casing_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_spoorbaandeel_lijn",
@@ -6243,12 +6243,12 @@
           ], 
           [
             "zoom"
-          ], 6, 2, 18, 20
+          ], 6, 3.2, 20, 32
         ]
       }
     }, 
     {
-      "id": "spoorbaandeel_lijn_casing_tunnel_10",
+      "id": "spoorbaandeel_lijn_trein_casing_tunnel_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_spoorbaandeel_lijn",
@@ -6278,7 +6278,7 @@
           ], 
           [
             "zoom"
-          ], 6, 0.5, 18, 3
+          ], 6, 0.7, 20, 7
         ],
         "line-gap-width": 
         [
@@ -6288,7 +6288,7 @@
           ], 
           [
             "zoom"
-          ], 6, 1, 18, 14
+          ], 6, 0.9, 20, 18
         ],
         "line-dasharray": 
         [
@@ -6297,7 +6297,7 @@
       }
     }, 
     {
-      "id": "spoorbaandeel_lijn_casing_brug_10",
+      "id": "spoorbaandeel_lijn_trein_casing_brug_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_spoorbaandeel_lijn",
@@ -6327,7 +6327,126 @@
           ], 
           [
             "zoom"
-          ], 6, 3, 18, 28
+          ], 6, 4.2, 20, 42
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_sneltram_casing_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typespoorbaan", "sneltram"
+        ], 
+        [
+          "!in", "fysiekvoorkomen", "in tunnel", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|overkluisd"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 1.6, 20, 16
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_sneltram_casing_tunnel_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typespoorbaan", "sneltram"
+        ], 
+        [
+          "==", "fysiekvoorkomen", "in tunnel"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 0.5, 20, 3
+        ],
+        "line-gap-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 1, 20, 14
+        ],
+        "line-dasharray": 
+        [
+          4, 3
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_sneltram_casing_brug_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typespoorbaan", "sneltram"
+        ], 
+        [
+          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|overkluisd"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(50, 50, 50)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 3, 20, 24
         ]
       }
     }, 
@@ -6356,7 +6475,7 @@
           ], 
           [
             "zoom"
-          ], 6, 2, 18, 20
+          ], 6, 2, 20, 20
         ]
       }
     }, 
@@ -6385,7 +6504,7 @@
           ], 
           [
             "zoom"
-          ], 6, 2, 18, 20
+          ], 6, 2, 20, 20
         ]
       }
     }, 
@@ -6410,7 +6529,7 @@
           ], 
           [
             "zoom"
-          ], 6, 2, 18, 20
+          ], 6, 2, 20, 20
         ]
       }
     }, 
@@ -6435,7 +6554,7 @@
           ], 
           [
             "zoom"
-          ], 6, 2, 18, 20
+          ], 6, 2, 20, 20
         ]
       }
     }, 
@@ -6460,7 +6579,7 @@
           ], 
           [
             "zoom"
-          ], 6, 2, 18, 20
+          ], 6, 2, 20, 20
         ],
         "line-opacity": 
         {
@@ -6478,7 +6597,7 @@
       }
     }, 
     {
-      "id": "spoorbaandeel_lijn_spoorenkel_10",
+      "id": "spoorbaandeel_lijn_treinenkel_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_spoorbaandeel_lijn",
@@ -6520,7 +6639,7 @@
       }
     }, 
     {
-      "id": "spoorbaandeel_lijn_spoormeer_10",
+      "id": "spoorbaandeel_lijn_treinmeer_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_spoorbaandeel_lijn",
@@ -6558,6 +6677,45 @@
         "line-dasharray": 
         [
           5, 5
+        ]
+      }
+    }, 
+    {
+      "id": "spoorbaandeel_lijn_sneltram_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_spoorbaandeel_lijn",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typespoorbaan", "sneltram"
+        ], 
+        [
+          "!=", "fysiekvoorkomen", "in tunnel"
+        ]
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(255,255,255)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 6, 0.9, 20, 12
+        ],
+        "line-dasharray": 
+        [
+          15, 2
         ]
       }
     }, 
@@ -9195,25 +9353,6 @@
       }
     }, 
     {
-      "id": "inrichting_radiotelescoop_50",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top50nl_inrichtingselement_punt",
-      "filter": 
-      [
-        "==", "type_inrichtingselement", "radiotelescoop"
-      ],
-      "layout": 
-      {
-        "icon-image": "telescoop",
-        "icon-allow-overlap": true,
-        "icon-offset": 
-        [
-          0, -5
-        ]
-      }
-    }, 
-    {
       "id": "inrichting_seinmast_10",
       "type": "symbol",
       "source": "brt_topnl",
@@ -9322,7 +9461,7 @@
       }
     }, 
     {
-      "id": "inrichting_windmolentje",
+      "id": "inrichting_punt_windmolentje_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9340,7 +9479,7 @@
       }
     }, 
     {
-      "id": "inrichting_boom",
+      "id": "inrichting_punt_boom_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9359,7 +9498,107 @@
       }
     }, 
     {
-      "id": "inrichting_sneltramhalte",
+      "id": "inrichting_punt_paal_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "paal"
+      ],
+      "layout": 
+      {
+        "icon-image": "paal",
+        "icon-offset": 
+        [
+          0, 0
+        ],
+        "text-field": "Pl",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 15
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0.3
+        ],
+        "text-anchor": "top",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "inrichting_punt_grenspunt_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "grenspunt"
+      ],
+      "layout": 
+      {
+        "icon-image": "paal",
+        "icon-offset": 
+        [
+          0, 0
+        ],
+        "text-field": "Gp",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 15
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0.3
+        ],
+        "text-anchor": "top",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "inrichting_punt_sneltramhalte_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9377,7 +9616,7 @@
       }
     }, 
     {
-      "id": "inrichting_metrostation",
+      "id": "inrichting_punt_metrostation_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9395,7 +9634,7 @@
       }
     }, 
     {
-      "id": "inrichting_treinstation",
+      "id": "inrichting_punt_treinstation_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9413,7 +9652,7 @@
       }
     }, 
     {
-      "id": "inrichting_uitzichtpunt",
+      "id": "inrichting_punt_uitzichtpunt_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9424,6 +9663,7 @@
       "layout": 
       {
         "icon-image": "uitzichtpunt",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9431,7 +9671,7 @@
       }
     }, 
     {
-      "id": "inrichting_wrak_10",
+      "id": "inrichting_punt_wrak_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9442,9 +9682,107 @@
       "layout": 
       {
         "icon-image": "wreck",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_koedam_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "koedam"
+      ],
+      "layout": 
+      {
+        "icon-image": "koedam",
+        "icon-allow-overlap": true,
+        "icon-offset": 
+        [
+          0, 0
+        ],
+        "symbol-placement": "line"
+      }
+    }, 
+    {
+      "id": "inrichting_punt_stuw_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "stuw"
+      ],
+      "layout": 
+      {
+        "icon-image": "stuw",
+        "icon-allow-overlap": true,
+        "icon-offset": 
+        [
+          0, 0
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_stuw_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "stuw"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(118,118,118)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 10, 1.5, 20, 15
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_sluisdeur_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "sluisdeur"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 10, 1.5, 20, 15
         ]
       }
     }, 
@@ -11462,6 +11800,10 @@
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
       "minzoom": 13.0,
+      "filter": 
+      [
+        "!in", "typefunctioneelgebied", "sluizencomplex"
+      ],
       "layout": 
       {
         "text-field": "{naamnl}",
@@ -11490,9 +11832,77 @@
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_multivlak",
       "minzoom": 13.0,
+      "filter": 
+      [
+        "!in", "typefunctioneelgebied", "sluizencomplex"
+      ],
       "layout": 
       {
         "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 1
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(150,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_vlak_sluis_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_vlak",
+      "minzoom": 13.0,
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "sluizencomplex"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl} Sch sl",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 1
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_multivlak_sluis_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_multivlak",
+      "minzoom": 13.0,
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "sluizencomplex"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl} Sch sl",
         "text-font": 
         [
           "pdok_OpenSansRegular"

@@ -531,6 +531,86 @@
   },
 
 
+  "vacant01": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 112
+  },
+  "vacant02": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 112
+  },
+  "vacant03": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 112
+  },
+  "vacant04": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 112
+  },
+  "vacant05": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 64,
+    "y": 112
+  },  
+  "vacant11": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 128
+  },
+  "vacant12": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 16,
+    "y": 128
+  },
+  "stuw": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 32,
+    "y": 128
+  },
+  "paal": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 48,
+    "y": 128
+  },
+  "koedam": 
+  {
+    "height": 16,
+    "width": 16,
+    "pixelRatio": 1,
+    "x": 64,
+    "y": 128
+  },
   "wreck": 
   {
     "height": 16,
