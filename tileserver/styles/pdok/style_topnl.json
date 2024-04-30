@@ -369,8 +369,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(200, 200, 200)",
-        "fill-outline-color": "rgb(150, 150, 150)"
+        "fill-color": "rgb(200, 200, 200)"
       }
     }, 
     {
@@ -412,8 +411,7 @@
       ],
       "paint": 
       {
-        "fill-pattern": "dodenakker",
-        "fill-outline-color": "#C3DBB5"
+        "fill-pattern": "dodenakker"
       }
     }, 
     {
@@ -497,17 +495,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(227,234,187)",
-        "fill-outline-color": 
-        [
-          "interpolate", 
-          [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 10, "#E3EABB", 11, "#CCCCAA"
-        ]
+        "fill-color": "rgb(227,234,187)"
       }
     }, 
     {
@@ -549,8 +537,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(254, 229,229)",
-        "fill-outline-color": "rgb(254, 229,229)"
+        "fill-color": "rgb(254, 229,229)"
       }
     }, 
     {
@@ -564,8 +551,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(254, 229,229)",
-        "fill-outline-color": "rgb(254, 229,229)"
+        "fill-color": "rgb(254, 229,229)"
       }
     }, 
     {
@@ -579,8 +565,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(254, 229,229)",
-        "fill-outline-color": "rgb(254, 229,229)"
+        "fill-color": "rgb(254, 229,229)"
       }
     }, 
     {
@@ -608,17 +593,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(255,255,255)",
-        "fill-outline-color": 
-        [
-          "interpolate", 
-          [
-            "linear"
-          ], 
-          [
-            "zoom"
-          ], 10, "#FFFFFF", 11, "#CCCCAA"
-        ]
+        "fill-color": "rgb(255,255,255)"
       }
     }, 
     {
@@ -4873,7 +4848,7 @@
       }
     }, 
     {
-      "id": "wegdeel_lijn_lokaa_l50",
+      "id": "wegdeel_lijn_lokaal_50",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
@@ -7009,6 +6984,28 @@
       }
     }, 
     {
+      "id": "inrichting_pijler_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "minzoom": 14.0,
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "pijler"
+      ],
+      "layout": 
+      {
+        "icon-image": "pijler",
+        "icon-allow-overlap": true
+      },
+      "paint": 
+      {
+        "text-color": "rgb(100,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
       "id": "wegdeel_lijn_overig_casing_brug_10",
       "type": "line",
       "source": "brt_topnl",
@@ -8035,6 +8032,26 @@
       }
     }, 
     {
+      "id": "waterdeel_vlak_waterloop_opbrug_10",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_waterdeel_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "in", "typewater", "waterloop"
+        ], 
+        [
+          "==", "fysiekvoorkomen", "op brug"
+        ]
+      ],
+      "paint": 
+      {
+        "fill-color": "rgb(173,218,240)"
+      }
+    }, 
+    {
       "id": "gebouw_vlak_hoogbouw_10",
       "type": "fill",
       "source": "brt_topnl",
@@ -8114,7 +8131,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "toren", "luchtwachttoren", "uitzichttoren", "klokkentoren", "radartoren", "telecommunicatietoren", "radiotoren, televisietoren"
@@ -8162,7 +8178,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "radiotoren, televisietoren", "koeltoren", "toren", "uitzichttoren", "lichttoren", "radartoren", "verkeerstoren", "huizenblok|telecommunicatietoren", "radarpost|verkeerstoren", "telecommunicatietoren", "klokkentoren", "huizenblok|toren", "gemeentehuis|toren", "gemeentehuis|klokkentoren", "luchtwachttoren", "gemeentehuis|klokkentoren|politiebureau", "bunker|luchtwachttoren", "luchtwachttoren|uitzichttoren", "school|toren", "huizenblok|klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "huizenblok|radarpost|toren", "gemaal|uitzichttoren", "gemeentehuis|huizenblok|klokkentoren", "kasteel|ruïne|toren", "kasteel|toren", "radiotoren, televisietoren|toren", "stationsgebouw|toren", "ruïne|toren", "kliniek, inrichting, sanatorium|luchtwachttoren", "huizenblok|klokkentoren|politiebureau", "kapel|toren", "huizenblok|paleis|toren"
@@ -8210,7 +8225,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 12.0,
       "filter": 
       [
         "in", "typegebouw", "kerk|school", "kerk"
@@ -8258,7 +8272,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 12.0,
       "filter": 
       [
         "in", "typegebouw", "kerk", "kerk|school", "huizenblok|kerk", "kerk|klooster, abdij", "kapel|kerk", "kerk|sporthal", "kerk|zwembad", "kerk|koepel", "kerk|synagoge", "huizenblok|kerk|school", "kerk|politiebureau", "huizenblok|kerk|koepel", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|universiteit", "kerk|stadskantoor, hulpsecretarie", "kerk|school|sporthal", "kerk|overig religieus gebouw", "gemeentehuis|kerk", "huizenblok|kerk|overig religieus gebouw", "kerk|kliniek, inrichting, sanatorium", "kerk|ziekenhuis", "kerk|postkantoor", "kerk|sporthal|zwembad", "kerk|politiebureau|school", "huizenblok|kerk|klooster, abdij", "kerk|moskee|universiteit", "huizenblok|kerk|school|universiteit", "kerk|school|zwembad", "huizenblok|kerk|universiteit", "huizenblok|kerk|postkantoor", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk|school", "huizenblok|synagoge", "synagoge", "moskee", "huizenblok|moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "huizenblok|overig religieus gebouw", "kasteel|overig religieus gebouw", "overig religieus gebouw|school", "klooster, abdij", "klooster, abdij|school", "huizenblok|klooster, abdij", "kasteel|klooster, abdij", "huizenblok|klooster, abdij|museum", "kapel|klooster, abdij"
@@ -8306,7 +8319,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "kerk|toren"
@@ -8358,7 +8370,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "kerk|toren", "kerk|klokkentoren", "huizenblok|kerk|toren", "kerk|klooster, abdij|toren", "klooster, abdij|toren"
@@ -8410,7 +8421,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "lichttoren", "vuurtoren"
@@ -8458,7 +8468,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "vuurtoren", "klokkentoren|vuurtoren", "vuurtoren|watertoren", "kasteel|lichttoren"
@@ -8506,7 +8515,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "watertoren"
@@ -8554,7 +8562,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "watertoren", "luchtwachttoren|watertoren", "huizenblok|watertoren", "school|watertoren"
@@ -8602,7 +8609,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "bunker"
@@ -8649,7 +8655,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "bunker", "bunker|museum"
@@ -8696,7 +8701,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "ruïne"
@@ -8742,7 +8746,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 10.0,
       "filter": 
       [
         "in", "typegebouw", "ruïne", "ruïne|toren", "ruïne|windmolen:korenmolen"
@@ -8788,7 +8791,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "tankstation"
@@ -8803,7 +8805,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "tankstation"
@@ -8818,7 +8819,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "parkeerdak, parkeerdek, parkeergarage"
@@ -8833,7 +8833,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "parkeerdak, parkeerdek, parkeergarage"
@@ -8848,7 +8847,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "gemeentehuis", "gemeentehuis|huizenblok", "gemeentehuis|huizenblok|postkantoor", "gemeentehuis|huizenblok|toren", "gemeentehuis|kerk", "gemeentehuis|parkeerdak, parkeerdek, parkeergarage", "gemeentehuis|politiebureau", "gemeentehuis|school", "gemeentehuis|stadskantoor, hulpsecretarie", "gemeentehuis|toren"
@@ -8867,7 +8865,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "postkantoor", "postkantoor|stadion", "postkantoor|stationsgebouw", "postkantoor|tankstation", "postkantoor|ziekenhuis"
@@ -8886,7 +8883,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "politiebureau", "politiebureau|sporthal", "politiebureau|stadskantoor, hulpsecretarie"
@@ -8905,7 +8901,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "gemaal"
@@ -8924,7 +8919,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "gemaal"
@@ -8943,7 +8937,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "windturbine"
@@ -8962,7 +8955,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "waterradmolen"
@@ -8981,7 +8973,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "waterradmolen", "huizenblok|waterradmolen", "kasteel|waterradmolen", "museum|waterradmolen"
@@ -9000,7 +8991,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
@@ -9020,7 +9010,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "gemaal|windmolen", "gemaal|windmolen: watermolen", "overig|windmolen", "ruïne|windmolen: korenmolen", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
@@ -9040,7 +9029,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typegebouw", "kapel"
@@ -9059,7 +9047,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "huizenblok|kapel", "huizenblok|kapel|toren", "kapel", "overig|kapel"
@@ -9078,7 +9065,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegebouw", "ziekenhuis", "ziekenhuis|school", "ziekenhuis|school|universiteit", "ziekenhuis|universiteit"
@@ -9098,7 +9084,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typeweg", "parkeerplaats", "parkeerplaats: carpool", "parkeerplaats: P+R"
@@ -9109,7 +9094,7 @@
       }
     }, 
     {
-      "id": "inrichting_hunebed_10",
+      "id": "inrichting_punt_hunebed_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9120,6 +9105,7 @@
       "layout": 
       {
         "icon-image": "hunebed",
+        "icon-allow-overlap": true,
         "text-field": "{naam}",
         "text-font": 
         [
@@ -9154,7 +9140,7 @@
       }
     }, 
     {
-      "id": "inrichting_gps_10",
+      "id": "inrichting_punt_gps_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9165,6 +9151,7 @@
       "layout": 
       {
         "icon-image": "gps",
+        "icon-allow-overlap": true,
         "text-field": "{naam}",
         "text-font": 
         [
@@ -9199,7 +9186,145 @@
       }
     }, 
     {
-      "id": "inrichting_markantobject_10",
+      "id": "inrichting_punt_kilometerpaal_weg_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "kilometerpaal"
+      ],
+      "layout": 
+      {
+        "icon-image": "kilometerpaal",
+        "icon-allow-overlap": true,
+        "text-field": "{nummer}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 10
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0.3
+        ],
+        "text-anchor": "top",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(100,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "inrichting_punt_kilometerpaal_water_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "kilometerpaal water"
+      ],
+      "layout": 
+      {
+        "icon-image": "kilometerpaal",
+        "icon-allow-overlap": true,
+        "text-field": "{nummer}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 10
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0.3
+        ],
+        "text-anchor": "top",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(100,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "inrichting_punt_kilometerpaal_spoorweg_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "kilometerpaal spoorweg"
+      ],
+      "layout": 
+      {
+        "icon-image": "kilometerpaal",
+        "icon-allow-overlap": true,
+        "text-field": "{nummer}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 10
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0.3
+        ],
+        "text-anchor": "top",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(100,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "inrichting_punt_markantobject_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9210,6 +9335,7 @@
       "layout": 
       {
         "icon-image": "markantpunt",
+        "icon-allow-overlap": true,
         "text-field": "{naam}",
         "text-font": 
         [
@@ -9244,7 +9370,7 @@
       }
     }, 
     {
-      "id": "inrichting_monument_10",
+      "id": "inrichting_punt_monument_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9255,6 +9381,7 @@
       "layout": 
       {
         "icon-image": "monument",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -3
@@ -9262,7 +9389,7 @@
       }
     }, 
     {
-      "id": "inrichting_wegwijzer_10",
+      "id": "inrichting_punt_wegwijzer_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9273,6 +9400,7 @@
       "layout": 
       {
         "icon-image": "wegwijzer",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -3
@@ -9280,7 +9408,7 @@
       }
     }, 
     {
-      "id": "inrichting_kruis_10",
+      "id": "inrichting_punt_kruis_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9291,6 +9419,7 @@
       "layout": 
       {
         "icon-image": "kruis",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -3
@@ -9298,7 +9427,7 @@
       }
     }, 
     {
-      "id": "inrichting_vlampijp_10",
+      "id": "inrichting_punt_vlampijp_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9309,6 +9438,7 @@
       "layout": 
       {
         "icon-image": "vlampijp",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -3
@@ -9316,7 +9446,7 @@
       }
     }, 
     {
-      "id": "inrichting_oliepompinstallatie_10",
+      "id": "inrichting_punt_oliepompinstallatie_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9327,6 +9457,7 @@
       "layout": 
       {
         "icon-image": "oliepompinstallatie",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -3
@@ -9334,7 +9465,7 @@
       }
     }, 
     {
-      "id": "inrichting_radiotelescoop_10",
+      "id": "inrichting_punt_radiotelescoop_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9353,7 +9484,7 @@
       }
     }, 
     {
-      "id": "inrichting_seinmast_10",
+      "id": "inrichting_punt_seinmast_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9364,6 +9495,7 @@
       "layout": 
       {
         "icon-image": "seinmast",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9371,7 +9503,7 @@
       }
     }, 
     {
-      "id": "inrichting_zendmast_10",
+      "id": "inrichting_punt_zendmast_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9382,6 +9514,7 @@
       "layout": 
       {
         "icon-image": "zendmast",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9389,7 +9522,7 @@
       }
     }, 
     {
-      "id": "inrichting_baak_10",
+      "id": "inrichting_punt_baak_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9400,6 +9533,7 @@
       "layout": 
       {
         "icon-image": "baak",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9407,7 +9541,7 @@
       }
     }, 
     {
-      "id": "inrichting_kilometerraaibord_10",
+      "id": "inrichting_punt_kilometerraaibord_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9418,6 +9552,7 @@
       "layout": 
       {
         "icon-image": "kilometerraaibord",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9425,7 +9560,7 @@
       }
     }, 
     {
-      "id": "inrichting_scheepvaartlicht_10",
+      "id": "inrichting_punt_scheepvaartlicht_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9436,6 +9571,7 @@
       "layout": 
       {
         "icon-image": "scheepvaartlicht",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9443,7 +9579,7 @@
       }
     }, 
     {
-      "id": "inrichting_peilschaal",
+      "id": "inrichting_punt_peilschaal",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9454,6 +9590,7 @@
       "layout": 
       {
         "icon-image": "peilschaal",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9461,7 +9598,7 @@
       }
     }, 
     {
-      "id": "inrichting_punt_windmolentje_10",
+      "id": "inrichting_punt_punt_windmolentje_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9472,6 +9609,7 @@
       "layout": 
       {
         "icon-image": "windmotor",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, -5
@@ -9491,6 +9629,7 @@
       "layout": 
       {
         "icon-image": "boom",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9510,6 +9649,7 @@
       "layout": 
       {
         "icon-image": "paal",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9560,6 +9700,7 @@
       "layout": 
       {
         "icon-image": "paal",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9609,6 +9750,7 @@
       "layout": 
       {
         "icon-image": "sneltramhalte",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9627,6 +9769,7 @@
       "layout": 
       {
         "icon-image": "metrostation",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9645,6 +9788,7 @@
       "layout": 
       {
         "icon-image": "treinstation",
+        "icon-allow-overlap": true,
         "icon-offset": 
         [
           0, 0
@@ -9706,7 +9850,8 @@
         [
           0, 0
         ],
-        "symbol-placement": "line"
+        "symbol-placement": "line",
+        "symbol-spacing": 1000.0
       }
     }, 
     {
@@ -9787,7 +9932,7 @@
       }
     }, 
     {
-      "id": "inrichting_hoogspanningsmast_10",
+      "id": "inrichting_punt_hoogspanningsmast_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9805,7 +9950,7 @@
       }
     }, 
     {
-      "id": "inrichting_hoogspanningsleiding_10",
+      "id": "inrichting_lijn_hoogspanningsleiding_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -9847,7 +9992,7 @@
       }
     }, 
     {
-      "id": "inrichting_hoogspanningsleiding_50",
+      "id": "inrichting_lijn_hoogspanningsleiding_50",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top50nl_inrichtingselement_lijn",
@@ -9889,7 +10034,7 @@
       }
     }, 
     {
-      "id": "inrichting_hoogspanningsleiding_100",
+      "id": "inrichting_lijn_hoogspanningsleiding_100",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top100nl_inrichtingselement_lijn",
@@ -9931,7 +10076,7 @@
       }
     }, 
     {
-      "id": "inrichting_hekwerk_paaltjes_10",
+      "id": "inrichting_lijn_hekwerk_paaltjes_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -9951,7 +10096,7 @@
       }
     }, 
     {
-      "id": "inrichting_hekwerk_10",
+      "id": "inrichting_lijn_hekwerk_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -9980,7 +10125,7 @@
       }
     }, 
     {
-      "id": "inrichting_schietbaan_10",
+      "id": "inrichting_lijn_schietbaan_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -10009,7 +10154,7 @@
       }
     }, 
     {
-      "id": "inrichting_kogelvanger_10",
+      "id": "inrichting_punt_kogelvanger_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -10027,7 +10172,7 @@
       }
     }, 
     {
-      "id": "inrichting_muur_10",
+      "id": "inrichting_lijn_muur_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -10056,7 +10201,7 @@
       }
     }, 
     {
-      "id": "inrichting_geluidwering_10",
+      "id": "inrichting_lijn_geluidwering_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -10085,7 +10230,7 @@
       }
     }, 
     {
-      "id": "inrichting_strekdam_10",
+      "id": "inrichting_lijn_strekdam_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -10114,7 +10259,7 @@
       }
     }, 
     {
-      "id": "inrichting_paalwerk_10",
+      "id": "inrichting_lijn_paalwerk_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_lijn",
@@ -10223,11 +10368,10 @@
       }
     }, 
     {
-      "id": "snelweglabelA10",
+      "id": "wegdeel_hartlijn_snelweglabelA_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "typeweg", "autosnelweg"
@@ -10255,11 +10399,10 @@
       }
     }, 
     {
-      "id": "snelweglabelA50",
+      "id": "wegdeel_lijn_snelweglabelA_50",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -10287,11 +10430,10 @@
       }
     }, 
     {
-      "id": "snelweglabelA100",
+      "id": "wegdeel_lijn_snelweglabelA_100",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -10319,11 +10461,10 @@
       }
     }, 
     {
-      "id": "snelweglabelA250",
+      "id": "wegdeel_lijn_snelweglabelA_250",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -10351,7 +10492,7 @@
       }
     }, 
     {
-      "id": "snelweglabelA500",
+      "id": "wegdeel_lijn_snelweglabelA_500",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top500nl_wegdeel_lijn",
@@ -10383,43 +10524,10 @@
       }
     }, 
     {
-      "id": "snelweglabelA1000",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 8.5,
-      "filter": 
-      [
-        "==", "type_weg", "autosnelweg"
-      ],
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 500.0,
-        "text-field": "{awegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(255,255,255)",
-        "text-halo-color": "rgb(255,0,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelE10",
+      "id": "wegdeel_hartlijn_snelweglabelE_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "typeweg", "autosnelweg"
@@ -10447,11 +10555,10 @@
       }
     }, 
     {
-      "id": "snelweglabelE50",
+      "id": "wegdeel_lijn_snelweglabelE_50",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -10479,11 +10586,10 @@
       }
     }, 
     {
-      "id": "snelweglabelE100",
+      "id": "wegdeel_lijn_snelweglabelE_100",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -10511,11 +10617,10 @@
       }
     }, 
     {
-      "id": "snelweglabelE250",
+      "id": "wegdeel_lijn_snelweglabelE_250",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 8.5,
       "filter": 
       [
         "==", "type_weg", "autosnelweg"
@@ -10543,7 +10648,7 @@
       }
     }, 
     {
-      "id": "snelweglabelE500",
+      "id": "wegdeel_lijn_snelweglabelE_500",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top500nl_wegdeel_lijn",
@@ -10575,43 +10680,10 @@
       }
     }, 
     {
-      "id": "snelweglabelE1000",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 8.5,
-      "filter": 
-      [
-        "==", "type_weg", "autosnelweg"
-      ],
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{ewegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(255,255,255)",
-        "text-halo-color": "rgb(0,125,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelN10",
+      "id": "wegdeel_hartlijn_weglabelN_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 10.0,
       "filter": 
       [
         "==", "typeweg", "hoofdweg"
@@ -10639,11 +10711,10 @@
       }
     }, 
     {
-      "id": "snelweglabelN50",
+      "id": "wegdeel_lijn_weglabelN_50",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 10.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -10671,11 +10742,10 @@
       }
     }, 
     {
-      "id": "snelweglabelN100",
+      "id": "wegdeel_lijn_weglabelN_100",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 10.0,
       "filter": 
       [
         "==", "type_weg", "hoofdweg"
@@ -10703,107 +10773,10 @@
       }
     }, 
     {
-      "id": "snelweglabelN250",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 10.0,
-      "filter": 
-      [
-        "==", "type_weg", "hoofdweg"
-      ],
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{nwegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelN500",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top500nl_wegdeel_lijn",
-      "minzoom": 10.0,
-      "filter": 
-      [
-        "==", "type_weg", "hoofdweg"
-      ],
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{nwegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelN1000",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 10.0,
-      "filter": 
-      [
-        "==", "type_weg", "hoofdweg"
-      ],
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{nwegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelS10",
+      "id": "wegdeel_hartlijn_weglabelS_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 10.0,
       "layout": 
       {
         "symbol-placement": "line",
@@ -10827,11 +10800,10 @@
       }
     }, 
     {
-      "id": "snelweglabelS50",
+      "id": "wegdeel_lijn_weglabelS_50",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 10.0,
       "layout": 
       {
         "symbol-placement": "line",
@@ -10855,11 +10827,10 @@
       }
     }, 
     {
-      "id": "snelweglabelS100",
+      "id": "wegdeel_lijn_weglabelS_100",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 10.0,
       "layout": 
       {
         "symbol-placement": "line",
@@ -10883,95 +10854,10 @@
       }
     }, 
     {
-      "id": "snelweglabelS250",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 10.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{swegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelS500",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top500nl_wegdeel_lijn",
-      "minzoom": 10.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{swegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "snelweglabelS1000",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 10.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "symbol-spacing": 450.0,
-        "text-field": "{swegnummer}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
-      }
-    }, 
-    {
-      "id": "afritnummer10",
+      "id": "wegdeel_hartlijn_afritnummer_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 10.0,
       "layout": 
       {
         "text-field": "{afritnummer}",
@@ -10992,11 +10878,10 @@
       }
     }, 
     {
-      "id": "afritnummer50",
+      "id": "wegdeel_lijn_afritnummer_50",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 10.0,
       "layout": 
       {
         "text-field": "{afritnummer}",
@@ -11017,11 +10902,10 @@
       }
     }, 
     {
-      "id": "wegdeel_lijn_straatnaam10",
+      "id": "wegdeel_lijn_straatnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
-      "minzoom": 13.0,
       "layout": 
       {
         "symbol-placement": "line",
@@ -11044,142 +10928,7 @@
       }
     }, 
     {
-      "id": "wegdeel_lijn_straatnaam50",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top50nl_wegdeel_lijn",
-      "minzoom": 13.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "text-field": "{nederlandse_straatnaam}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 2.0,
-        "text-halo-blur": 2.0
-      }
-    }, 
-    {
-      "id": "wegdeel_lijn_straatnaam100",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top100nl_wegdeel_lijn",
-      "minzoom": 13.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "text-field": "{nederlandse_straatnaam}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 2.0,
-        "text-halo-blur": 2.0
-      }
-    }, 
-    {
-      "id": "wegdeel_lijn_straatnaam250",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_wegdeel_lijn",
-      "minzoom": 13.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "text-field": "{naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 2.0,
-        "text-halo-blur": 2.0
-      }
-    }, 
-    {
-      "id": "wegdeel_lijn_straatnaam500",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top500nl_wegdeel_lijn",
-      "minzoom": 13.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "text-field": "{naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 2.0,
-        "text-halo-blur": 2.0
-      }
-    }, 
-    {
-      "id": "wegdeel_lijn_straatnaam1000",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_wegdeel_lijn",
-      "minzoom": 13.0,
-      "layout": 
-      {
-        "symbol-placement": "line",
-        "symbol-avoid-edges": true,
-        "text-field": "{naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 2.0,
-        "text-halo-blur": 2.0
-      }
-    }, 
-    {
-      "id": "plaats_vlak_stadsnaam10",
+      "id": "plaats_vlak_stadsnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_vlak",
@@ -11231,7 +10980,7 @@
       }
     }, 
     {
-      "id": "plaats_multivlak_stadsnaam10",
+      "id": "plaats_multivlak_stadsnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_multivlak",
@@ -11283,7 +11032,7 @@
       }
     }, 
     {
-      "id": "plaats_vlak_dorpsnaam10",
+      "id": "plaats_vlak_dorpsnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_vlak",
@@ -11334,7 +11083,7 @@
       }
     }, 
     {
-      "id": "plaats_multivlak_dorpsnaam10",
+      "id": "plaats_multivlak_dorpsnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_multivlak",
@@ -11385,7 +11134,7 @@
       }
     }, 
     {
-      "id": "plaats_punt_stadsnaam250",
+      "id": "plaats_punt_stadsnaam_250",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top250nl_plaats_punt",
@@ -11414,7 +11163,7 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam250",
+      "id": "plaats_vlak_stadsnaam_250",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top250nl_plaats_vlak",
@@ -11443,7 +11192,7 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam500",
+      "id": "plaats_vlak_stadsnaam_500",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top500nl_plaats_vlak",
@@ -11472,7 +11221,7 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam1000",
+      "id": "plaats_vlak_stadsnaam_1000",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top1000nl_plaats_vlak",
@@ -11501,11 +11250,10 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_waternaam",
+      "id": "waterdeel_vlak_waternaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_geografisch_gebied_vlak",
-      "minzoom": 7.0,
       "filter": 
       [
         "in", "typegeografischgebied", "watergebied", "bank, ondiepte, plaat", "geul, vaargeul"
@@ -11515,7 +11263,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-size": 
         {
@@ -11546,11 +11294,54 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_plasnaam",
+      "id": "waterdeel_vlak_waterloopnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_waterdeel_vlak",
-      "minzoom": 7.0,
+      "filter": 
+      [
+        "in", "typewater", "waterloop"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 10
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,255)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "waterdeel_vlak_plasnaam_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_waterdeel_vlak",
       "filter": 
       [
         "in", "typewater", "meer, plas"
@@ -11560,7 +11351,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-size": 
         {
@@ -11591,17 +11382,16 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_gebouwnaam",
+      "id": "gebouw_vlak_gebouwnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 15.0,
       "layout": 
       {
         "text-field": "{naam}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-size": 
         {
@@ -11632,11 +11422,10 @@
       }
     }, 
     {
-      "id": "geografisch_vlak_bosnaam",
+      "id": "geografisch_vlak_bosnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_geografisch_gebied_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegeografischgebied", "bosgebied"
@@ -11646,7 +11435,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-size": 
         {
@@ -11655,10 +11444,10 @@
           [
             
             [
-              7, 12
+              7, 14
             ], 
             [
-              11, 16
+              11, 20
             ]
           ]
         },
@@ -11677,11 +11466,10 @@
       }
     }, 
     {
-      "id": "geografisch_vlak_veldnaam",
+      "id": "geografisch_vlak_veldnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_geografisch_gebied_vlak",
-      "minzoom": 14.0,
       "filter": 
       [
         "in", "typegeografischgebied", "streek, veld"
@@ -11691,7 +11479,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-size": 
         {
@@ -11700,10 +11488,10 @@
           [
             
             [
-              7, 12
+              7, 14
             ], 
             [
-              11, 16
+              11, 20
             ]
           ]
         },
@@ -11722,11 +11510,10 @@
       }
     }, 
     {
-      "id": "geografisch_vlak_heidenaam",
+      "id": "geografisch_vlak_heidenaam_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_geografisch_gebied_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "in", "typegeografischgebied", "heidegebied"
@@ -11736,7 +11523,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-size": 
         {
@@ -11745,10 +11532,10 @@
           [
             
             [
-              7, 12
+              7, 14
             ], 
             [
-              11, 16
+              11, 20
             ]
           ]
         },
@@ -11767,17 +11554,16 @@
       }
     }, 
     {
-      "id": "functioneelgebied_punt_divers",
+      "id": "functioneelgebied_punt_divers_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_punt",
-      "minzoom": 13.0,
       "layout": 
       {
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-line-height": 1.5,
         "text-size": 12.0,
@@ -11795,11 +11581,10 @@
       }
     }, 
     {
-      "id": "functioneelgebied_vlak_divers",
+      "id": "functioneelgebied_vlak_divers_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "!in", "typefunctioneelgebied", "sluizencomplex"
@@ -11809,7 +11594,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-line-height": 1.5,
         "text-size": 12.0,
@@ -11827,11 +11612,10 @@
       }
     }, 
     {
-      "id": "functioneelgebied_multivlak_divers",
+      "id": "functioneelgebied_multivlak_divers_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_multivlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "!in", "typefunctioneelgebied", "sluizencomplex"
@@ -11841,7 +11625,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-line-height": 1.5,
         "text-size": 12.0,
@@ -11863,7 +11647,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typefunctioneelgebied", "sluizencomplex"
@@ -11873,7 +11656,7 @@
         "text-field": "{naamnl} Sch sl",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-line-height": 1.5,
         "text-size": 12.0,
@@ -11895,7 +11678,6 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_multivlak",
-      "minzoom": 13.0,
       "filter": 
       [
         "==", "typefunctioneelgebied", "sluizencomplex"
@@ -11905,7 +11687,7 @@
         "text-field": "{naamnl} Sch sl",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansItalic"
         ],
         "text-line-height": 1.5,
         "text-size": 12.0,
@@ -11923,249 +11705,73 @@
       }
     }, 
     {
-      "id": "registratief_prov_multivlak10",
+      "id": "functioneelgebied_valk_grafheuvel_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_vlak",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "grafheuvel"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 1.0,
+        "line-opacity": 0.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_valk_grafheuvel_text_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_vlak",
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "grafheuvel"
+      ],
+      "layout": 
+      {
+        "text-field": "Grafheuvel",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 1
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "registratief_multivlak_land_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_registratief_gebied_multivlak",
-      "filter": 
-      [
-        "==", "typeregistratiefgebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_prov_vlak10",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_registratief_gebied_vlak",
-      "filter": 
-      [
-        "==", "typeregistratiefgebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_prov_vlak50",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top50nl_registratief_gebied_vlak",
-      "filter": 
-      [
-        "==", "type_registratief_gebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_prov_vlak100",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top100nl_registratief_gebied_vlak",
-      "filter": 
-      [
-        "==", "type_registratief_gebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_prov_vlak250",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_registratief_gebied_vlak",
-      "filter": 
-      [
-        "==", "type_regigebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_prov_vlak500",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top500nl_registratief_gebied_vlak",
-      "filter": 
-      [
-        "==", "type_regigebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_prov_vlak1000",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top1000nl_registratief_gebied_vlak",
-      "filter": 
-      [
-        "==", "type_regigebied", "provincie"
-      ],
-      "layout": 
-      {
-        "line-cap": "round",
-        "line-join": "miter"
-      },
-      "paint": 
-      {
-        "line-color": "rgb(100,100,100)",
-        "line-width": 
-        [
-          "interpolate", 
-          [
-            "exponential", 1.5
-          ], 
-          [
-            "zoom"
-          ], 1, 1, 20, 6
-        ],
-        "line-dasharray": 
-        [
-          5, 3, 1, 3
-        ]
-      }
-    }, 
-    {
-      "id": "registratief_land_multivlak10",
-      "type": "line",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_registratief_gebied_multivlak",
+      "minzoom": 1.0,
+      "maxzoom": 8.0,
       "filter": 
       [
         "==", "typeregistratiefgebied", "land"
       ],
       "layout": 
       {
-        "line-cap": "round",
-        "line-join": "miter"
+        "line-cap": "butt",
+        "line-join": "bevel"
       },
       "paint": 
       {
@@ -12174,31 +11780,33 @@
         [
           "interpolate", 
           [
-            "exponential", 2
+            "exponential", 1.3
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 9
+          ], 1, 1, 22, 20
         ],
         "line-dasharray": 
         [
-          5, 3, 1, 3
+          8, 2, 2, 2
         ]
       }
     }, 
     {
-      "id": "registratief_land_vlak50",
+      "id": "registratief_vlak_land_50",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top50nl_registratief_gebied_vlak",
+      "minzoom": 1.0,
+      "maxzoom": 8.0,
       "filter": 
       [
         "==", "type_registratief_gebied", "land"
       ],
       "layout": 
       {
-        "line-cap": "round",
-        "line-join": "miter"
+        "line-cap": "butt",
+        "line-join": "bevel"
       },
       "paint": 
       {
@@ -12207,31 +11815,33 @@
         [
           "interpolate", 
           [
-            "exponential", 2
+            "exponential", 1.3
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 9
+          ], 1, 1, 22, 20
         ],
         "line-dasharray": 
         [
-          5, 3, 1, 3
+          8, 2, 2, 2
         ]
       }
     }, 
     {
-      "id": "registratief_land_vlak100",
+      "id": "registratief_valk_land_100",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top100nl_registratief_gebied_vlak",
+      "minzoom": 1.0,
+      "maxzoom": 8.0,
       "filter": 
       [
         "==", "type_registratief_gebied", "land"
       ],
       "layout": 
       {
-        "line-cap": "round",
-        "line-join": "miter"
+        "line-cap": "butt",
+        "line-join": "bevel"
       },
       "paint": 
       {
@@ -12240,31 +11850,33 @@
         [
           "interpolate", 
           [
-            "exponential", 2
+            "exponential", 1.3
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 9
+          ], 1, 1, 22, 20
         ],
         "line-dasharray": 
         [
-          5, 3, 1, 3
+          8, 2, 2, 2
         ]
       }
     }, 
     {
-      "id": "registratief_land_vlak250",
+      "id": "registratief_vlak_land_250",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top250nl_registratief_gebied_vlak",
+      "minzoom": 1.0,
+      "maxzoom": 8.0,
       "filter": 
       [
         "==", "type_regigebied", "land"
       ],
       "layout": 
       {
-        "line-cap": "round",
-        "line-join": "miter"
+        "line-cap": "butt",
+        "line-join": "bevel"
       },
       "paint": 
       {
@@ -12273,31 +11885,33 @@
         [
           "interpolate", 
           [
-            "exponential", 2
+            "exponential", 1.3
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 9
+          ], 1, 1, 22, 20
         ],
         "line-dasharray": 
         [
-          5, 3, 1, 3
+          8, 2, 2, 2
         ]
       }
     }, 
     {
-      "id": "registratief_land_vlak500",
+      "id": "registratief_vlak_land_500",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top500nl_registratief_gebied_vlak",
+      "minzoom": 1.0,
+      "maxzoom": 8.0,
       "filter": 
       [
         "==", "type_regigebied", "land"
       ],
       "layout": 
       {
-        "line-cap": "round",
-        "line-join": "miter"
+        "line-cap": "butt",
+        "line-join": "bevel"
       },
       "paint": 
       {
@@ -12306,31 +11920,33 @@
         [
           "interpolate", 
           [
-            "exponential", 2
+            "exponential", 1.3
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 9
+          ], 1, 1, 22, 20
         ],
         "line-dasharray": 
         [
-          5, 3, 1, 3
+          8, 2, 2, 2
         ]
       }
     }, 
     {
-      "id": "registratief_land_vlak1000",
+      "id": "registratief_vlak_land_1000",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top1000nl_registratief_gebied_vlak",
+      "minzoom": 1.0,
+      "maxzoom": 8.0,
       "filter": 
       [
         "==", "type_regigebied", "land"
       ],
       "layout": 
       {
-        "line-cap": "round",
-        "line-join": "miter"
+        "line-cap": "butt",
+        "line-join": "bevel"
       },
       "paint": 
       {
@@ -12339,15 +11955,645 @@
         [
           "interpolate", 
           [
-            "exponential", 2
+            "exponential", 1.3
           ], 
           [
             "zoom"
-          ], 1, 1, 20, 9
+          ], 1, 1, 22, 20
         ],
         "line-dasharray": 
         [
-          5, 3, 1, 3
+          8, 2, 2, 2
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_multivlak_prov_longdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_multivlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_multivlak_prov_shortdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_multivlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_longdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_shortdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_longdash_50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_registratief_gebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_shortdash_50",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top50nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_registratief_gebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_longdash_100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_registratief_gebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_shortdash_100",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top100nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_registratief_gebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_longdash_250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_regigebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_shortdash_250",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_regigebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_longdash_500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_regigebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_shortdash_500",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_regigebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_longdash_1000",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_regigebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          8, 6
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_prov_shortdash_1000",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_registratief_gebied_vlak",
+      "minzoom": 8.0,
+      "maxzoom": 13.0,
+      "filter": 
+      [
+        "==", "type_regigebied", "provincie"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 10, 2, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_multivlak_gemeente_longdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_multivlak",
+      "minzoom": 13.0,
+      "maxzoom": 22.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "gemeente"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          4, 8
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_multivlak_gemeente_shortdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_multivlak",
+      "minzoom": 13.0,
+      "maxzoom": 22.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "gemeente"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 6, 4, 1.99
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_gemeente_longdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_vlak",
+      "minzoom": 13.0,
+      "maxzoom": 22.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "gemeente"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          4, 8
+        ]
+      }
+    }, 
+    {
+      "id": "registratief_vlak_gemeente_shortdash_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_registratief_gebied_vlak",
+      "minzoom": 13.0,
+      "maxzoom": 22.0,
+      "filter": 
+      [
+        "==", "typeregistratiefgebied", "gemeente"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(200,188,36)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.3
+          ], 
+          [
+            "zoom"
+          ], 1, 1, 22, 20
+        ],
+        "line-dasharray": 
+        [
+          0.01, 6, 4, 1.99
         ]
       }
     }
