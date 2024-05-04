@@ -36,11 +36,11 @@ echo 5 - InrichtingsElement
 ogr2ogr -update -f GPKG -select naam,type_element,soortnaam ..\maps\merged_gpkg\merge0250.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_inrichtingselement_punt
 ogr2ogr -update -f GPKG -select naam,type_element,soortnaam ..\maps\merged_gpkg\merge0250.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_inrichtingselement_lijn
 echo 6 - Plaats
-ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0250.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_punt
-ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0250.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_vlak
+ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied,aantal_inwoners ..\maps\merged_gpkg\merge0250.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_punt
+ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied,aantal_inwoners ..\maps\merged_gpkg\merge0250.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_vlak
 REM Also merge to separate files to be used to compensate for the fact that plaats is missing in top50nl and top100nl
-ogr2ogr         -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0250_plaats.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_punt
-ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0250_plaats.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_vlak
+ogr2ogr         -f GPKG -select nederlandse_naam,naam_officieel,type_gebied,aantal_inwoners ..\maps\merged_gpkg\merge0250_plaats.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_punt
+ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied,aantal_inwoners ..\maps\merged_gpkg\merge0250_plaats.gpkg ..\maps\gpkg\top250nl_Compleet.gpkg top250nl_plaats_vlak
 echo 7 - Plantopografie
 REM Missing!
 echo 8 - RegistratiefGebied

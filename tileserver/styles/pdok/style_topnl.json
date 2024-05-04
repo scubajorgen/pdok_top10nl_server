@@ -667,6 +667,37 @@
       }
     }, 
     {
+      "id": "plaats_vlak_bebouwdgebied_250",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_vlak",
+      "paint": 
+      {
+        "fill-color": "rgb(160,160,160)"
+      }
+    }, 
+    {
+      "id": "plaats_vlak_bebouwdgebied_500",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_plaats_vlak",
+      "paint": 
+      {
+        "fill-color": "rgb(160,160,160)"
+      }
+    }, 
+    {
+      "id": "plaats_vlak_bebouwdgebied_1000",
+      "type": "fill",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_plaats_vlak",
+      "minzoom": 6.0,
+      "paint": 
+      {
+        "fill-color": "rgb(160,160,160)"
+      }
+    }, 
+    {
       "id": "terrein_vlak_spoorbaanlichaam_10",
       "type": "fill",
       "source": "brt_topnl",
@@ -1317,7 +1348,7 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_met_riet_10",
+      "id": "waterdeel_vlak_water_met_riet_10",
       "type": "fill",
       "source": "brt_topnl",
       "source-layer": "top10nl_waterdeel_vlak",
@@ -1442,7 +1473,19 @@
       "source-layer": "top10nl_waterdeel_lijn",
       "filter": 
       [
-        "==", "fysiekvoorkomen", "in duiker"
+        "any", 
+        [
+          "==", "fysiekvoorkomen", "in duiker"
+        ], 
+        [
+          "==", "fysiekvoorkomen", "in afsluitbare duiker"
+        ], 
+        [
+          "==", "fysiekvoorkomen", "in afsluitbare grondduiker"
+        ], 
+        [
+          "==", "fysiekvoorkomen", "in grondduiker"
+        ]
       ],
       "layout": 
       {
@@ -9579,7 +9622,7 @@
       }
     }, 
     {
-      "id": "inrichting_punt_peilschaal",
+      "id": "inrichting_punt_peilschaal_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9598,7 +9641,7 @@
       }
     }, 
     {
-      "id": "inrichting_punt_punt_windmolentje_10",
+      "id": "inrichting_punt_windmotor_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_inrichtingselement_punt",
@@ -9914,6 +9957,35 @@
       "layout": 
       {
         "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 10, 1.5, 20, 15
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_wegafsluiting_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "wegafsluiting"
+      ],
+      "layout": 
+      {
+        "line-cap": "butt",
         "line-join": "miter"
       },
       "paint": 
@@ -10292,7 +10364,106 @@
       }
     }, 
     {
-      "id": "functioneelgebied_vlak_kampeerterrein",
+      "id": "inrichting_lijn_bomenrij_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "bomenrij"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 13, 1, 20, 7
+        ],
+        "line-dasharray": 
+        [
+          0.01, 12
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_heghaag_smalldots_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "heg, haag"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 13, 1, 20, 7
+        ],
+        "line-dasharray": 
+        [
+          0.01, 12
+        ]
+      }
+    }, 
+    {
+      "id": "inrichting_lijn_heghaag_largedots_10",
+      "type": "line",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_lijn",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "heg, haag"
+      ],
+      "layout": 
+      {
+        "line-cap": "round",
+        "line-join": "miter"
+      },
+      "paint": 
+      {
+        "line-color": "rgb(0,0,0)",
+        "line-width": 
+        [
+          "interpolate", 
+          [
+            "exponential", 1.5
+          ], 
+          [
+            "zoom"
+          ], 13, 0.5, 20, 3.5
+        ],
+        "line-dasharray": 
+        [
+          0.02, 7.98
+        ]
+      }
+    }, 
+    {
+      "id": "functioneelgebied_vlak_kampeerterrein_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
@@ -10311,7 +10482,7 @@
       }
     }, 
     {
-      "id": "functioneelgebied_multivlak_kampeerterrein",
+      "id": "functioneelgebied_multivlak_kampeerterrein_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_multivlak",
@@ -10330,7 +10501,7 @@
       }
     }, 
     {
-      "id": "functioneelgebied_vlak_ziekenhuiscomplex",
+      "id": "functioneelgebied_vlak_ziekenhuiscomplex_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
@@ -10349,7 +10520,7 @@
       }
     }, 
     {
-      "id": "functioneelgebied_multivlak_ziekenhuiscomplex",
+      "id": "functioneelgebied_multivlak_ziekenhuiscomplex_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_multivlak",
@@ -10360,6 +10531,44 @@
       "layout": 
       {
         "icon-image": "ziekenhuis",
+        "icon-allow-overlap": true,
+        "icon-offset": 
+        [
+          0, 0
+        ]
+      }
+    }, 
+    {
+      "id": "functioneelgebied_vlak_sportcomplex_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_vlak",
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "sportterrein, sportcomplex"
+      ],
+      "layout": 
+      {
+        "icon-image": "sportcomplex",
+        "icon-allow-overlap": true,
+        "icon-offset": 
+        [
+          0, 0
+        ]
+      }
+    }, 
+    {
+      "id": "functioneelgebied_multivlak_sportcomplex_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_multivlak",
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "sportterrein, sportcomplex"
+      ],
+      "layout": 
+      {
+        "icon-image": "sportcomplex",
         "icon-allow-overlap": true,
         "icon-offset": 
         [
@@ -10902,6 +11111,36 @@
       }
     }, 
     {
+      "id": "wegdeel_lijn_aantalrijstroken_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_wegdeel_hartlijn",
+      "filter": 
+      [
+        ">", "aantalrijstroken", 0
+      ],
+      "layout": 
+      {
+        "icon-image": "rijstroken",
+        "symbol-placement": "line",
+        "symbol-spacing": 450.0,
+        "text-field": "{aantalrijstroken}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,100)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
       "id": "wegdeel_lijn_straatnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
@@ -10928,11 +11167,10 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam_10",
+      "id": "plaats_vlak_plaatsnaam_100k_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_vlak",
-      "minzoom": 7.0,
       "filter": 
       [
         "all", 
@@ -10948,7 +11186,7 @@
         "text-field": "{naamofficieel}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
         "text-transform": "uppercase",
         "text-size": 
@@ -10958,10 +11196,10 @@
           [
             
             [
-              7, 18
+              6, 10.0
             ], 
             [
-              11, 24
+              20, 100.0
             ]
           ]
         },
@@ -10974,17 +11212,16 @@
       },
       "paint": 
       {
-        "text-color": "rgb(51, 51, 51)",
+        "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
     }, 
     {
-      "id": "plaats_multivlak_stadsnaam_10",
+      "id": "plaats_multivlak_plaatsnaam_100k_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_multivlak",
-      "minzoom": 7.0,
       "filter": 
       [
         "all", 
@@ -11000,7 +11237,7 @@
         "text-field": "{naamnl}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
         "text-transform": "uppercase",
         "text-size": 
@@ -11010,10 +11247,10 @@
           [
             
             [
-              7, 18
+              6, 10.0
             ], 
             [
-              11, 24
+              20, 100.0
             ]
           ]
         },
@@ -11026,17 +11263,16 @@
       },
       "paint": 
       {
-        "text-color": "rgb(51, 51, 51)",
+        "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
     }, 
     {
-      "id": "plaats_vlak_dorpsnaam_10",
+      "id": "plaats_vlak_plaatsnaam_25k_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_vlak",
-      "minzoom": 7.0,
       "filter": 
       [
         "all", 
@@ -11044,16 +11280,20 @@
           "==", "typegebied", "woonkern"
         ], 
         [
+          ">=", "aantalinwoners", 25000
+        ], 
+        [
           "<", "aantalinwoners", 100000
         ]
       ],
       "layout": 
       {
-        "text-field": "{naamnl}",
+        "text-field": "{naamofficieel}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
+        "text-transform": "uppercase",
         "text-size": 
         {
           "base": 1.2,
@@ -11061,10 +11301,10 @@
           [
             
             [
-              7, 12
+              6, 8.1
             ], 
             [
-              11, 16
+              20, 80.8
             ]
           ]
         },
@@ -11077,17 +11317,16 @@
       },
       "paint": 
       {
-        "text-color": "rgb(51, 51, 51)",
+        "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
     }, 
     {
-      "id": "plaats_multivlak_dorpsnaam_10",
+      "id": "plaats_multivlak_plaatsnaam_25k_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_plaats_multivlak",
-      "minzoom": 7.0,
       "filter": 
       [
         "all", 
@@ -11095,7 +11334,330 @@
           "==", "typegebied", "woonkern"
         ], 
         [
+          ">=", "aantalinwoners", 25000
+        ], 
+        [
           "<", "aantalinwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 8.1
+            ], 
+            [
+              20, 80.8
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_plaatsnaam_5k_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typegebied", "woonkern"
+        ], 
+        [
+          ">=", "aantalinwoners", 5000
+        ], 
+        [
+          "<", "aantalinwoners", 25000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamofficieel}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 6.9
+            ], 
+            [
+              20, 69.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_multivlak_plaatsnaam_5k_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_multivlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typegebied", "woonkern"
+        ], 
+        [
+          ">=", "aantalinwoners", 5000
+        ], 
+        [
+          "<", "aantalinwoners", 25000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 6.9
+            ], 
+            [
+              20, 69.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_plaatsnaam_1k_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 1000
+        ], 
+        [
+          "<", "aantal_inwoners", 5000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamofficieel}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 5.4
+            ], 
+            [
+              20, 53.8
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_multivlak_plaatsnaam_1k_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_multivlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 1000
+        ], 
+        [
+          "<", "aantal_inwoners", 5000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 5.4
+            ], 
+            [
+              20, 53.8
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_plaatsnaam_250_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typegebied", "woonkern"
+        ], 
+        [
+          ">=", "aantalinwoners", 250
+        ], 
+        [
+          "<", "aantalinwoners", 1000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamofficieel}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 4.6
+            ], 
+            [
+              20, 46.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_multivlak_plaatsnaam_250_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_multivlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typegebied", "woonkern"
+        ], 
+        [
+          ">=", "aantalinwoners", 250
+        ], 
+        [
+          "<", "aantalinwoners", 1000
         ]
       ],
       "layout": 
@@ -11112,10 +11674,161 @@
           [
             
             [
-              7, 12
+              6, 4.6
             ], 
             [
-              11, 16
+              20, 46.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_plaatsnaam_0_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typegebied", "woonkern"
+        ], 
+        [
+          "<", "aantalinwoners", 250
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamofficieel}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 3.7
+            ], 
+            [
+              20, 36.5
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_multivlak_plaatsnaam_0_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_plaats_multivlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "typegebied", "woonkern"
+        ], 
+        [
+          "<", "aantalinwoners", 250
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 3.7
+            ], 
+            [
+              20, 36.5
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_punt_stadsnaam_100k_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_punt",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 10.0
+            ], 
+            [
+              20, 100.0
             ]
           ]
         },
@@ -11134,20 +11847,313 @@
       }
     }, 
     {
-      "id": "plaats_punt_stadsnaam_250",
+      "id": "plaats_vlak_stadsnaam_100k_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 10.0
+            ], 
+            [
+              20, 100.0
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_punt_stadsnaam_25k_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_punt",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 25000
+        ], 
+        [
+          "<", "aantal_inwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 8.1
+            ], 
+            [
+              20, 80.8
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_25k_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 25000
+        ], 
+        [
+          "<", "aantal_inwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 8.1
+            ], 
+            [
+              20, 80.8
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_punt_stadsnaam_5k_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_punt",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 5000
+        ], 
+        [
+          "<", "aantal_inwoners", 25000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 6.9
+            ], 
+            [
+              20, 69.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_5k_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 5000
+        ], 
+        [
+          "<", "aantal_inwoners", 25000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 6.9
+            ], 
+            [
+              20, 69.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_punt_stadsnaam_1k_250",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top250nl_plaats_punt",
       "minzoom": 10.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 1000
+        ], 
+        [
+          "<", "aantal_inwoners", 5000
+        ]
+      ],
       "layout": 
       {
         "text-field": "{nederlandse_naam}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
         "text-transform": "uppercase",
-        "text-size": 10.0,
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 5.4
+            ], 
+            [
+              20, 53.8
+            ]
+          ]
+        },
         "text-offset": 
         [
           0, 0
@@ -11163,20 +12169,46 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam_250",
+      "id": "plaats_vlak_stadsnaam_1k_250",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top250nl_plaats_vlak",
-      "minzoom": 7.0,
+      "minzoom": 10.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 1000
+        ], 
+        [
+          "<", "aantal_inwoners", 5000
+        ]
+      ],
       "layout": 
       {
         "text-field": "{nederlandse_naam}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
         "text-transform": "uppercase",
-        "text-size": 10.0,
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 5.4
+            ], 
+            [
+              20, 53.8
+            ]
+          ]
+        },
         "text-offset": 
         [
           0, 0
@@ -11192,20 +12224,150 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam_500",
+      "id": "plaats_punt_stadsnaam_250_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_punt",
+      "minzoom": 10.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 250
+        ], 
+        [
+          "<", "aantal_inwoners", 1000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 4.6
+            ], 
+            [
+              20, 46.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_250_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_plaats_vlak",
+      "minzoom": 10.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 250
+        ], 
+        [
+          "<", "aantal_inwoners", 1000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 4.6
+            ], 
+            [
+              20, 46.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_100k_500",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top500nl_plaats_vlak",
-      "minzoom": 7.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 100000
+        ]
+      ],
       "layout": 
       {
         "text-field": "{nederlandse_naam}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
         "text-transform": "uppercase",
-        "text-size": 10.0,
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 10.0
+            ], 
+            [
+              20, 100.0
+            ]
+          ]
+        },
         "text-offset": 
         [
           0, 0
@@ -11221,20 +12383,45 @@
       }
     }, 
     {
-      "id": "plaats_vlak_stadsnaam_1000",
+      "id": "plaats_vlak_stadsnaam_25k_500",
       "type": "symbol",
       "source": "brt_topnl",
-      "source-layer": "top1000nl_plaats_vlak",
-      "minzoom": 7.0,
+      "source-layer": "top500nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 25000
+        ], 
+        [
+          "<", "aantal_inwoners", 100000
+        ]
+      ],
       "layout": 
       {
         "text-field": "{nederlandse_naam}",
         "text-font": 
         [
-          "pdok_OpenSansRegular"
+          "pdok_OpenSansSemibold"
         ],
         "text-transform": "uppercase",
-        "text-size": 10.0,
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 8.1
+            ], 
+            [
+              20, 80.8
+            ]
+          ]
+        },
         "text-offset": 
         [
           0, 0
@@ -11245,6 +12432,167 @@
       "paint": 
       {
         "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_5k_500",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top500nl_plaats_vlak",
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 5000
+        ], 
+        [
+          "<", "aantal_inwoners", 25000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 6.9
+            ], 
+            [
+              20, 69.2
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(51, 51, 51)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_100k_1000",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_plaats_vlak",
+      "minzoom": 6.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 10.0
+            ], 
+            [
+              20, 100.0
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "plaats_vlak_stadsnaam_25k_1000",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top1000nl_plaats_vlak",
+      "minzoom": 6.0,
+      "filter": 
+      [
+        "all", 
+        [
+          "==", "type_gebied", "woonkern"
+        ], 
+        [
+          ">=", "aantal_inwoners", 25000
+        ], 
+        [
+          "<", "aantal_inwoners", 100000
+        ]
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansSemibold"
+        ],
+        "text-transform": "uppercase",
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              6, 8.1
+            ], 
+            [
+              20, 80.8
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
@@ -11265,24 +12613,7 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0
-        ],
+        "text-size": 10.0,
         "text-anchor": "bottom",
         "text-max-width": 8.0
       },
@@ -11304,29 +12635,13 @@
       ],
       "layout": 
       {
+        "symbol-placement": "line",
         "text-field": "{naamnl}",
         "text-font": 
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0
-        ],
+        "text-size": 10.0,
         "text-anchor": "bottom",
         "text-max-width": 8.0
       },
@@ -11353,64 +12668,7 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0
-        ],
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,255)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "gebouw_vlak_gebouwnaam_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_gebouw_vlak",
-      "layout": 
-      {
-        "text-field": "{naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 3
-        ],
+        "text-size": 10.0,
         "text-anchor": "bottom",
         "text-max-width": 8.0
       },
@@ -11437,24 +12695,7 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 14
-            ], 
-            [
-              11, 20
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0
-        ],
+        "text-size": 16.0,
         "text-anchor": "bottom",
         "text-max-width": 8.0
       },
@@ -11481,24 +12722,7 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 14
-            ], 
-            [
-              11, 20
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0
-        ],
+        "text-size": 16.0,
         "text-anchor": "bottom",
         "text-max-width": 8.0
       },
@@ -11525,30 +12749,36 @@
         [
           "pdok_OpenSansItalic"
         ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 14
-            ], 
-            [
-              11, 20
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0
-        ],
+        "text-size": 16.0,
         "text-anchor": "bottom",
         "text-max-width": 8.0
       },
       "paint": 
       {
-        "text-color": "rgb(0,100,0)",
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "gebouw_vlak_gebouwnaam_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_gebouw_vlak",
+      "layout": 
+      {
+        "text-field": "{naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 10.0,
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,255)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
@@ -11705,7 +12935,100 @@
       }
     }, 
     {
-      "id": "functioneelgebied_valk_grafheuvel_10",
+      "id": "waterdeel_lijn_duiker_afsluitbaar_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_waterdeel_lijn",
+      "filter": 
+      [
+        "==", "fysiekvoorkomen", "in afsluitbare duiker"
+      ],
+      "layout": 
+      {
+        "text-field": "Sl",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 1
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "waterdeel_lijn_duiker_grond_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_waterdeel_lijn",
+      "filter": 
+      [
+        "==", "fysiekvoorkomen", "in grondduiker"
+      ],
+      "layout": 
+      {
+        "text-field": "Gd",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 1
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "waterdeel_lijn_duiker_afsluitbaargrond_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_waterdeel_lijn",
+      "filter": 
+      [
+        "==", "fysiekvoorkomen", "in afsluitbare grondduiker"
+      ],
+      "layout": 
+      {
+        "text-field": "Sl Gd",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 1
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_vlak_grafheuvel_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
@@ -11727,7 +13050,7 @@
       }
     }, 
     {
-      "id": "functioneelgebied_valk_grafheuvel_text_10",
+      "id": "functioneelgebied_vlak_grafheuvel_text_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",

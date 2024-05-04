@@ -82,6 +82,10 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 * Water with ```functie``` 'vloeiveld' has a dark blue outline color, like 'waterzuivering' has a red outline color
 * Roads and runways with ```status``` 'buiten gebruik' have a dashed red casing, long dashes ('in uitvoering' are black long dashes). For example airport
 * Also for the ```typeinrichtingselement```'kilometerpaal' (road) the value is shown, like for 'kilometerpaal spoorweg' and 'kilometerpaal water'
+* When zooming in on ```typefunctioneelgebied``` 'Grafheuvel', it is shown as a circle
+* Colors are used for labels: blue for water, pink for 'heidegebied', green for 'bosgebied' and 'streek, veld', dark blue for 'gebouw' and 'inrichting' 
+* A slight distinction is made between 'straat' (blue casing) and 'overige weg' (gray casing)
+* On airports the 'startbaan' and 'rollerbaan' are drawn
 
 ### Deviations
 * We don't have roads with separate lanes on higher scales ('gescheiden rijbanen'). Zooming in to scale 1:10.000 shows lanes seperately.
@@ -89,22 +93,19 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 * ```typelandgebruik``` 'Overig' is white with red dots
 * ```typelandgebruik``` 'Spoorbaanlichaam' is grey i.s.o. white
 * Roads in tunnels are drawn dashed, including the interior; on the legend only outline are dashed, no interior is drawn
-* Aquaducts are shown conform the legend: 
+* Aquaducts are shown conform the legend: however on TopRaster the road outlines are shown under the water, whereas in the legend they are not
+* Duikers with ```fysiekvoorkomen``` 'in afsluitbare grondduiker' are shown with the text 'Sl Gd', whereas on TopRaster they are indicated with 'Gd'. No specifics in Legend.
 
 ### Issues
 * Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain...
-* Only GPS kernnetpunt, not plain white RD points... (not found yet)
+* Only GPS kernnetpunt, not plain white RD points... (not found yet, not in the data, not on TopRaster)
 * ```typeinrichtingselement``` 'stuw' (small ones; points; grey rectangle) are not aligned to waterway
 * Issue: ```typeweg``` 'hoofdweg' on ```fysiekvoorkomen```'op beweegbaar deel van brug' not drawn at #17/53.226297/6.612613 whereas it is shown on raster maps; unclear why
 * 'Land' (Country), 'Provincie' (Province) and 'Gemeente' (County) borders overlap. If all are drawn this messes things up. It does not appear to be possible to give a hierarchy or priority which to draw when they overlap. Therefore at zoom levels 1.00-7.99 'Land' borders are drawn, form 8.00-12.99 'Provincie' borders and from 13.00-21.99 'Gemeente' borders. However, borders of adjacent 'Provincies' and 'Gemeentes' still overlap.
-* Mapbox sometimes not show features like texts and icons if they overlap other features, although allow_overlap is set to TRUE. This usually shows as disappearing/reappearing featues when zooming. Note that some features show when at detailed zoomlevels.
-* Road labels: It is not possible to create a text with a colored background. Therefore a large text halo is used as work around. Maybe improve by using an icon together with ```icon-text-fit```
+* Mapbox sometimes not show features like texts and icons if they overlap other features (decluttering), although allow_overlap is set to TRUE. This usually shows as disappearing/reappearing featues when zooming. Note that some features show when at detailed zoomlevels.
+* Road labels: It is not possible to create a text with a colored background. Therefore a large text halo is used as work around. Maybe improve by using an icon together with ```icon-text-fit```, like is done for 'aantalrijstroken'
+* City and area names and icons are often added to Polygon objects. This can result in the name or icon to appear multiple times.
 
 ### To do
 * Tram: add small gray/black blocks (tramhaltes?)
-* Review duikers
-* Kilometer paal, aantal rijstroken, wegafsluiting
-* Bomenrij, heg/haag, grenspunt, houtwal
-* Check wegnummering, berijdbare dijk, ingegraven holle weg
-* Brug op peilers
 * Revisit labels

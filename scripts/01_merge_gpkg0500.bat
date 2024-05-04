@@ -36,8 +36,8 @@ ogr2ogr -update -f GPKG -select type_hoogte,referentie_vlak ..\maps\merged_gpkg\
 echo 5 - InrichtingsElement
 ogr2ogr -update -f GPKG -select naam,type_element,soortnaam ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_inrichtingselement_lijn
 echo 6 - Plaats
-ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_plaats_punt
-ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_plaats_vlak
+ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied,aantal_inwoners ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_plaats_punt
+ogr2ogr -update -f GPKG -select nederlandse_naam,naam_officieel,type_gebied,aantal_inwoners ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_plaats_vlak
 echo 7 - Plantopografie
 REM Missing!
 REM ogr2ogr -update -f GPKG -select typeobject,naam ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_plantopografie_vlak
