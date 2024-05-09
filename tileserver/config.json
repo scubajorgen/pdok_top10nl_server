@@ -2,10 +2,10 @@
   "options": {
     "paths": {
       "root": "/data",
-      "fonts": "tileserver/fonts",
-      "styles": "tileserver/styles",
+      "fonts": "fonts",
+      "styles": "styles",
       "sprites": "",
-      "mbtiles": "maps/mbtiles"
+      "mbtiles": "maps/"
     },
     "domains": [
       "tiles.studioblueplanet.net"
