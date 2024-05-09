@@ -29,6 +29,7 @@ ogr2ogr         -f GPKG -select type_functioneel_gebied,soortnaam,nederlandse_na
 echo 2 - Gebouw
 ogr2ogr -update -f GPKG -select naam,type_gebouw,hoogte,status,soortnaam ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_gebouw_punt
 echo 3 - GeografischGebied
+ogr2ogr -update -f GPKG -select type_geoggebied,nederlandse_naam ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_geografisch_gebied_punt
 ogr2ogr -update -f GPKG -select type_geoggebied,nederlandse_naam ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_geografisch_gebied_vlak
 echo 4 - Hoogte
 ogr2ogr -update -f GPKG -select type_hoogte,referentie_vlak ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_hoogte_lijn
@@ -51,6 +52,7 @@ echo 12 - Waterdeel
 ogr2ogr -update -f GPKG -select type_water,breedteklasse,fysiek_voorkomen ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_waterdeel_lijn
 ogr2ogr -update -f GPKG -select type_water,breedteklasse,fysiek_voorkomen ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_waterdeel_vlak
 echo 13 - Wegdeel
+ogr2ogr -update -f GPKG -select afritnummer,afritnaam,awegnummer,ewegnummer,fysiek_voorkomen,gescheidenrijbaan,hoofdverkeersgebruik,knooppuntnaam,nwegnummer,status,naam,swegnummer,type_infrastructuur,type_weg,verhardings_type,bag_naam_ind,tunnelnaam,brugnaam,verhardingsbreedteklasse ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_wegdeel_punt
 ogr2ogr -update -f GPKG -select afritnummer,afritnaam,awegnummer,ewegnummer,fysiek_voorkomen,gescheidenrijbaan,hoofdverkeersgebruik,knooppuntnaam,nwegnummer,status,naam,swegnummer,type_infrastructuur,type_weg,verhardings_type,bag_naam_ind,tunnelnaam,brugnaam,verhardingsbreedteklasse ..\maps\merged_gpkg\merge1000.gpkg ..\maps\gpkg\top1000nl_Compleet.gpkg top1000nl_wegdeel_lijn
 
 echo done %date% %time%

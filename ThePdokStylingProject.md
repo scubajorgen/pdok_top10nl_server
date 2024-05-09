@@ -25,6 +25,7 @@ First a bit about the structure of the [PDOK TopNL geopackages](https://www.pdok
    * the actual geometry (POINT, LINE, etc)
 * For some reason top10nl ommits underscores in column names, whereas they are used in higher scale packages. In top10nl the name is 'typespoor' whereas in the other files it is 'type_spoor'.
 * In the [2021-11](2021-11.md) release all tables of top10nl contain all columns (all table definitions appear to be the same).
+* For some reason some layers are missing in top50nl and top100nl: ```top[N]nl_geografisch_gebied_punt```, ```top[N]nl_geografisch_gebied_vlak```, ```top[N]nl_plaats_punt``` and ```top[N]nl_plaats_vlak```. These layers mainly contain names. Therefore for the zoomlevels corresponding to top10nl and top50nl we generate tiles based on top250nl (the scale for which the layers are present). 
 
 Refer to next pages for a dump of tables, attribute values and table definitions of the a number of TopNL releases:
 * [2021-11](2021-11.md)
@@ -148,6 +149,8 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 * Roads in tunnels are drawn dashed, including the interior; on the legend only outline are dashed, no interior is drawn
 * Aquaducts are shown conform the legend: however on TopRaster the road outlines are shown under the water, whereas in the legend they are not
 * Duikers with ```fysiekvoorkomen``` 'in afsluitbare grondduiker' are shown with the text 'Sl Gd', whereas on TopRaster they are indicated with 'Gd'. No specifics in Legend.
+* Buildings 'laagbouw' are dark grey instead of black, so black icons are still visible when the coincide with the building, which they often do
+* Friese namen are not displayed, only officiele en nederlandse namen
 
 ### Issues
 * Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain...

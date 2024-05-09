@@ -137,14 +137,14 @@ public class FileProcessorTest
         ArgumentCaptor<String> stringCaptor=ArgumentCaptor.forClass(String.class);
         FileProcessor instance = new FileProcessor();
         instance.writeCsvFile(writer, testStyle1);
-        verify(writer, times(44)).write(stringCaptor.capture());
+        verify(writer, times(45)).write(stringCaptor.capture());
 
         assertEquals("id;type;source;source-layer;filter;minzoom;maxzoom;fill-pattern;fill-color;"+
                      "fill-outline-color;fill-opacity;symbol-placement;symbol-avoid-edges;"+
                      "symbol-spacing;line-cap;line-join;line-color;line-width;line-gap-width;"+
                      "line-opacity;line-dasharray;icon-image;icon-allow-overlap;icon-offset;"+
                      "text-field;text-font;text-size;text-offset;text-anchor;text-max-width;"+
-                     "text-transform;text-allow-overlap;text-line-height;text-color;text-halo-color;"+
+                     "text-transform;text-allow-overlap;text-line-height;text-letter-spacing;text-color;text-halo-color;"+
                      "text-halo-width;text-halo-blur;background-color\n", stringCaptor.getAllValues().get(0));
         assertEquals("test ruïne", stringCaptor.getAllValues().get(3));
 
@@ -162,11 +162,12 @@ public class FileProcessorTest
     public void testReadCsvFile()
     {
         System.out.println("readCsvFile");
-        String fileName = "src/test/resources/test02.csv";
+        String fileName = "src/test/resources/test04.csv";
         Style style = new Style();
         FileProcessor instance = new FileProcessor();
         instance.readCsvFile(fileName, style);
-        Layer layer=style.getLayers().get(220);
+        assertEquals(392, style.getLayers().size());
+        Layer layer=style.getLayers().get(268);
         assertEquals("[\"in\",\"typegebouw\",\"ruïne\"]", layer.getFilter().toString());
     }
 }

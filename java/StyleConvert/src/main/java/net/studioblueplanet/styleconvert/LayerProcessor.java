@@ -43,7 +43,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class LayerProcessor
 {   
     private final static Logger LOGGER = LogManager.getLogger(LayerProcessor.class);
-    private static final int    MAXFIELDS=38;
+    private static final int    MAXFIELDS=39;
     
     private static final int    COLUMN_ID              =0;
     private static final int    COLUMN_TYPE            =1;
@@ -54,39 +54,40 @@ public class LayerProcessor
     private static final int    COLUMN_MAXZOOM         =6;
     
     // Paint
-    private static final int    COLUMN_FILLPATTERN     =7;
-    private static final int    COLUMN_FILLCOLOR       =8;
-    private static final int    COLUMN_FILLOUTLINECOLOR=9;
-    private static final int    COLUMN_FILLOPACITY     =10;
-    private static final int    COLUMN_LINECOLOR       =16;
-    private static final int    COLUMN_LINEWIDTH       =17;
-    private static final int    COLUMN_LINEGAPWIDTH    =18;
-    private static final int    COLUMN_LINEOPACITY     =19;
-    private static final int    COLUMN_LINEDASHARRAY   =20;
-    private static final int    COLUMN_TEXTCOLOR       =33;
-    private static final int    COLUMN_TEXTHALOCOLOR   =34;
-    private static final int    COLUMN_TEXTHALOWIDTH   =35;
-    private static final int    COLUMN_TEXTHALOBLUR    =36;
-    private static final int    COLUMN_BACKGROUNDCOLOR =37;
+    private static final int    COLUMN_FILLPATTERN          =7;
+    private static final int    COLUMN_FILLCOLOR            =8;
+    private static final int    COLUMN_FILLOUTLINECOLOR     =9;
+    private static final int    COLUMN_FILLOPACITY          =10;
+    private static final int    COLUMN_LINECOLOR            =16;
+    private static final int    COLUMN_LINEWIDTH            =17;
+    private static final int    COLUMN_LINEGAPWIDTH         =18;
+    private static final int    COLUMN_LINEOPACITY          =19;
+    private static final int    COLUMN_LINEDASHARRAY        =20;
+    private static final int    COLUMN_TEXTCOLOR            =34;
+    private static final int    COLUMN_TEXTHALOCOLOR        =35;
+    private static final int    COLUMN_TEXTHALOWIDTH        =36;
+    private static final int    COLUMN_TEXTHALOBLUR         =37;
+    private static final int    COLUMN_BACKGROUNDCOLOR      =38;
     
     // Layout
-    private static final int    COLUMN_SYMBOLPLACEMENT =11;
-    private static final int    COLUMN_SYMBOLAVOIDEDGES=12;
-    private static final int    COLUMN_SYMBOLSPACING   =13;
-    private static final int    COLUMN_LINECAP         =14;
-    private static final int    COLUMN_LINEJOIN        =15;
-    private static final int    COLUMN_ICONIMAGE       =21;
-    private static final int    COLUMN_ICONALLOWOVERLAP=22;
-    private static final int    COLUMN_ICONOFFSET      =23;
-    private static final int    COLUMN_TEXTFIELD       =24;
-    private static final int    COLUMN_TEXTFONT        =25;
-    private static final int    COLUMN_TEXTSIZE        =26;
-    private static final int    COLUMN_TEXTOFFSET      =27;
-    private static final int    COLUMN_TEXTANCHOR      =28;
-    private static final int    COLUMN_TEXTMAXWIDTH    =29;
-    private static final int    COLUMN_TEXTTRANSFORM   =30;
-    private static final int    COLUMN_TEXTALLOWOVERLAP=31;
-    private static final int    COLUMN_TEXTLINEHEIGHT  =32;
+    private static final int    COLUMN_SYMBOLPLACEMENT      =11;
+    private static final int    COLUMN_SYMBOLAVOIDEDGES     =12;
+    private static final int    COLUMN_SYMBOLSPACING        =13;
+    private static final int    COLUMN_LINECAP              =14;
+    private static final int    COLUMN_LINEJOIN             =15;
+    private static final int    COLUMN_ICONIMAGE            =21;
+    private static final int    COLUMN_ICONALLOWOVERLAP     =22;
+    private static final int    COLUMN_ICONOFFSET           =23;
+    private static final int    COLUMN_TEXTFIELD            =24;
+    private static final int    COLUMN_TEXTFONT             =25;
+    private static final int    COLUMN_TEXTSIZE             =26;
+    private static final int    COLUMN_TEXTOFFSET           =27;
+    private static final int    COLUMN_TEXTANCHOR           =28;
+    private static final int    COLUMN_TEXTMAXWIDTH         =29;
+    private static final int    COLUMN_TEXTTRANSFORM        =30;
+    private static final int    COLUMN_TEXTALLOWOVERLAP     =31;
+    private static final int    COLUMN_TEXTLINEHEIGHT       =32;
+    private static final int    COLUMN_TEXTLETTERSPACING    =33;
     
     private final String        csvSeparator;
     private List<Layer>         layers;
@@ -273,6 +274,7 @@ public class LayerProcessor
         line+="text-transform"+csvSeparator;
         line+="text-allow-overlap"+csvSeparator;
         line+="text-line-height"+csvSeparator;
+        line+="text-letter-spacing"+csvSeparator;
         line+="text-color"+csvSeparator;
         line+="text-halo-color"+csvSeparator;
         line+="text-halo-width"+csvSeparator;
@@ -344,6 +346,7 @@ public class LayerProcessor
                         items[COLUMN_TEXTTRANSFORM]     =convertToString(layout.getTextTransform());
                         items[COLUMN_TEXTALLOWOVERLAP]  =convertToString(layout.getTextAllowOverlap());
                         items[COLUMN_TEXTLINEHEIGHT]    =convertToString(layout.getTextLineHeight());
+                        items[COLUMN_TEXTLETTERSPACING] =convertToString(layout.getTextLetterSpacing());
                     }
 
 
@@ -547,6 +550,7 @@ public class LayerProcessor
                         isNotNull |= setString  (layerStrings[COLUMN_TEXTTRANSFORM]     , layout::setTextTransform);
                         isNotNull |= setBoolean (layerStrings[COLUMN_TEXTALLOWOVERLAP]  , layout::setTextAllowOverlap);
                         isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTLINEHEIGHT]    , layout::setTextLineHeight);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTLETTERSPACING] , layout::setTextLetterSpacing);
 
                         if (isNotNull)
                         {
@@ -762,6 +766,7 @@ public class LayerProcessor
             isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_TEXTTRANSFORM))      , layout::setTextTransform);
             isNotNull |= setBoolean (getCellBooleanValue(row.getCell(COLUMN_TEXTALLOWOVERLAP))  , layout::setTextAllowOverlap);
             isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTLINEHEIGHT))     , layout::setTextLineHeight);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTLETTERSPACING))  , layout::setTextLetterSpacing);
 
             if (isNotNull)
             {

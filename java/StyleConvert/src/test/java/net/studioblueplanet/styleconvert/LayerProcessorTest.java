@@ -17,6 +17,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.io.FileWriter;
+
 /**
  *
  * @author jorgen
@@ -194,15 +196,14 @@ public class LayerProcessorTest
      * Test of readExcel method, of class LayerProcessor.
      */
     @Test
-    public void testReadExcel()
+    public void testReadExcel() throws Exception
     {
         System.out.println("readExcel");
         String fileName = "src/test/resources/test03.xlsx";
         LayerProcessor instance = new LayerProcessor(";");
         instance.readExcel(fileName);
-        List<Layer> layers=instance.getLayers();
-
         
+        List<Layer> layers=instance.getLayers();
         for(int i=0;i<layers.size();i++)
         {
             System.out.println(i+" "+layers.get(i).getId());

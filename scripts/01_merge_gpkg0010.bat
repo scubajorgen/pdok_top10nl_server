@@ -69,5 +69,4 @@ ogr2ogr -update -f GPKG -select typeweg,hoogteniveau,typeinfrastructuur,hoofdver
 ogr2ogr -update -f GPKG -select typeweg,hoogteniveau,typeinfrastructuur,hoofdverkeersgebruik,fysiekvoorkomen,verhardingsbreedteklasse,gescheidenrijbaan,verhardingstype,aantalrijstroken,verhardingstype,status,awegnummer,nwegnummer,ewegnummer,swegnummer,afritnummer,afritnaam,naam,knooppuntnaam,brugnaam,tunnelnaam ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_wegdeel_hartpunt
 ogr2ogr -update -f GPKG -select typeweg,hoogteniveau,typeinfrastructuur,hoofdverkeersgebruik,fysiekvoorkomen,verhardingsbreedteklasse,gescheidenrijbaan,verhardingstype,aantalrijstroken,verhardingstype,status,awegnummer,nwegnummer,ewegnummer,swegnummer,afritnummer,afritnaam,naam,knooppuntnaam,brugnaam,tunnelnaam ..\maps\merged_gpkg\merge0010.gpkg ..\maps\gpkg\top10nl_Compleet.gpkg top10nl_wegdeel_vlak
 
-
 echo done %date% %time%

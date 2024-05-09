@@ -30,6 +30,7 @@ REM ogr2ogr         -f GPKG -select functioneel_gebied,soortnaam,nederlandse_naa
 echo 2 - Gebouw
 ogr2ogr -f GPKG -select naam,type_gebouw,status,soortnaam ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_gebouw_punt
 echo 3 - GeografischGebied
+ogr2ogr -update -f GPKG -select type_geoggebied,nederlandse_naam ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_geografisch_gebied_punt
 ogr2ogr -update -f GPKG -select type_geoggebied,nederlandse_naam ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_geografisch_gebied_vlak
 echo 4 - Hoogte
 ogr2ogr -update -f GPKG -select type_hoogte,referentie_vlak ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_hoogte_lijn
@@ -53,5 +54,6 @@ ogr2ogr -update -f GPKG -select type_water,breedteklasse,fysiek_voorkomen ..\map
 ogr2ogr -update -f GPKG -select type_water,breedteklasse,fysiek_voorkomen ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_waterdeel_vlak
 echo 13 - Wegdeel
 ogr2ogr -update -f GPKG -select afritnummer,afritnaam,awegnummer,ewegnummer,fysiek_voorkomen,gescheidenrijbaan,hoofdverkeersgebruik,knooppuntnaam,nwegnummer,status,naam,swegnummer,type_infrastructuur,type_weg,verhardings_type,bag_naam_ind,tunnelnaam,brugnaam,verhardingsbreedteklasse ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_wegdeel_lijn
+ogr2ogr -update -f GPKG -select afritnummer,afritnaam,awegnummer,ewegnummer,fysiek_voorkomen,gescheidenrijbaan,hoofdverkeersgebruik,knooppuntnaam,nwegnummer,status,naam,swegnummer,type_infrastructuur,type_weg,verhardings_type,bag_naam_ind,tunnelnaam,brugnaam,verhardingsbreedteklasse ..\maps\merged_gpkg\merge0500.gpkg ..\maps\gpkg\top500nl_Compleet.gpkg top500nl_wegdeel_punt
 
 echo done %date% %time%

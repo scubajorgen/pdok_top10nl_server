@@ -8,13 +8,13 @@
 #declare -a ext="-2023"
 #declare -a release="2023-09"
 
-declare -a dir="/home/downloads/2024-02"
-declare -a ext=""
-declare -a release="2024-02"
-
-#declare -a dir="/home/downloads/2024-04"
+#declare -a dir="/home/downloads/2024-02"
 #declare -a ext=""
-#declare -a release="2024-04"
+#declare -a release="2024-02"
+
+declare -a dir="/home/downloads/2024-04"
+declare -a ext=""
+declare -a release="2024-04"
 
 header(){
   echo -e "\n"
@@ -77,6 +77,10 @@ distinct $dir/top10nl_Compleet$ext.gpkg top10nl_functioneel_gebied_punt typefunc
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_functioneel_gebied_vlak typefunctioneelgebied
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_functioneel_gebied_multivlak typefunctioneelgebied
 
+header "## GEOGRAFISCH GEBIED"
+distinct $dir/top10nl_Compleet$ext.gpkg top10nl_geografisch_gebied_vlak typegeografischgebied
+distinct $dir/top10nl_Compleet$ext.gpkg top10nl_geografisch_gebied_multivlak typegeografischgebied
+
 header "## HOOGTE"
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_hoogte_punt typehoogte
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_hoogte_lijn typehoogte
@@ -105,6 +109,16 @@ header "## TERREIN"
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_terrein_vlak typelandgebruik
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_terrein_vlak voorkomen
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_terrein_vlak fysiekvoorkomen
+
+distinct $dir/top50nl_Compleet$ext.gpkg top50nl_terrein_vlak type_landgebruik
+
+distinct $dir/top100nl_Compleet$ext.gpkg top100nl_terrein_vlak type_landgebruik
+
+distinct $dir/top250nl_Compleet$ext.gpkg top250nl_terrein_vlak type_landgebruik
+
+distinct $dir/top500nl_Compleet$ext.gpkg top500nl_terrein_vlak type_landgebruik
+
+distinct $dir/top1000nl_Compleet$ext.gpkg top1000nl_terrein_vlak type_landgebruik
 
 header "## WATER"
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_waterdeel_punt typewater
