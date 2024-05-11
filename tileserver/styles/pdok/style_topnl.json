@@ -8264,39 +8264,7 @@
       "layout": 
       {
         "icon-image": "toren",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8311,39 +8279,7 @@
       "layout": 
       {
         "icon-image": "toren",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8358,39 +8294,7 @@
       "layout": 
       {
         "icon-image": "kerk",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8405,39 +8309,7 @@
       "layout": 
       {
         "icon-image": "kerk",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8456,39 +8328,7 @@
         "icon-offset": 
         [
           0, -2
-        ],
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        ]
       }
     }, 
     {
@@ -8507,39 +8347,7 @@
         "icon-offset": 
         [
           0, -2
-        ],
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        ]
       }
     }, 
     {
@@ -8554,39 +8362,7 @@
       "layout": 
       {
         "icon-image": "vuurtoren",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8601,39 +8377,7 @@
       "layout": 
       {
         "icon-image": "vuurtoren",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8648,39 +8392,7 @@
       "layout": 
       {
         "icon-image": "watertoren",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8695,39 +8407,7 @@
       "layout": 
       {
         "icon-image": "watertoren",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-allow-overlap": true,
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8742,38 +8422,7 @@
       "layout": 
       {
         "icon-image": "bunker",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8788,38 +8437,7 @@
       "layout": 
       {
         "icon-image": "bunker",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8834,38 +8452,7 @@
       "layout": 
       {
         "icon-image": "ruine",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -8880,38 +8467,7 @@
       "layout": 
       {
         "icon-image": "ruine",
-        "icon-allow-overlap": true,
-        "text-field": "{typegebouw}",
-        "text-font": 
-        [
-          "pdok_OpenSansRegular"
-        ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              7, 8
-            ], 
-            [
-              11, 10
-            ]
-          ]
-        },
-        "text-offset": 
-        [
-          0, 0.4
-        ],
-        "text-anchor": "top",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(100,0,0)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "icon-allow-overlap": true
       }
     }, 
     {
@@ -9794,11 +9350,62 @@
         [
           0, 0
         ],
-        "text-field": "Pl",
+        "text-field": "Pl {nummer}",
         "text-font": 
         [
           "pdok_OpenSansRegular"
         ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              7, 8
+            ], 
+            [
+              11, 15
+            ]
+          ]
+        },
+        "text-offset": 
+        [
+          0, 0.3
+        ],
+        "text-anchor": "top",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "inrichting_punt_strandpaal_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_inrichtingselement_punt",
+      "filter": 
+      [
+        "==", "typeinrichtingselement", "strandpaal"
+      ],
+      "layout": 
+      {
+        "icon-image": "paal",
+        "icon-allow-overlap": true,
+        "icon-offset": 
+        [
+          0, 0
+        ],
+        "text-field": "Pln {nummer}",
+        "text-font": 
+        [
+          "pdok_OpenSansRegular"
+        ],
+        "text-allow-overlap": true,
         "text-size": 
         {
           "base": 1.2,
@@ -12720,10 +12327,10 @@
           [
             
             [
-              6, 6.9
+              6, 5.4
             ], 
             [
-              20, 69.2
+              20, 53.8
             ]
           ]
         },
@@ -12764,10 +12371,10 @@
           [
             
             [
-              6, 6.9
+              6, 5.4
             ], 
             [
-              20, 69.2
+              20, 53.8
             ]
           ]
         },
@@ -12808,10 +12415,10 @@
           [
             
             [
-              6, 6.9
+              6, 5.4
             ], 
             [
-              20, 69.2
+              20, 53.8
             ]
           ]
         },
@@ -12852,10 +12459,10 @@
           [
             
             [
-              6, 6.9
+              6, 5.4
             ], 
             [
-              20, 69.2
+              20, 53.8
             ]
           ]
         },
@@ -13140,100 +12747,6 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_waternaam_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_geografisch_gebied_vlak",
-      "filter": 
-      [
-        "in", "typegeografischgebied", "watergebied", "bank, ondiepte, plaat", "geul, vaargeul"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 18.0,
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,152,224)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "waterdeel_punt_waternaam_250",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_geografisch_gebied_punt",
-      "filter": 
-      [
-        "in", "type_geoggebied", "watergebied", "bank, ondiepte, plaat", "zeegat, zeearm"
-      ],
-      "layout": 
-      {
-        "text-field": "{nederlandse_naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 
-        {
-          "base": 1.2,
-          "stops": 
-          [
-            
-            [
-              8, 12
-            ], 
-            [
-              12, 18
-            ]
-          ]
-        },
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,152,224)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "waterdeel_punt_eiland_250",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top250nl_geografisch_gebied_vlak",
-      "filter": 
-      [
-        "==", "type_geoggebied", "eiland"
-      ],
-      "layout": 
-      {
-        "text-field": "{nederlandse_naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 18.0,
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
       "id": "waterdeel_vlak_waterloopnaam_10",
       "type": "symbol",
       "source": "brt_topnl",
@@ -13284,271 +12797,6 @@
       "paint": 
       {
         "text-color": "rgb(0,152,224)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "geografisch_vlak_bosnaam_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_geografisch_gebied_vlak",
-      "filter": 
-      [
-        "in", "typegeografischgebied", "bosgebied"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 16.0,
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,100,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "geografisch_vlak_veldnaam_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_geografisch_gebied_vlak",
-      "filter": 
-      [
-        "in", "typegeografischgebied", "streek, veld"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 16.0,
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,100,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "geografisch_vlak_heidenaam_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_geografisch_gebied_vlak",
-      "filter": 
-      [
-        "in", "typegeografischgebied", "heidegebied"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 16.0,
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(121,80,82)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "gebouw_vlak_gebouwnaam_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_gebouw_vlak",
-      "minzoom": 14.0,
-      "layout": 
-      {
-        "text-field": "{naam}",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-size": 10.0,
-        "text-offset": 
-        [
-          0, 1.5
-        ],
-        "text-anchor": "bottom",
-        "text-max-width": 8.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(0,0,255)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "functioneelgebied_punt_divers_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_functioneel_gebied_punt",
-      "minzoom": 14.0,
-      "layout": 
-      {
-        "text-field": "{naamnl} ({typefunctioneelgebied})",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-offset": 
-        [
-          0, 1
-        ],
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(255,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "functioneelgebied_vlak_divers_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_functioneel_gebied_vlak",
-      "minzoom": 14.0,
-      "filter": 
-      [
-        "!in", "typefunctioneelgebied", "sluizencomplex"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl} ({typefunctioneelgebied})",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-offset": 
-        [
-          0, 1
-        ],
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(200,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "functioneelgebied_multivlak_divers_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_functioneel_gebied_multivlak",
-      "minzoom": 14.0,
-      "filter": 
-      [
-        "!in", "typefunctioneelgebied", "sluizencomplex"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl} ({typefunctioneelgebied})",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-offset": 
-        [
-          0, 1
-        ],
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(150,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "functioneelgebied_vlak_sluis_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_functioneel_gebied_vlak",
-      "minzoom": 14.0,
-      "filter": 
-      [
-        "==", "typefunctioneelgebied", "sluizencomplex"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl} Sch sl",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-offset": 
-        [
-          0, 1
-        ],
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(200,0,0)",
-        "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 1.2
-      }
-    }, 
-    {
-      "id": "functioneelgebied_multivlak_sluis_10",
-      "type": "symbol",
-      "source": "brt_topnl",
-      "source-layer": "top10nl_functioneel_gebied_multivlak",
-      "minzoom": 14.0,
-      "filter": 
-      [
-        "==", "typefunctioneelgebied", "sluizencomplex"
-      ],
-      "layout": 
-      {
-        "text-field": "{naamnl} Sch sl",
-        "text-font": 
-        [
-          "pdok_OpenSansItalic"
-        ],
-        "text-line-height": 1.5,
-        "text-size": 12.0,
-        "text-offset": 
-        [
-          0, 1
-        ],
-        "text-max-width": 10.0
-      },
-      "paint": 
-      {
-        "text-color": "rgb(150,0,0)",
         "text-halo-color": "rgb(255,255,255)",
         "text-halo-width": 1.2
       }
@@ -13650,6 +12898,1002 @@
       }
     }, 
     {
+      "id": "geografisch_vlak_zee_wad_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "wad", "zee"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 16
+            ], 
+            [
+              17, 25
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,152,224)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_waternaam_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "watergebied", "bank, ondiepte, plaat", "geul, vaargeul"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,152,224)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_waternaam_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "bank, ondiepte, plaat", "geul, vaargeul"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,152,224)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_punt_waternaam_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_geografisch_gebied_punt",
+      "filter": 
+      [
+        "in", "type_geoggebied", "bank, ondiepte, plaat", "zeegat, zeearm"
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              8, 12
+            ], 
+            [
+              12, 18
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,152,224)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_eiland_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "==", "typegeografischgebied", "eiland"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 16
+            ], 
+            [
+              17, 25
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_eiland_250",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top250nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "==", "type_geoggebied", "eiland"
+      ],
+      "layout": 
+      {
+        "text-field": "{nederlandse_naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 16
+            ], 
+            [
+              17, 25
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_bosgebied_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "bosgebied"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,100,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_bosgebied_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "bosgebied"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,100,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_heidegebied_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "heidegebied"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_heidegebied_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "heidegebied"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_duingebied_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "duingebied"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(144,104,56)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_duingebied_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "duingebied"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(144,104,56)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_heuvel_berg_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "heuvel, berg"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_heuvel_berg_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "heuvel, berg"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_kaap_hoek_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "kaap, hoek"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_streek_veld_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "streek, veld"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,100,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_streek_veld_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "streek, veld"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,100,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_polder_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "polder"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,20,130)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_multivlak_polder_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_multivlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "polder"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,20,130)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_terp_wierde_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "terp, wierde"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(121,80,82)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "geografisch_vlak_overig_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_geografisch_gebied_vlak",
+      "filter": 
+      [
+        "in", "typegeografischgebied", "overig"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 
+        {
+          "base": 1.2,
+          "stops": 
+          [
+            
+            [
+              13, 14
+            ], 
+            [
+              17, 22
+            ]
+          ]
+        },
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(40,40,40)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_punt_divers_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_punt",
+      "minzoom": 15.0,
+      "layout": 
+      {
+        "text-field": "{naamnl} ({typefunctioneelgebied})",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 2
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(255,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_vlak_divers_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_vlak",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "!in", "typefunctioneelgebied", "sluizencomplex"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl} ({typefunctioneelgebied})",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 2
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_multivlak_divers_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_multivlak",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "!in", "typefunctioneelgebied", "sluizencomplex"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl} ({typefunctioneelgebied})",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 2
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(150,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_vlak_sluis_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_vlak",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "sluizencomplex"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl} Sch sl",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 2
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(200,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "functioneelgebied_multivlak_sluis_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_functioneel_gebied_multivlak",
+      "minzoom": 15.0,
+      "filter": 
+      [
+        "==", "typefunctioneelgebied", "sluizencomplex"
+      ],
+      "layout": 
+      {
+        "text-field": "{naamnl} Sch sl",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-line-height": 1.5,
+        "text-size": 12.0,
+        "text-offset": 
+        [
+          0, 2
+        ],
+        "text-max-width": 10.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(150,0,0)",
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
       "id": "functioneelgebied_vlak_grafheuvel_10",
       "type": "line",
       "source": "brt_topnl",
@@ -13676,7 +13920,7 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_functioneel_gebied_vlak",
-      "minzoom": 14.0,
+      "minzoom": 15.0,
       "filter": 
       [
         "==", "typefunctioneelgebied", "grafheuvel"
@@ -13692,7 +13936,7 @@
         "text-size": 12.0,
         "text-offset": 
         [
-          0, 1
+          0, 2
         ],
         "text-max-width": 10.0
       },
@@ -13700,6 +13944,34 @@
       {
         "text-color": "rgb(200,0,0)",
         "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 1.2
+      }
+    }, 
+    {
+      "id": "gebouw_vlak_gebouwnaam_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_gebouw_vlak",
+      "minzoom": 15.0,
+      "layout": 
+      {
+        "text-field": "{naam}",
+        "text-font": 
+        [
+          "pdok_OpenSansItalic"
+        ],
+        "text-size": 10.0,
+        "text-offset": 
+        [
+          0, 1.5
+        ],
+        "text-anchor": "bottom",
+        "text-max-width": 8.0
+      },
+      "paint": 
+      {
+        "text-color": "rgb(0,0,255)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
     }, 
