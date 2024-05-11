@@ -80,6 +80,8 @@ distinct $dir/top10nl_Compleet$ext.gpkg top10nl_functioneel_gebied_multivlak typ
 header "## GEOGRAFISCH GEBIED"
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_geografisch_gebied_vlak typegeografischgebied
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_geografisch_gebied_multivlak typegeografischgebied
+distinct $dir/top250nl_Compleet$ext.gpkg top250nl_geografisch_gebied_punt type_geoggebied
+distinct $dir/top250nl_Compleet$ext.gpkg top250nl_geografisch_gebied_vlak type_geoggebied
 
 header "## HOOGTE"
 distinct $dir/top10nl_Compleet$ext.gpkg top10nl_hoogte_punt typehoogte
