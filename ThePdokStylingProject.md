@@ -106,14 +106,13 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 **Terschelling, zoomlevel 15**
 
 ![](images/example02.jpg)\
-
 **Vinkeveense plassen, zoomlevel 16**
 
 ![](images/example03.jpg)\
 **Amsterdam CS, zoomlevel 15**
 
 ![](images/example04.jpg)\
-**Amsterdam, zoomlevel 12**
+**Amsterdam, zoomlevel 11**
 
 ![](images/example05.jpg)\
 **Mid NL, zoomlevel 10**
@@ -122,7 +121,7 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 **Oostersluis Groningen, zoomlevel 16**
 
 ![](images/example07.jpg)\
-**Sint Pietersberg Maastricht, zoomlevel 15.7**
+**Sint Pietersberg Maastricht, zoomlevel 16**
 
 ![](images/example08.jpg)\
 **De Peel, unused airport, zoomlevel 14**
@@ -152,7 +151,8 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 * Building names are small and blue
 * When zooming in to zoomlevel 15, ```functioneel_gebied``` is shown in red, together with the type in braces, like 'Antillenstraat (bedrijventerrein)'. If no name is available, only the type is shown in braces.
 
-![](images/LegendAdendum.png)
+![](images/LegendAdendum.png)\
+**Differences and extras**
 
 ### Deviations
 * We don't have roads with separate lanes on higher scales ('gescheiden rijbanen'). Zooming in to scale 1:10.000 shows lanes seperately.
