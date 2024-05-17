@@ -10290,10 +10290,23 @@
       "source-layer": "top10nl_wegdeel_hartlijn",
       "filter": 
       [
-        "==", "typeweg", "autosnelweg"
+        "all", 
+        [
+          "==", "typeweg", "autosnelweg"
+        ], 
+        [
+          "has", "awegnummer"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_rood",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 500.0,
@@ -10302,7 +10315,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10310,8 +10322,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(255,0,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10321,10 +10332,23 @@
       "source-layer": "top50nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "type_weg", "autosnelweg"
+        ], 
+        [
+          "has", "wegnummer_a_weg"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_rood",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 500.0,
@@ -10333,7 +10357,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10341,8 +10364,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(255,0,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10352,10 +10374,23 @@
       "source-layer": "top100nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "type_weg", "autosnelweg"
+        ], 
+        [
+          "has", "wegnummer_a_weg"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_rood",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 500.0,
@@ -10364,7 +10399,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10372,8 +10406,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(255,0,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10383,10 +10416,23 @@
       "source-layer": "top250nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "typeweg", "autosnelweg"
+        ], 
+        [
+          "has", "awegnummer"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_rood",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 500.0,
@@ -10395,7 +10441,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10403,8 +10448,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(255,0,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10415,10 +10459,23 @@
       "minzoom": 8.5,
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "typeweg", "autosnelweg"
+        ], 
+        [
+          "has", "awegnummer"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_rood",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 500.0,
@@ -10427,7 +10484,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10435,8 +10491,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(255,0,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10446,10 +10501,23 @@
       "source-layer": "top10nl_wegdeel_hartlijn",
       "filter": 
       [
-        "==", "typeweg", "autosnelweg"
+        "all", 
+        [
+          "==", "typeweg", "autosnelweg"
+        ], 
+        [
+          "has", "ewegnummer"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_groen",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10458,7 +10526,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10466,8 +10533,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,125,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10477,10 +10543,23 @@
       "source-layer": "top50nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "type_weg", "autosnelweg"
+        ], 
+        [
+          "has", "wegnummer_e_weg"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_groen",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10489,7 +10568,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10497,8 +10575,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,125,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10508,10 +10585,23 @@
       "source-layer": "top100nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "type_weg", "autosnelweg"
+        ], 
+        [
+          "has", "wegnummer_e_weg"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_groen",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10520,7 +10610,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10528,8 +10617,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,125,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10539,10 +10627,23 @@
       "source-layer": "top250nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "typeweg", "autosnelweg"
+        ], 
+        [
+          "has", "ewegnummer"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_groen",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10551,7 +10652,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10559,8 +10659,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,125,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10571,10 +10670,23 @@
       "minzoom": 8.5,
       "filter": 
       [
-        "==", "type_weg", "autosnelweg"
+        "all", 
+        [
+          "==", "typeweg", "autosnelweg"
+        ], 
+        [
+          "has", "ewegnummer"
+        ]
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_groen",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10583,7 +10695,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10591,8 +10702,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,125,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10602,10 +10712,17 @@
       "source-layer": "top10nl_wegdeel_hartlijn",
       "filter": 
       [
-        "==", "typeweg", "hoofdweg"
+        "has", "nwegnummer"
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_geel",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10614,7 +10731,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10622,8 +10738,7 @@
       {
         "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10633,10 +10748,17 @@
       "source-layer": "top50nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "hoofdweg"
+        "has", "wegnummer_n_weg"
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_geel",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10645,7 +10767,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10653,8 +10774,7 @@
       {
         "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10664,10 +10784,17 @@
       "source-layer": "top100nl_wegdeel_lijn",
       "filter": 
       [
-        "==", "type_weg", "hoofdweg"
+        "has", "wegnummer_n_weg"
       ],
       "layout": 
       {
+        "icon-image": "wegnummer_geel",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10676,7 +10803,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10684,8 +10810,7 @@
       {
         "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,0)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10693,8 +10818,19 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
+      "filter": 
+      [
+        "has", "swegnummer"
+      ],
       "layout": 
       {
+        "icon-image": "wegnummer_wit",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10703,7 +10839,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10711,8 +10846,7 @@
       {
         "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10720,8 +10854,19 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "has", "wegnummer_s_weg"
+      ],
       "layout": 
       {
+        "icon-image": "wegnummer_wit",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10730,7 +10875,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10738,8 +10882,7 @@
       {
         "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10747,8 +10890,19 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top100nl_wegdeel_lijn",
+      "filter": 
+      [
+        "has", "wegnummer_s_weg"
+      ],
       "layout": 
       {
+        "icon-image": "wegnummer_wit",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "symbol-placement": "line",
         "symbol-avoid-edges": true,
         "symbol-spacing": 450.0,
@@ -10757,7 +10911,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10765,8 +10918,7 @@
       {
         "text-color": "rgb(0,0,0)",
         "text-halo-color": "rgb(255,255,255)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10774,14 +10926,24 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_wegdeel_hartlijn",
+      "filter": 
+      [
+        "has", "afritnummer"
+      ],
       "layout": 
       {
+        "icon-image": "afritnummer",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "text-field": "{afritnummer}",
         "text-font": 
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10789,8 +10951,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,129,225)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10798,14 +10959,24 @@
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top50nl_wegdeel_lijn",
+      "filter": 
+      [
+        "has", "afritnummer"
+      ],
       "layout": 
       {
+        "icon-image": "afritnummer",
+        "icon-allow-overlap": true,
+        "icon-text-fit": "width",
+        "icon-text-fit-padding": 
+        [
+          0, 5, 0, 5
+        ],
         "text-field": "{afritnummer}",
         "text-font": 
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
@@ -10813,8 +10984,7 @@
       {
         "text-color": "rgb(255,255,255)",
         "text-halo-color": "rgb(0,129,225)",
-        "text-halo-width": 5.0,
-        "text-halo-blur": 5.0
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10830,21 +11000,20 @@
       {
         "icon-image": "rijstroken",
         "symbol-placement": "line",
-        "symbol-spacing": 450.0,
+        "symbol-spacing": 800.0,
         "text-field": "{aantalrijstroken}",
         "text-font": 
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },
       "paint": 
       {
         "text-color": "rgb(0,0,100)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
+        "text-halo-color": "rgb(255,255,255)",
+        "text-halo-width": 0.2
       }
     }, 
     {
@@ -10861,7 +11030,6 @@
         [
           "pdok_OpenSansRegular"
         ],
-        "text-line-height": 1.5,
         "text-size": 12.0,
         "text-max-width": 10.0
       },

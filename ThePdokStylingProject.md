@@ -172,9 +172,8 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 1. Issue: ```typeweg``` 'hoofdweg' on ```fysiekvoorkomen```'op beweegbaar deel van brug' not drawn at #17/53.226297/6.612613 whereas it is shown on raster maps; unclear why
 1. 'Land' (Country), 'Provincie' (Province) and 'Gemeente' (County) borders overlap. If all are drawn this messes things up. It does not appear to be possible to give a hierarchy or priority which to draw when they overlap. Therefore at zoom levels 1.00-7.99 'Land' borders are drawn, form 8.00-12.99 'Provincie' borders and from 13.00-21.99 'Gemeente' borders. However, borders of adjacent 'Provincies' and 'Gemeentes' still overlap.
 1. Mapbox sometimes does not show features like texts and icons if they overlap other features (decluttering), although allow_overlap is set to TRUE. This usually shows as disappearing/reappearing featues when zooming. Note that some features show when at detailed zoomlevels.
-1. Road labels: It is not possible to create a text with a colored background. Therefore a large text halo is used as work around. Maybe improve by using an icon together with ```icon-text-fit```, like is done for 'aantalrijstroken'
 1. City and area names and icons are often added to Polygon objects. This can result in the name or icon to appear multiple times.
 
 ### To do
 * Tram: add small gray/black blocks (tramhaltes?)
-* Improve road labels and use real icons like on 'aantalrijstroken'
+

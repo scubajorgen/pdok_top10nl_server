@@ -532,39 +532,47 @@
   },
 
 
+  "wegnummer_rood": 
+  {
+    "height": 32,
+    "width": 64,
+    "pixelRatio": 1,
+    "x": 0,
+    "y": 192
+  },
+  "wegnummer_groen": 
+  {
+    "height": 32,
+    "width": 64,
+    "pixelRatio": 1,
+    "x": 64,
+    "y": 192
+  },
   "vacant01": 
   {
     "height": 32,
     "width": 32,
     "pixelRatio": 1,
+    "x": 128,
+    "y": 192
+  },
+  "wegnummer_geel": 
+  {
+    "height": 32,
+    "width": 64,
+    "pixelRatio": 1,
     "x": 0,
     "y": 224
   },
-  "vacant02": 
+  "wegnummer_wit": 
   {
     "height": 32,
-    "width": 32,
-    "pixelRatio": 1,
-    "x": 32,
-    "y": 224
-  },
-  "vacant03": 
-  {
-    "height": 32,
-    "width": 32,
+    "width": 64,
     "pixelRatio": 1,
     "x": 64,
     "y": 224
   },
-  "vacant04": 
-  {
-    "height": 32,
-    "width": 32,
-    "pixelRatio": 1,
-    "x": 96,
-    "y": 224
-  },
-  "vacant05": 
+  "afritnummer": 
   {
     "height": 32,
     "width": 32,
