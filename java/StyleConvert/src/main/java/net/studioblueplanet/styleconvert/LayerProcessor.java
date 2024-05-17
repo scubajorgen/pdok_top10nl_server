@@ -43,7 +43,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class LayerProcessor
 {   
     private final static Logger LOGGER = LogManager.getLogger(LayerProcessor.class);
-    private static final int    MAXFIELDS=39;
+    private static final int    MAXFIELDS=41;
     
     private static final int    COLUMN_ID              =0;
     private static final int    COLUMN_TYPE            =1;
@@ -63,11 +63,11 @@ public class LayerProcessor
     private static final int    COLUMN_LINEGAPWIDTH         =18;
     private static final int    COLUMN_LINEOPACITY          =19;
     private static final int    COLUMN_LINEDASHARRAY        =20;
-    private static final int    COLUMN_TEXTCOLOR            =34;
-    private static final int    COLUMN_TEXTHALOCOLOR        =35;
-    private static final int    COLUMN_TEXTHALOWIDTH        =36;
-    private static final int    COLUMN_TEXTHALOBLUR         =37;
-    private static final int    COLUMN_BACKGROUNDCOLOR      =38;
+    private static final int    COLUMN_TEXTCOLOR            =36;
+    private static final int    COLUMN_TEXTHALOCOLOR        =37;
+    private static final int    COLUMN_TEXTHALOWIDTH        =38;
+    private static final int    COLUMN_TEXTHALOBLUR         =39;
+    private static final int    COLUMN_BACKGROUNDCOLOR      =40;
     
     // Layout
     private static final int    COLUMN_SYMBOLPLACEMENT      =11;
@@ -78,16 +78,19 @@ public class LayerProcessor
     private static final int    COLUMN_ICONIMAGE            =21;
     private static final int    COLUMN_ICONALLOWOVERLAP     =22;
     private static final int    COLUMN_ICONOFFSET           =23;
-    private static final int    COLUMN_TEXTFIELD            =24;
-    private static final int    COLUMN_TEXTFONT             =25;
-    private static final int    COLUMN_TEXTSIZE             =26;
-    private static final int    COLUMN_TEXTOFFSET           =27;
-    private static final int    COLUMN_TEXTANCHOR           =28;
-    private static final int    COLUMN_TEXTMAXWIDTH         =29;
-    private static final int    COLUMN_TEXTTRANSFORM        =30;
-    private static final int    COLUMN_TEXTALLOWOVERLAP     =31;
-    private static final int    COLUMN_TEXTLINEHEIGHT       =32;
-    private static final int    COLUMN_TEXTLETTERSPACING    =33;
+    private static final int    COLUMN_ICONTEXTFIT          =24;
+    private static final int    COLUMN_ICONTEXTFITPADDING   =25;
+
+    private static final int    COLUMN_TEXTFIELD            =26;
+    private static final int    COLUMN_TEXTFONT             =27;
+    private static final int    COLUMN_TEXTSIZE             =28;
+    private static final int    COLUMN_TEXTOFFSET           =29;
+    private static final int    COLUMN_TEXTANCHOR           =30;
+    private static final int    COLUMN_TEXTMAXWIDTH         =31;
+    private static final int    COLUMN_TEXTTRANSFORM        =32;
+    private static final int    COLUMN_TEXTALLOWOVERLAP     =33;
+    private static final int    COLUMN_TEXTLINEHEIGHT       =34;
+    private static final int    COLUMN_TEXTLETTERSPACING    =35;
     
     private final String        csvSeparator;
     private List<Layer>         layers;
@@ -264,6 +267,8 @@ public class LayerProcessor
         line+="icon-image"+csvSeparator;
         line+="icon-allow-overlap"+csvSeparator;
         line+="icon-offset"+csvSeparator;
+        line+="icon-text-fit"+csvSeparator;
+        line+="icon-text-fit-padding"+csvSeparator;
 
         line+="text-field"+csvSeparator;
         line+="text-font"+csvSeparator;
@@ -336,6 +341,8 @@ public class LayerProcessor
                         items[COLUMN_ICONIMAGE]         =convertToString(layout.getIconImage());
                         items[COLUMN_ICONALLOWOVERLAP]  =convertToString(layout.getIconAllowOverlap());
                         items[COLUMN_ICONOFFSET]        =convertToString(layout.getIconOffset());
+                        items[COLUMN_ICONTEXTFIT]       =convertToString(layout.getIconTextFit());
+                        items[COLUMN_ICONTEXTFITPADDING]=convertToString(layout.getIconTextFitPadding());
 
                         items[COLUMN_TEXTFIELD]         =convertToString(layout.getTextField());
                         items[COLUMN_TEXTFONT]          =convertToString(layout.getTextFont());
@@ -540,6 +547,8 @@ public class LayerProcessor
                         isNotNull |= setString  (layerStrings[COLUMN_ICONIMAGE]         , layout::setIconImage);
                         isNotNull |= setBoolean (layerStrings[COLUMN_ICONALLOWOVERLAP]  , layout::setIconAllowOverlap);
                         isNotNull |= setJsonNode(layerStrings[COLUMN_ICONOFFSET]        , layout::setIconOffset);
+                        isNotNull |= setString  (layerStrings[COLUMN_ICONTEXTFIT]       , layout::setIconTextFit);
+                        isNotNull |= setJsonNode(layerStrings[COLUMN_ICONTEXTFITPADDING], layout::setIconTextFitPadding);
 
                         isNotNull |= setString  (layerStrings[COLUMN_TEXTFIELD]         , layout::setTextField);
                         isNotNull |= setJsonNode(layerStrings[COLUMN_TEXTFONT]          , layout::setTextFont);
@@ -756,6 +765,8 @@ public class LayerProcessor
             isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_ICONIMAGE))          , layout::setIconImage);
             isNotNull |= setBoolean (getCellBooleanValue(row.getCell(COLUMN_ICONALLOWOVERLAP))  , layout::setIconAllowOverlap);
             isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_ICONOFFSET))         , layout::setIconOffset);
+            isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_ICONTEXTFIT))        , layout::setIconTextFit);
+            isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_ICONTEXTFITPADDING)) , layout::setIconTextFitPadding);
 
             isNotNull |= setString  (getCellStringValue(row.getCell(COLUMN_TEXTFIELD))          , layout::setTextField);
             isNotNull |= setJsonNode(getCellStringValue(row.getCell(COLUMN_TEXTFONT))           , layout::setTextFont);

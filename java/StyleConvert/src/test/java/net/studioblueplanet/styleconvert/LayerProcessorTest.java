@@ -124,7 +124,14 @@ public class LayerProcessorTest
         assertEquals(14, layer.getMinzoom(),0.0001);
         
         layer=layers.get(98);
-        assertEquals(15, layer.getMinzoom(), 0.0001);        
+        assertEquals(15, layer.getMinzoom(), 0.0001);  
+        
+        // Check some new columns
+        layer=layers.get(330);        
+        assertEquals("wegnummer_rood", layer.getLayout().getIconImage());  
+        assertEquals("width", layer.getLayout().getIconTextFit());  
+        assertEquals("[0,5,0,6]", layer.getLayout().getIconTextFitPadding().toString());  
+        
     }
     /**
      * Test of getLayers method, of class LayerProcessor.

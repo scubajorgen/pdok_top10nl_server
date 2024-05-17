@@ -27,6 +27,10 @@ public class Layout
     private Boolean iconAllowOverlap;
     @JsonProperty("icon-offset")
     private JsonNode iconOffset;
+    @JsonProperty("icon-text-fit")
+    private String iconTextFit;
+    @JsonProperty("icon-text-fit-padding")
+    private JsonNode iconTextFitPadding;
     @JsonProperty("symbol-placement")
     private String symbolPlacement;
     @JsonProperty("symbol-avoid-edges")
@@ -193,6 +197,26 @@ public class Layout
     public void setIconOffset(JsonNode iconOffset)
     {
         this.iconOffset = iconOffset;
+    }
+
+    public String getIconTextFit()
+    {
+        return iconTextFit;
+    }
+
+    public void setIconTextFit(String iconTextFit)
+    {
+        this.iconTextFit = iconTextFit;
+    }
+
+    public JsonNode getIconTextFitPadding()
+    {
+        return iconTextFitPadding;
+    }
+
+    public void setIconTextFitPadding(JsonNode iconTextFitPadding)
+    {
+        this.iconTextFitPadding = iconTextFitPadding;
     }
 
     public String getTextTransform()
