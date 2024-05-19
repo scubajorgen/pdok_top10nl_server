@@ -8229,7 +8229,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "kas, warenhuis", "kas, warenhuis|universiteit", "kas, warenhuis|zwembad", "overig|kas, warenhuis"
+        "in", "typegebouw", "kas, warenhuis", "kas, warenhuis|school", "kas, warenhuis|tank", "kas, warenhuis|transformatorstation", "kas, warenhuis|universiteit", "kas, warenhuis|zwembad"
       ],
       "paint": 
       {
@@ -8259,7 +8259,13 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "toren", "luchtwachttoren", "uitzichttoren", "klokkentoren", "radartoren", "telecommunicatietoren", "radiotoren, televisietoren"
+        "all", 
+        [
+          "in", "typegebouw", "klokkentoren", "luchtwachttoren", "radartoren", "radiotoren, televisietoren", "telecommunicatietoren", "toren", "uitzichttoren"
+        ], 
+        [
+          "!in", "typegebouw", "kerk", "moskee"
+        ]
       ],
       "layout": 
       {
@@ -8274,7 +8280,13 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "radiotoren, televisietoren", "koeltoren", "toren", "uitzichttoren", "lichttoren", "radartoren", "verkeerstoren", "huizenblok|telecommunicatietoren", "radarpost|verkeerstoren", "telecommunicatietoren", "klokkentoren", "huizenblok|toren", "gemeentehuis|toren", "gemeentehuis|klokkentoren", "luchtwachttoren", "gemeentehuis|klokkentoren|politiebureau", "bunker|luchtwachttoren", "luchtwachttoren|uitzichttoren", "school|toren", "huizenblok|klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "huizenblok|radarpost|toren", "gemaal|uitzichttoren", "gemeentehuis|huizenblok|klokkentoren", "kasteel|ruïne|toren", "kasteel|toren", "radiotoren, televisietoren|toren", "stationsgebouw|toren", "ruïne|toren", "kliniek, inrichting, sanatorium|luchtwachttoren", "huizenblok|klokkentoren|politiebureau", "kapel|toren", "huizenblok|paleis|toren", "brandweerkazerne|toren"
+        "all", 
+        [
+          "in", "typegebouw", "brandweerkazerne|toren", "bunker|luchtwachttoren", "gemaal|uitzichttoren", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|toren", "huizenblok|kapel|toren", "huizenblok|kerk|toren", "huizenblok|klokkentoren", "huizenblok|klokkentoren|politiebureau", "huizenblok|paleis|toren", "huizenblok|radarpost|toren", "huizenblok|telecommunicatietoren", "huizenblok|toren", "kapel|toren", "kasteel|ruïne|toren", "kasteel|toren", "kerk|klokkentoren", "kerk|klooster, abdij|toren", "kerk|toren", "kliniek, inrichting, sanatorium|luchtwachttoren", "klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "klokkentoren|vuurtoren", "klooster, abdij|toren", "koeltoren", "luchtwachttoren", "luchtwachttoren|uitzichttoren", "luchtwachttoren|watertoren", "radarpost|verkeerstoren", "radartoren", "radiotoren, televisietoren", "radiotoren, televisietoren|toren", "ruïne|toren", "school|toren", "stationsgebouw|toren", "telecommunicatietoren", "toren", "uitzichttoren", "verkeerstoren"
+        ], 
+        [
+          "!in", "typegebouw", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "huizenblok|kerk", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|koepel", "huizenblok|kerk|overig religieus gebouw", "huizenblok|kerk|postkantoor", "huizenblok|kerk|school", "huizenblok|kerk|school|universiteit", "huizenblok|kerk|toren", "huizenblok|kerk|universiteit", "huizenblok|klooster, abdij", "huizenblok|klooster, abdij|museum", "huizenblok|moskee", "huizenblok|overig religieus gebouw", "huizenblok|synagoge", "kapel|kerk", "kapel|klooster, abdij", "kasteel|klooster, abdij", "kasteel|overig religieus gebouw", "kerk", "kerk|kliniek, inrichting, sanatorium", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|koepel", "kerk|moskee|universiteit", "kerk|overig religieus gebouw", "kerk|politiebureau", "kerk|politiebureau|school", "kerk|postkantoor", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|school", "kerk|school|sporthal", "kerk|school|zwembad", "kerk|sporthal", "kerk|sporthal|zwembad", "kerk|stadskantoor, hulpsecretarie", "kerk|synagoge", "kerk|toren", "kerk|universiteit", "kerk|ziekenhuis", "kerk|zwembad", "klooster, abdij", "klooster, abdij|school", "klooster, abdij|toren", "moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "overig religieus gebouw|school", "synagoge"
+        ]
       ],
       "layout": 
       {
@@ -8289,7 +8301,13 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "kerk|school", "kerk"
+        "all", 
+        [
+          "in", "typegebouw", "kerk", "moskee"
+        ], 
+        [
+          "!in", "typegebouw", "klokkentoren", "toren"
+        ]
       ],
       "layout": 
       {
@@ -8304,11 +8322,32 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "kerk", "kerk|school", "huizenblok|kerk", "kerk|klooster, abdij", "kapel|kerk", "kerk|sporthal", "kerk|zwembad", "kerk|koepel", "kerk|synagoge", "huizenblok|kerk|school", "kerk|politiebureau", "huizenblok|kerk|koepel", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|universiteit", "kerk|stadskantoor, hulpsecretarie", "kerk|school|sporthal", "kerk|overig religieus gebouw", "gemeentehuis|kerk", "huizenblok|kerk|overig religieus gebouw", "kerk|kliniek, inrichting, sanatorium", "kerk|ziekenhuis", "kerk|postkantoor", "kerk|sporthal|zwembad", "kerk|politiebureau|school", "huizenblok|kerk|klooster, abdij", "kerk|moskee|universiteit", "huizenblok|kerk|school|universiteit", "kerk|school|zwembad", "huizenblok|kerk|universiteit", "huizenblok|kerk|postkantoor", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk|school", "huizenblok|synagoge", "synagoge", "moskee", "huizenblok|moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "huizenblok|overig religieus gebouw", "kasteel|overig religieus gebouw", "overig religieus gebouw|school", "klooster, abdij", "klooster, abdij|school", "huizenblok|klooster, abdij", "kasteel|klooster, abdij", "huizenblok|klooster, abdij|museum", "kapel|klooster, abdij"
+        "all", 
+        [
+          "in", "typegebouw", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "huizenblok|kerk", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|koepel", "huizenblok|kerk|overig religieus gebouw", "huizenblok|kerk|postkantoor", "huizenblok|kerk|school", "huizenblok|kerk|school|universiteit", "huizenblok|kerk|toren", "huizenblok|kerk|universiteit", "huizenblok|moskee", "huizenblok|overig religieus gebouw", "huizenblok|synagoge", "kapel|kerk", "kasteel|overig religieus gebouw", "kerk", "kerk|kliniek, inrichting, sanatorium", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|koepel", "kerk|moskee|universiteit", "kerk|overig religieus gebouw", "kerk|politiebureau", "kerk|politiebureau|school", "kerk|postkantoor", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|school", "kerk|school|sporthal", "kerk|school|zwembad", "kerk|sporthal", "kerk|sporthal|zwembad", "kerk|stadskantoor, hulpsecretarie", "kerk|synagoge", "kerk|toren", "kerk|universiteit", "kerk|ziekenhuis", "kerk|zwembad", "moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "overig religieus gebouw|school", "synagoge"
+        ], 
+        [
+          "!in", "typegebouw", "brandweerkazerne|toren", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|toren", "huizenblok|kapel|toren", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|toren", "huizenblok|klokkentoren", "huizenblok|klokkentoren|politiebureau", "huizenblok|klooster, abdij", "huizenblok|klooster, abdij|museum", "huizenblok|paleis|toren", "huizenblok|radarpost|toren", "huizenblok|toren", "kapel|klooster, abdij", "kapel|toren", "kasteel|klooster, abdij", "kasteel|ruïne|toren", "kasteel|toren", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|toren", "klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "klokkentoren|vuurtoren", "klooster, abdij", "klooster, abdij|school", "klooster, abdij|toren", "radiotoren, televisietoren|toren", "ruïne|toren", "school|toren", "stationsgebouw|toren", "toren"
+        ]
       ],
       "layout": 
       {
         "icon-image": "kerk",
+        "icon-allow-overlap": true
+      }
+    }, 
+    {
+      "id": "gebouw_vlak_klooster_10",
+      "type": "symbol",
+      "source": "brt_topnl",
+      "source-layer": "top10nl_gebouw_vlak",
+      "filter": 
+      [
+        "in", "typegebouw", "huizenblok|kerk|klooster, abdij", "huizenblok|klooster, abdij", "huizenblok|klooster, abdij|museum", "kapel|klooster, abdij", "kasteel|klooster, abdij", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "klooster, abdij", "klooster, abdij|school", "klooster, abdij|toren"
+      ],
+      "layout": 
+      {
+        "icon-image": "abdij",
         "icon-allow-overlap": true
       }
     }, 
@@ -8319,7 +8358,13 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "kerk|toren"
+        "all", 
+        [
+          "in", "typegebouw", "kerk", "moskee"
+        ], 
+        [
+          "in", "typegebouw", "klokkentoren", "toren"
+        ]
       ],
       "layout": 
       {
@@ -8338,7 +8383,13 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "kerk|toren", "kerk|klokkentoren", "huizenblok|kerk|toren", "kerk|klooster, abdij|toren", "klooster, abdij|toren"
+        "all", 
+        [
+          "in", "typegebouw", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "huizenblok|kerk", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|koepel", "huizenblok|kerk|overig religieus gebouw", "huizenblok|kerk|postkantoor", "huizenblok|kerk|school", "huizenblok|kerk|school|universiteit", "huizenblok|kerk|toren", "huizenblok|kerk|universiteit", "huizenblok|moskee", "huizenblok|synagoge", "kapel|kerk", "kerk", "kerk|kliniek, inrichting, sanatorium", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|koepel", "kerk|moskee|universiteit", "kerk|overig religieus gebouw", "kerk|politiebureau", "kerk|politiebureau|school", "kerk|postkantoor", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|school", "kerk|school|sporthal", "kerk|school|zwembad", "kerk|sporthal", "kerk|sporthal|zwembad", "kerk|stadskantoor, hulpsecretarie", "kerk|synagoge", "kerk|toren", "kerk|universiteit", "kerk|ziekenhuis", "kerk|zwembad", "moskee", "moskee|school", "moskee|universiteit", "synagoge"
+        ], 
+        [
+          "in", "typegebouw", "brandweerkazerne|toren", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|toren", "huizenblok|kapel|toren", "huizenblok|kerk|toren", "huizenblok|klokkentoren", "huizenblok|klokkentoren|politiebureau", "huizenblok|paleis|toren", "huizenblok|radarpost|toren", "huizenblok|toren", "kapel|toren", "kasteel|ruïne|toren", "kasteel|toren", "kerk|klokkentoren", "kerk|klooster, abdij|toren", "kerk|toren", "klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "klokkentoren|vuurtoren", "klooster, abdij|toren", "radiotoren, televisietoren|toren", "ruïne|toren", "school|toren", "stationsgebouw|toren", "toren"
+        ]
       ],
       "layout": 
       {
@@ -8372,7 +8423,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "vuurtoren", "klokkentoren|vuurtoren", "vuurtoren|watertoren", "kasteel|lichttoren"
+        "in", "typegebouw", "kasteel|lichttoren", "klokkentoren|vuurtoren", "lichttoren", "vuurtoren", "vuurtoren|watertoren"
       ],
       "layout": 
       {
@@ -8402,7 +8453,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "watertoren", "luchtwachttoren|watertoren", "huizenblok|watertoren", "school|watertoren"
+        "in", "typegebouw", "huizenblok|watertoren", "luchtwachttoren|watertoren", "school|watertoren", "vuurtoren|watertoren", "watertoren"
       ],
       "layout": 
       {
@@ -8417,7 +8468,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "bunker"
+        "in", "typegebouw", "bunker", "bunker|radarpost"
       ],
       "layout": 
       {
@@ -8432,7 +8483,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "bunker", "bunker|museum"
+        "in", "typegebouw", "bunker", "bunker|luchtwachttoren", "bunker|museum"
       ],
       "layout": 
       {
@@ -8447,7 +8498,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "ruïne"
+        "in", "typegebouw", "kasteel|ruïne", "ruïne"
       ],
       "layout": 
       {
@@ -8462,7 +8513,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "ruïne", "ruïne|toren", "ruïne|windmolen:korenmolen"
+        "in", "typegebouw", "kasteel|ruïne", "kasteel|ruïne|toren", "ruïne", "ruïne|toren"
       ],
       "layout": 
       {

@@ -121,6 +121,14 @@
     "y": 96
   },
 
+  "abdij": 
+  {
+    "height": 32,
+    "width": 32,
+    "pixelRatio": 1,
+    "x": 128,
+    "y": 0
+  },
   "hunebed": 
   {
     "height": 32,

@@ -130,6 +130,7 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 ### Extras
 * Bunkers (```typeinrichtingselement``` 'bunker') are shown (as hexagon)
 * Ruïnes (```typeinrichtingselement``` containing 'ruïne') are shown 
+* Kloosters/Abdijen (```typegebouw``` containing 'klooster, abdij') are shown 
 * Viewpoints (```typeinrichtingselement``` 'uitzichtpunt') are shown
 * Wrecks (```typeinrichtingselement``` 'zichtbaar wrak') are shown
 * ```typeinrichtingselement``` 'paalwerk' is shown as 'strekdam' but dashed, small dashes
@@ -166,7 +167,8 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
 * Friese namen are not displayed, only officiele en nederlandse namen
 
 ### Issues
-1. Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain...
+1. Some attributes like ```typegebouw``` can have more values that are concatenated in one string, like 'stationsgebouw|toren' or 'kasteel|toren'. Unfortunately in Mapbox you cannot filter on _parts of_ an attribute, like ```LIKE '%toren%'``` if you specifially look for 'toren'. Therefore if you want to filter, you have take into account _all occuring combinations_ of attribute values that incorporate the value you are looking for. Unfortunately, these combinations can change in subsequent versions of the PDOK TopNl map. This makes it hard to maintain.
+**We solved this by introducing a new type of filter expression: "_IN" and "!_IN". During insertion of layers using StyleConvert the filter expression is evaluated and transalted to the expression used by MapBox GL (including all combinations). Refer to the [StyleConvert readme](./java/StyleConvert/readme.md).**
 1. Only GPS kernnetpunt, not plain white RD points... (not found yet, not in the data, not on TopRaster)
 1. ```typeinrichtingselement``` 'stuw' (small ones; points; grey rectangle) are not aligned to waterway, but are always drawn upright.
 1. Issue: ```typeweg``` 'hoofdweg' on ```fysiekvoorkomen```'op beweegbaar deel van brug' not drawn at #17/53.226297/6.612613 whereas it is shown on raster maps; unclear why
