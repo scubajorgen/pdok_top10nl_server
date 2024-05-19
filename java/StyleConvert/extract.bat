@@ -1,0 +1,1 @@
+java -jar target\StyleConvert.jar StyleConvertExtract.properties

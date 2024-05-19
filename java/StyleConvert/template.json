@@ -1,0 +1,17 @@
+{
+  "version": 8,
+  "name": "PDOK BRT TopNL",
+  "glyphs": "{fontstack}/{range}.pbf",
+  "sources": 
+  {
+    "brt_topnl": 
+    {
+      "type": "vector",
+      "url": "mbtiles://{PDOK BRT TopNL}"
+    }
+  },
+  "sprite": "{styleJsonFolder}/sprites/sprites",
+  "layers": 
+  [
+  ]
+}

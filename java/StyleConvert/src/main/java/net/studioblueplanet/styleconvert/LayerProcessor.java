@@ -595,7 +595,7 @@ public class LayerProcessor
                 }
                 i++;
             }
-            LOGGER.info("Lines read: {}, layers written: {}", i, layers.size());
+            LOGGER.info("Lines read: {}, layers extracted: {}", i, layers.size());
         }
         catch (Exception e)
         {
@@ -841,7 +841,7 @@ public class LayerProcessor
                         LOGGER.debug("Empty row: {}",i);
                     }
                 }
-                LOGGER.info("Lines read: {}, layers written: {}", maxRow, layers.size());
+                LOGGER.info("Lines read: {}, layers extracted: {}", maxRow, layers.size());
             }
         }
         catch (FileNotFoundException e)

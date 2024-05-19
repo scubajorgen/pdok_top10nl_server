@@ -1,1 +1,1 @@
-java -jar target\StyleConvert-1.0-SNAPSHOT-jar-with-dependencies.jar INSERTLAYERS style_topnlDevelop.json.org layers.csv style_topnlDevelop.json
+java -jar target\StyleConvert.jar StyleConvertInsert.properties

@@ -13,40 +13,17 @@ import java.io.OutputStreamWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
-import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 /**
- * Quick and especially DIRTY conversion tool. Note that it was intended for
+ * Conversion tool. Note that it was intended for
  * own use. Not all style fields and attributes are supported. Only a subset
  * @author jorgen
  */
 public class StyleConvert
 {
     private final static Logger LOGGER = LogManager.getLogger(LayerProcessor.class);
-    private final static String PROPERTY_FILE_NAME      ="StyleConvert.properties";
-    private String              csvSeparator;
-    private static final String DEFAULT_CSV_SEPARATOR   =";";
-    
-    private void readSettings()
-    {
-        Properties properties=new Properties();
-        try
-        {
-            properties.load(new FileInputStream(PROPERTY_FILE_NAME      )); 
-            csvSeparator=properties.getProperty("csvSeparator");
-            if (csvSeparator==null)
-            {
-                csvSeparator=DEFAULT_CSV_SEPARATOR;
-            }
-        }
-        catch(IOException e)
-        {
-            csvSeparator=DEFAULT_CSV_SEPARATOR;
-        }
-    }
 
     /**
      * Reads the JSON style file and exports the layers in it to CSV
@@ -96,7 +73,16 @@ public class StyleConvert
         {
             LOGGER.error("Unknown file format, please provide .xlsx of .csv file");
         }
-            
+           
+        // Process the filter and convert custom filters ("_IN") to MapBox GL filters
+        Settings settings=Settings.getInstance();
+        Boolean enabled=settings.getEnableFilterProcessing();
+        if (enabled!=null && enabled)
+        {
+            FilterExtension filterExtension=new FilterExtension();
+            filterExtension.processFilters(style.getLayers());
+        }
+        
         try
         {
             Writer writer=new OutputStreamWriter(new FileOutputStream(outputJsonStyleFile), StandardCharsets.UTF_8);
@@ -123,52 +109,60 @@ public class StyleConvert
         LOGGER.info("LAYER CONVERSION TOOL");
         
         StyleConvert instance=new StyleConvert();
-        instance.readSettings();
 
         error=false;
-        if (args.length>0)
+        // By default the software looks for the properties file in the 
+        // resources dir, unless the user specified his own.
+        if (args.length==1)
         {
-            if (args[0].equals("INSERTLAYERS"))
+            String propertyFileName=args[0];
+            Settings.setUserDefinedPropertyFile(propertyFileName);
+        }
+        else if (args.length>1)
+        {
+            error=true;
+        }
+
+        Settings settings=Settings.getInstance();
+        
+        String mode=settings.getMode();
+        if (mode!=null && "extractlayers".equals(settings.getMode().toLowerCase()))
+        {
+            String configFile=settings.getConfigJson();
+            String outputFile=settings.getOutputLayersCsv();
+            if (configFile!=null && outputFile!=null)
             {
-                if (args.length==4)
-                {
-                    LOGGER.info("Inserting layers from {} into {}, write result to {}", args[2], args[1], args[3]);
-                    instance.insertLayersToStyleFile(args[1], args[2], args[3]);
-                }
-                else
-                {
-                    error=true;
-                }
+                LOGGER.info("Exporting layers from {} to {}", configFile, outputFile);
+                instance.exportLayersToCsvFile(configFile, outputFile);
             }
-            else if (args[0].equals("EXTRACTLAYERS"))
-            {
-                if (args.length==3)
-                {
-                    LOGGER.info("Exporting layers from {} to {}", args[1], args[2]);
-                    instance.exportLayersToCsvFile(args[1], args[2]);
-                }
-                else
-                {
-                    error=true;
-                }                
-            }
-            else 
+            else
             {
                 error=true;
             }
         }
         else
         {
-            error=true;
+            String configFile   =settings.getInputLayersExcel();
+            String template     =settings.getTemplateJson();
+            String outputFile   =settings.getConfigJson();
+            if (configFile!=null && outputFile!=null && template!=null)
+            {
+                LOGGER.info("Inserting layers from {} into {}, write result to {}", configFile, template, outputFile);
+                instance.insertLayersToStyleFile(template, configFile, outputFile);
+            }
+            else
+            {
+                error=true;
+            }
         }
         
         if (error)
         {
             LOGGER.info("Usage:");
-            LOGGER.info("java -jar StyleConvert EXTRACTLAYERS [StyleJsonInFile] [LayerCsvOutFile]");
-            LOGGER.info("Extracts the layers out the [StyleJsonInFile] and writes them to [LayerCsvOutFile]");
-            LOGGER.info("java -jar StyleConvert INSERTLAYERS [StyleJsonInFile] [LayerInFile] [StyleJsonOutFile]");
-            LOGGER.info("Inserts the layers from [LayerInFile] into [StyleJsonInFile] and writes it to a new style file [StyleJsonOutFile]");
+            LOGGER.info("java -jar StyleConvert");
+            LOGGER.info("(assumes the properties file in the resource directory) or");
+            LOGGER.info("java -jar StyleConvert [propertiesfile.properties]");
+            LOGGER.info("Refer to documentation in the properties file");
         }
         LOGGER.info("done");
     }

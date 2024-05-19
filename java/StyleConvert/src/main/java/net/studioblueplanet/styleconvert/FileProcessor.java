@@ -24,9 +24,6 @@ public class FileProcessor
 {
     private final static Logger LOGGER = LogManager.getLogger(FileProcessor.class);
     private ObjectMapper        objectMapper;
-    private final static String PROPERTY_FILE_NAME="StyleConvert.properties";
-    private static final String DEFAULT_CSV_SEPARATOR=";";   
-    private String              csvSeparator=DEFAULT_CSV_SEPARATOR;
     
     /**
      * Read a map style from JSON file
@@ -77,7 +74,7 @@ public class FileProcessor
      */
     public void writeCsvFile(Writer writer, Style style)
     {
-        LayerProcessor processor=new LayerProcessor(csvSeparator);
+        LayerProcessor processor=new LayerProcessor(Settings.getInstance().getCsvSeparator());
         processor.setLayers(style.getLayers());
         processor.writeToCsvFile(writer);   
     }
@@ -91,7 +88,7 @@ public class FileProcessor
     {
         List<Layer> layers;
         
-        LayerProcessor processor=new LayerProcessor(csvSeparator);
+        LayerProcessor processor=new LayerProcessor(Settings.getInstance().getCsvSeparator());
         processor.readCsv(fileName);
         layers=processor.getLayers();
         style.setLayers(layers);
@@ -106,7 +103,7 @@ public class FileProcessor
     {
         List<Layer> layers;
         
-        LayerProcessor processor=new LayerProcessor(csvSeparator);
+        LayerProcessor processor=new LayerProcessor(Settings.getInstance().getCsvSeparator());
         processor.readExcel(fileName);
         layers=processor.getLayers();
         style.setLayers(layers);
