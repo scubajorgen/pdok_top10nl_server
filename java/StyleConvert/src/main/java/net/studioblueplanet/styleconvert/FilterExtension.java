@@ -255,7 +255,7 @@ public class FilterExtension
 
         if (tables==null)
         {
-            LOGGER.fatal("Unable to replace filter");
+            LOGGER.fatal("Unable to replace filter - EXIT");
             System.exit(0);
         }
         String filename = tables.get(gpkgLayer);
@@ -283,7 +283,7 @@ public class FilterExtension
             }
             else
             {
-                LOGGER.fatal("Processing _IN filter results in empty filter. Layer: {} Attribute: {} Values: {}", 
+                LOGGER.fatal("Processing _IN filter results in empty filter. Layer: {} Attribute: {} Values: {} - EXIT", 
                              gpkgLayer, gpkgAttribute, filterValues);
                 System.exit(0);
             }
@@ -377,7 +377,10 @@ public class FilterExtension
                     if (changed)
                     {
                         layer.setFilter(convertedFilter);
-                        LOGGER.info("Layer ID '{}': filter '{}' replaced by '{}'", layer.getId(), filter.toString(), convertedFilter.toString());
+                        LOGGER.info("FILTER REPLACEMENT:\n"+
+                                    "Layer ID    '{}'\n"+
+                                    "Filter      '{}'\n"+
+                                    "Replaced by '{}'", layer.getId(), filter.toString(), convertedFilter.toString());
                     }
                 }
                 else
@@ -386,7 +389,10 @@ public class FilterExtension
                     if (newFilter!=null)
                     {
                         layer.setFilter(newFilter);
-                        LOGGER.info("Layer ID '{}': filter '{}' replaced by '{}'", layer.getId(), filter.toString(), newFilter.toString());
+                        LOGGER.info("FILTER REPLACEMENT:\n"+
+                                    "Layer ID    '{}'\n"+
+                                    "Filter      '{}'\n"+
+                                    "Replaced by '{}'", layer.getId(), filter.toString(), newFilter.toString());
                     }
                 }
             }
