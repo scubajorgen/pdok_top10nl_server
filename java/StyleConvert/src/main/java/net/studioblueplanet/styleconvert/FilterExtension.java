@@ -221,23 +221,20 @@ public class FilterExtension
         {
             for (String value : distinctValues)
             {
-                String parts[]=value.split("[|]");
-                for (String part : parts)
+                if (value!=null)
                 {
-                    if (part.equals(filter))
+                    String parts[]=value.split("[|]");
+                    for (String part : parts)
                     {
-                        if (!filtered.contains(value))
+                        if (part.equals(filter))
                         {
-                            filtered.add(value);
-                        }                        
+                            if (!filtered.contains(value))
+                            {
+                                filtered.add(value);
+                            }                        
+                        }
                     }
                 }
-/*                
-                if (value.contains(filter))
-                {
-
-                }
-*/                
             }
         }
         filtered.sort(String::compareTo);

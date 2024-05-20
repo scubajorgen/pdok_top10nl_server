@@ -9,7 +9,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.ArrayList;
 import java.util.List;
 import net.studioblueplanet.styleconvert.data.Layer;
-import net.studioblueplanet.styleconvert.data.Style;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
