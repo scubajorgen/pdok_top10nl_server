@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -243,7 +244,6 @@ public class FilterExtension
     
     /**
      * This method offers a replacement for the filter
-     *
      * @param gpkgLayer Layer to use
      * @param gpkgAttribute Attribute to process
      * @param filterValues Values to look for
@@ -252,20 +252,19 @@ public class FilterExtension
     public JsonNode filterReplacementIn(String gpkgLayer, String gpkgAttribute, List<String> filterValues, boolean negate)
     {
         JsonNode newFilter = null;
-
         if (tables==null)
         {
             LOGGER.fatal("Unable to replace filter - EXIT");
             System.exit(0);
         }
         String filename = tables.get(gpkgLayer);
-
         if (filename != null)
         {
             List<String> distinctAttributeValues=getDistinctAttributeValues(filename, gpkgLayer, gpkgAttribute);
-            List<String> filteredValues=filterDistinctValues(distinctAttributeValues, filterValues);
+            List<String> filteredValues         =filterDistinctValues(distinctAttributeValues, filterValues);
             if (filteredValues.size()>0)
             {
+                // Create new filter
                 List<String> result=new ArrayList<>();
                 if (negate)
                 {
@@ -290,18 +289,57 @@ public class FilterExtension
         } 
         else
         {
-            LOGGER.error("Layer {} not found!", gpkgLayer);
+            LOGGER.fatal("Layer {} not found! - EXIT", gpkgLayer);
+            System.exit(0);
         }
-
         return newFilter;
     }
 
+
     /**
-     * 
-     * @param gpkgLayer
-     * @param layerId
-     * @param filter
-     * @return 
+     * Returns the filter expression
+     * @param filter The Filter
+     * @return The expression or command of the filter
+     */
+    private String getFilterExpression(JsonNode filter)
+    {
+        return filter.get(0).asText();
+    }
+
+    /**
+     * Helper; returns the attribute of the filter the commands works on
+     * @param filter The filter
+     * @return The attribute
+     */
+    private String getFilterAttribute(JsonNode filter)
+    {
+        return filter.get(1).asText();
+    }
+
+    /**
+     * Helper; returns the list of attribute values from an "_IN" or "_IN"
+     * filter
+     * @param filter Filter; must be ["[cmd]", "[attrib]", "[val1]", "[val2]", ...]
+     * @return String list of [val1], [val2], ...
+     */
+    private List<String> getFilterAttributeValues(JsonNode filter)
+    {
+        List<String> values = new ArrayList<>();
+        for (int i = 2; i < filter.size(); i++)
+        {
+            String value = filter.get(i).asText();
+            values.add(value);
+        }     
+        return values;
+    }
+    /**
+     * This processes a filter and replaces the "_IN" and "!_IN" filter expressions
+     * with the "in" resp "!in" filter expressions with all distinct values from 
+     * the Geopackage data layer containing the filtered values
+     * @param gpkgLayer Geopackage layer to look for distinct values
+     * @param layer Mapbox GL layer that contains the filter expression
+     * @param Filter Filter to process
+     * @return The new filter or null if filter hasn't been replaced
      */
     public JsonNode processFilter(Layer layer, String gpkgLayer, JsonNode filter)
     {
@@ -310,29 +348,186 @@ public class FilterExtension
         if ("_IN".equals(filterCommand))
         {
             String attribute = filter.get(1).asText();
-            List<String> values = new ArrayList<>();
-            for (int i = 2; i < filter.size(); i++)
-            {
-                String value = filter.get(i).asText();
-                values.add(value);
-            }
+            List<String> values = getFilterAttributeValues(filter);
             newFilter=filterReplacementIn(gpkgLayer, attribute, values, false);
         }
         else if ("!_IN".equals(filterCommand))
         {
             String attribute = filter.get(1).asText();
-            List<String> values = new ArrayList<>();
-            for (int i = 2; i < filter.size(); i++)
-            {
-                String value = filter.get(i).asText();
-                values.add(value);
-            }
+            List<String> values = getFilterAttributeValues(filter);
             newFilter=filterReplacementIn(gpkgLayer, attribute, values, true);
         }
         return newFilter;
     }
     
+    /**
+     * Parses an "all" or "any" filter expression and processes each subfilter
+     * @param gpkgLayer Geopackage layer to look for distinct values
+     * @param layer Mapbox GL layer that contains the filter expression
+     * @return The new filter if replaced, or current filter if not replaced
+     */
+    public JsonNode processSubfilters(Layer layer, String gpkgLayer)
+    {
+        JsonNode filter         =layer.getFilter();
+        JsonNode returnFilter   =null;
+        
+        String filterCommand    =filter.get(0).asText();
+        if ("all".equals(filterCommand) || "any".equals(filterCommand))
+        {        
+            ObjectMapper mapper = new ObjectMapper();
+            ArrayNode convertedFilter = mapper.createArrayNode();  
+            convertedFilter.add(filter.get(0));     // Add the "all" or "any"
+            for(int i=1; i<filter.size(); i++)
+            {
+                JsonNode subFilter=filter.get(i);
+                JsonNode newFilter=processFilter(layer, gpkgLayer, subFilter);
+                if (newFilter!=null)
+                {
+                    convertedFilter.add(newFilter);
+                    returnFilter=convertedFilter;
+                }
+                else
+                {
+                    convertedFilter.add(subFilter);
+                }
+            }
+        }
+        return returnFilter;
+    }
+
+    /**
+     * Optimisation. Replaces ["all", ["in", "attribute", ...], ["_in", "attribute", ...]]
+     * with a single ["in", "attribute", ...]
+     * @param gpkgLayer Geopackage layer to look for distinct values
+     * @param layer Mapbox GL layer that contains the filter expression
+     * @return The new filter replacement or null if no optimisation possible
+     */
+    public JsonNode optimizeSubfilters(Layer layer, String gpkgLayer)
+    {
+        // Check for special case ["all",["in", "attribute", ...],["!in","attribute",...]]
+        JsonNode filter     =layer.getFilter();
+        ArrayNode newFilter =null;
+
+        String filterCommand = filter.get(0).asText();
+        if ("all".equals(filterCommand) && filter.size()>=3 &&
+            filter.get(1).isArray() && filter.get(1).size()>2 &&
+            filter.get(2).isArray() && filter.get(1).size()>2)
+        {
+            JsonNode subFilter1 =filter.get(1);
+            JsonNode subFilter2 =filter.get(2);
+            String command1     =subFilter1.get(0).asText();
+            String command2     =subFilter2.get(0).asText();
+            String attribute1   =subFilter1.get(1).asText();
+            String attribute2   =subFilter2.get(1).asText();
+            if ("in".equals(command1) && "!in".equals(command2) &&
+                attribute1.equals(attribute2))
+            {
+                String          attribute  =getFilterAttribute(filter.get(1));
+                List<String>    values1    =getFilterAttributeValues(filter.get(1));
+                List<String>    values2    =getFilterAttributeValues(filter.get(2));
+
+                List<String> newValues  =values1.stream()
+                                                .filter(value -> !values2.contains(value))
+                                                .collect(Collectors.toList());
+                if (newValues.size()>0)
+                {
+                    ObjectMapper mapper = new ObjectMapper();
+                    ArrayNode newSubfilter = mapper.createArrayNode(); 
+                    newSubfilter.add("in");
+                    newSubfilter.add(attribute);
+                    for(String value : newValues)
+                    {
+                        newSubfilter.add(value);
+                    }
+                    
+                    if (filter.size()==3)
+                    {
+                        // In this case we only have one subfilter, so the 
+                        // "all" or "any" can be omitted
+                        newFilter=newSubfilter;
+                    }
+                    else
+                    {
+                        newFilter=mapper.createArrayNode();
+                        // Keep the original filter command
+                        newFilter.add(filterCommand);
+                        // Add optimized subfilter
+                        newFilter.add(newSubfilter);
+                        // Copy the remaining filter
+                        for (int i=3; i<filter.size();i++)
+                        {
+                            newFilter.add(filter.get(i));
+                        }
+                    }
+                }
+                else
+                {
+                    LOGGER.fatal("Impossible filter optimisation - Exit");
+                    System.exit(0);
+                }
+            }
+        }       
+        return newFilter;
+    }
     
+    /**
+     * Optimisation. 
+     * Replaces ["in", "attribute", "value"] by ["==", "attribute", "value"].
+     * Replaces ["!in", "attribute", "value"] by ["!=", "attribute", "value"].
+     * @param filter Filter to optimize
+     * @return The optimized filter or null if no optimization possible
+     */
+    public JsonNode optimizeSubfilters2(JsonNode filter)
+    {
+        ArrayNode newFilter=null;
+        if (filter!=null && filter.isArray())
+        {
+            String filterCommand=filter.get(0).asText();
+            if ("in".equals(filterCommand) && filter.size()==3)
+            {
+                ObjectMapper mapper=new ObjectMapper();
+                newFilter = mapper.createArrayNode(); 
+                newFilter.add("==");
+                newFilter.add(filter.get(1));
+                newFilter.add(filter.get(2));
+                
+            }
+            else if ("!in".equals(filterCommand) && filter.size()==3)
+            {
+                ObjectMapper mapper=new ObjectMapper();
+                newFilter = mapper.createArrayNode(); 
+                newFilter.add("!=");
+                newFilter.add(filter.get(1));
+                newFilter.add(filter.get(2));                
+            }
+            else if ("all".equals(filterCommand) || "any".equals(filterCommand))
+            {
+                ObjectMapper mapper =new ObjectMapper();
+                newFilter           = mapper.createArrayNode(); 
+                boolean changed     =false;
+                newFilter.add(filterCommand);
+                for(int i=1;i<filter.size(); i++)
+                {
+                    JsonNode subFilter=filter.get(i);
+                    JsonNode newCandidate=optimizeSubfilters2(subFilter);
+                    if (newCandidate!=null)
+                    {
+                        newFilter.add(newCandidate);
+                        changed=true;
+                    }
+                    else
+                    {
+                        newFilter.add(subFilter);
+                    }
+                }
+                if (!changed)
+                {
+                    newFilter=null;
+                }
+            }
+        }
+        return newFilter;
+    }    
     
     /**
      * This method processes all filters. If a filter has the format ["_IN",
@@ -348,39 +543,29 @@ public class FilterExtension
         for (Layer layer : layers)
         {
             JsonNode filter = layer.getFilter();
-
-            if (filter != null && filter.isArray())
+            if (filter!=null && filter.isArray())
             {
-
                 String filterCommand = filter.get(0).asText();
                 String gpkgLayer = layer.getSourceLayer();
                 if ("all".equals(filterCommand) || "any".equals(filterCommand))
                 {
-                    boolean changed=false;
-                    ObjectMapper mapper = new ObjectMapper();
-                    ArrayNode convertedFilter = mapper.createArrayNode();  
-                    convertedFilter.add(filter.get(0));
-                    for(int i=1; i<filter.size(); i++)
+                    JsonNode newFilter=processSubfilters(layer, gpkgLayer);
+                    if (newFilter!=null)
                     {
-                        JsonNode subFilter=filter.get(i);
-                        JsonNode newFilter=processFilter(layer, gpkgLayer, subFilter);
-                        if (newFilter!=null)
-                        {
-                            convertedFilter.add(newFilter);
-                            changed=true;
-                        }
-                        else
-                        {
-                            convertedFilter.add(subFilter);
-                        }
-                    }
-                    if (changed)
-                    {
-                        layer.setFilter(convertedFilter);
+                        layer.setFilter(newFilter);
                         LOGGER.info("FILTER REPLACEMENT:\n"+
                                     "Layer ID    '{}'\n"+
                                     "Filter      '{}'\n"+
-                                    "Replaced by '{}'", layer.getId(), filter.toString(), convertedFilter.toString());
+                                    "Replaced by '{}'", layer.getId(), filter.toString(), newFilter.toString());
+                    }
+                    newFilter=optimizeSubfilters(layer, gpkgLayer);    
+                    if (newFilter!=null)
+                    {
+                        layer.setFilter(newFilter);
+                        LOGGER.info("FILTER OPTIMISATION:\n"+
+                                    "Layer ID    '{}'\n"+
+                                    "Filter      '{}'\n"+
+                                    "Replaced by '{}'", layer.getId(), filter.toString(), newFilter.toString());                        
                     }
                 }
                 else
@@ -395,9 +580,16 @@ public class FilterExtension
                                     "Replaced by '{}'", layer.getId(), filter.toString(), newFilter.toString());
                     }
                 }
+                
+                JsonNode newFilter=optimizeSubfilters2(layer.getFilter());
+                if (newFilter!=null)
+                {
+                    layer.setFilter(newFilter);
+                    LOGGER.info("FILTER OPTIMISATION:\n"+
+                                "Layer ID    '{}'\n"+
+                                "Filter      '{}'\n"+
+                                "Replaced by '{}'", layer.getId(), filter.toString(), newFilter.toString());                }
             }
-
         }
     }
-
 }
