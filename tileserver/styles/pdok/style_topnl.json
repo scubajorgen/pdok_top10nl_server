@@ -239,7 +239,7 @@
       "source-layer": "top10nl_terrein_vlak",
       "filter": 
       [
-        "in", "typelandgebruik", "bos: loofbos"
+        "==", "typelandgebruik", "bos: loofbos"
       ],
       "paint": 
       {
@@ -253,7 +253,7 @@
       "source-layer": "top10nl_terrein_vlak",
       "filter": 
       [
-        "in", "typelandgebruik", "bos: naaldbos"
+        "==", "typelandgebruik", "bos: naaldbos"
       ],
       "paint": 
       {
@@ -267,7 +267,7 @@
       "source-layer": "top10nl_terrein_vlak",
       "filter": 
       [
-        "in", "typelandgebruik", "bos: gemengd bos"
+        "==", "typelandgebruik", "bos: gemengd bos"
       ],
       "paint": 
       {
@@ -281,7 +281,7 @@
       "source-layer": "top10nl_terrein_vlak",
       "filter": 
       [
-        "in", "typelandgebruik", "bos: griend"
+        "==", "typelandgebruik", "bos: griend"
       ],
       "paint": 
       {
@@ -496,7 +496,7 @@
       "source-layer": "top10nl_terrein_vlak",
       "filter": 
       [
-        "in", "typelandgebruik", "grasland"
+        "==", "typelandgebruik", "grasland"
       ],
       "paint": 
       {
@@ -511,7 +511,7 @@
       "source-layer": "top50nl_terrein_vlak",
       "filter": 
       [
-        "in", "type_landgebruik", "grasland"
+        "==", "type_landgebruik", "grasland"
       ],
       "paint": 
       {
@@ -526,7 +526,7 @@
       "source-layer": "top100nl_terrein_vlak",
       "filter": 
       [
-        "in", "type_landgebruik", "grasland"
+        "==", "type_landgebruik", "grasland"
       ],
       "paint": 
       {
@@ -729,7 +729,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(200, 200, 200)"
+        "fill-color": "rgb(200, 200, 220)"
       }
     }, 
     {
@@ -743,7 +743,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(200, 200, 200)"
+        "fill-color": "rgb(200, 200, 220)"
       }
     }, 
     {
@@ -757,7 +757,7 @@
       ],
       "paint": 
       {
-        "fill-color": "rgb(200, 200, 200)"
+        "fill-color": "rgb(200, 200, 220)"
       }
     }, 
     {
@@ -893,7 +893,7 @@
       }
     }, 
     {
-      "id": "hoogte_lijn10",
+      "id": "hoogte_lijn_10",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top10nl_hoogte_lijn",
@@ -922,7 +922,7 @@
       }
     }, 
     {
-      "id": "hoogte_lijn50",
+      "id": "hoogte_lijn_50",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top50nl_hoogte_lijn",
@@ -951,7 +951,7 @@
       }
     }, 
     {
-      "id": "hoogte_lijn100",
+      "id": "hoogte_lijn_100",
       "type": "line",
       "source": "brt_topnl",
       "source-layer": "top100nl_hoogte_lijn",
@@ -980,7 +980,7 @@
       }
     }, 
     {
-      "id": "hoogte_lijn_hoogte10",
+      "id": "hoogte_lijn_hoogte_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_hoogte_lijn",
@@ -1035,7 +1035,7 @@
       }
     }, 
     {
-      "id": "relief_lijn_wal",
+      "id": "relief_lijn_wal_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_relief_lijn",
@@ -1054,7 +1054,7 @@
       }
     }, 
     {
-      "id": "relief_lijn_taludhoog",
+      "id": "relief_lijn_taludhoog_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
@@ -1079,7 +1079,7 @@
       }
     }, 
     {
-      "id": "relief_lijn_taludlaag",
+      "id": "relief_lijn_taludlaag_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
@@ -1104,7 +1104,7 @@
       }
     }, 
     {
-      "id": "relief_lijn_steilerand",
+      "id": "relief_lijn_steilerand_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_relief_talud_hoge_zijde_lijn",
@@ -1143,7 +1143,7 @@
       "source-layer": "top50nl_waterdeel_vlak",
       "filter": 
       [
-        "in", "type_water", "zee"
+        "==", "type_water", "zee"
       ],
       "paint": 
       {
@@ -1165,7 +1165,7 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_zee_droogvallend_100",
+      "id": "waterdeel_vlak_droogvallend_100",
       "type": "fill",
       "source": "brt_topnl",
       "source-layer": "top100nl_waterdeel_vlak",
@@ -1193,7 +1193,7 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_zee_droogvallend_250",
+      "id": "waterdeel_vlak_droogvallend_250",
       "type": "fill",
       "source": "brt_topnl",
       "source-layer": "top250nl_waterdeel_vlak",
@@ -1221,7 +1221,7 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_zee_droogvallend_500",
+      "id": "waterdeel_vlak_droogvallend_500",
       "type": "fill",
       "source": "brt_topnl",
       "source-layer": "top500nl_waterdeel_vlak",
@@ -1249,7 +1249,7 @@
       }
     }, 
     {
-      "id": "waterdeel_vlak_zee_droogvallend_1000",
+      "id": "waterdeel_vlak_droogvallend_1000",
       "type": "fill",
       "source": "brt_topnl",
       "source-layer": "top1000nl_waterdeel_vlak",
@@ -1269,7 +1269,7 @@
       "source-layer": "top10nl_waterdeel_vlak",
       "filter": 
       [
-        "in", "typewater", "meer, plas"
+        "==", "typewater", "meer, plas"
       ],
       "paint": 
       {
@@ -1285,7 +1285,7 @@
       [
         "all", 
         [
-          "in", "typewater", "meer, plas"
+          "==", "typewater", "meer, plas"
         ], 
         [
           "==", "functie", "waterzuivering"
@@ -1306,7 +1306,7 @@
       [
         "all", 
         [
-          "in", "typewater", "meer, plas"
+          "==", "typewater", "meer, plas"
         ], 
         [
           "==", "functie", "vloeiveld"
@@ -1325,7 +1325,7 @@
       "source-layer": "top10nl_waterdeel_vlak",
       "filter": 
       [
-        "in", "typewater", "waterloop"
+        "==", "typewater", "waterloop"
       ],
       "paint": 
       {
@@ -1423,7 +1423,7 @@
       "source-layer": "top50nl_waterdeel_vlak",
       "filter": 
       [
-        "in", "type_water", "droogvallend"
+        "==", "type_water", "droogvallend"
       ],
       "paint": 
       {
@@ -1556,19 +1556,7 @@
       "source-layer": "top10nl_waterdeel_lijn",
       "filter": 
       [
-        "any", 
-        [
-          "==", "fysiekvoorkomen", "in duiker"
-        ], 
-        [
-          "==", "fysiekvoorkomen", "in afsluitbare duiker"
-        ], 
-        [
-          "==", "fysiekvoorkomen", "in afsluitbare grondduiker"
-        ], 
-        [
-          "==", "fysiekvoorkomen", "in grondduiker"
-        ]
+        "in", "fysiekvoorkomen", "in duiker", "in afsluitbare duiker", "in afsluitbare grondduiker", "in grondduiker"
       ],
       "layout": 
       {
@@ -2234,7 +2222,7 @@
           "==", "status", "in gebruik"
         ], 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
           "in", "fysiekvoorkomen", "in tunnel", "op knooppuntverbinding|in tunnel", "op oprit / afrit|in tunnel"
@@ -2719,7 +2707,7 @@
       [
         "all", 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
           "in", "fysiekvoorkomen", "in tunnel", "op knooppuntverbinding|in tunnel", "op oprit / afrit|in tunnel"
@@ -3189,7 +3177,7 @@
           "==", "status", "in gebruik"
         ], 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
           "!in", "fysiekvoorkomen", "in tunnel", "op knooppuntverbinding|in tunnel", "op oprit / afrit|in tunnel"
@@ -3237,7 +3225,7 @@
           "==", "status", "in uitvoering"
         ], 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ]
       ],
       "layout": 
@@ -3286,7 +3274,7 @@
           "==", "status", "buiten gebruik"
         ], 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ]
       ],
       "layout": 
@@ -3330,7 +3318,7 @@
       "source-layer": "top50nl_wegdeel_lijn",
       "filter": 
       [
-        "in", "type_weg", "straat"
+        "==", "type_weg", "straat"
       ],
       "layout": 
       {
@@ -4867,7 +4855,7 @@
       [
         "all", 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
           "!=", "verhardingsbreedteklasse", "< 2 meter"
@@ -4903,7 +4891,7 @@
       "source-layer": "top50nl_wegdeel_lijn",
       "filter": 
       [
-        "in", "type_weg", "straat"
+        "==", "type_weg", "straat"
       ],
       "layout": 
       {
@@ -5993,7 +5981,7 @@
       "source-layer": "top10nl_wegdeel_vlak",
       "filter": 
       [
-        "in", "typeweg", "startbaan, landingsbaan", "startbaan, landingsbaan|overig", "startbaan, landingsbaan|rolbaan, platform", "startbaan, landingsbaan|rolbaan, platform|overig"
+        "in", "typeweg", "rolbaan, platform", "rolbaan, platform|overig", "startbaan, landingsbaan", "startbaan, landingsbaan|overig", "startbaan, landingsbaan|rolbaan, platform", "startbaan, landingsbaan|rolbaan, platform|overig"
       ],
       "paint": 
       {
@@ -6007,7 +5995,7 @@
       "source-layer": "top50nl_wegdeel_vlak",
       "filter": 
       [
-        "==", "type_weg", "startbaan, landingsbaan"
+        "in", "type_weg", "rolbaan, platform", "startbaan, landingsbaan"
       ],
       "paint": 
       {
@@ -6021,7 +6009,7 @@
       "source-layer": "top100nl_wegdeel_vlak",
       "filter": 
       [
-        "==", "type_weg", "startbaan, landingsbaan"
+        "in", "type_weg", "rolbaan, platform", "startbaan, landingsbaan"
       ],
       "paint": 
       {
@@ -6325,7 +6313,7 @@
           "==", "typespoorbaan", "trein"
         ], 
         [
-          "!in", "fysiekvoorkomen", "in tunnel", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|overkluisd"
+          "!in", "fysiekvoorkomen", "in tunnel", "op beweegbaar deel van brug", "op vast deel van brug", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -6409,7 +6397,7 @@
           "==", "typespoorbaan", "trein"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op vast deel van brug", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -6444,7 +6432,7 @@
           "==", "typespoorbaan", "sneltram"
         ], 
         [
-          "!in", "fysiekvoorkomen", "in tunnel", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|overkluisd"
+          "!in", "fysiekvoorkomen", "in tunnel", "op beweegbaar deel van brug", "op vast deel van brug", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -6528,7 +6516,7 @@
           "==", "typespoorbaan", "sneltram"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op vast deel van brug", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7149,7 +7137,7 @@
           "!=", "verhardingsbreedteklasse", "< 2 meter"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd", "op beweegbaar deel van brug|op oprit / afrit"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7194,10 +7182,10 @@
           "==", "status", "in gebruik"
         ], 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd", "op beweegbaar deel van brug|op oprit / afrit"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7245,7 +7233,7 @@
           "==", "typeweg", "lokale weg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd", "op beweegbaar deel van brug|op oprit / afrit"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7293,7 +7281,7 @@
           "==", "typeweg", "regionale weg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd", "op beweegbaar deel van brug|op oprit / afrit"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7341,7 +7329,7 @@
           "==", "typeweg", "hoofdweg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd", "op beweegbaar deel van brug|op oprit / afrit"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7389,7 +7377,7 @@
           "==", "typeweg", "autosnelweg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op beweegbaar deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd", "op beweegbaar deel van brug|op oprit / afrit"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7440,7 +7428,7 @@
           "==", "verhardingstype", "onverhard"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7481,7 +7469,7 @@
           "==", "verhardingstype", "half verhard"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7525,7 +7513,7 @@
           "==", "hoofdverkeersgebruik", "fietsers, bromfietsers"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7569,7 +7557,7 @@
           "==", "hoofdverkeersgebruik", "voetgangers"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7613,7 +7601,7 @@
           "!in", "hoofdverkeersgebruik", "fietsers, bromfietsers", "hoofdverkeersgebruik", "voetgangers"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7686,10 +7674,10 @@
       [
         "all", 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7734,7 +7722,7 @@
       [
         "all", 
         [
-          "in", "typeweg", "straat"
+          "==", "typeweg", "straat"
         ], 
         [
           "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit"
@@ -7785,7 +7773,7 @@
           "==", "typeweg", "lokale weg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7881,7 +7869,7 @@
           "==", "typeweg", "regionale weg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -7977,7 +7965,7 @@
           "==", "typeweg", "hoofdweg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -8073,7 +8061,7 @@
           "==", "typeweg", "autosnelweg"
         ], 
         [
-          "in", "fysiekvoorkomen", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
+          "in", "fysiekvoorkomen", "op beweegbaar deel van brug", "op beweegbaar deel van brug|op oprit / afrit", "op vast deel van brug", "op vast deel van brug|op knooppuntverbinding", "op vast deel van brug|op oprit / afrit", "op vast deel van brug|op rotonde", "op vast deel van brug|overkluisd"
         ]
       ],
       "layout": 
@@ -8166,7 +8154,7 @@
       [
         "all", 
         [
-          "in", "typewater", "waterloop"
+          "==", "typewater", "waterloop"
         ], 
         [
           "==", "fysiekvoorkomen", "op brug"
@@ -8259,13 +8247,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "all", 
-        [
-          "in", "typegebouw", "klokkentoren", "luchtwachttoren", "radartoren", "radiotoren, televisietoren", "telecommunicatietoren", "toren", "uitzichttoren"
-        ], 
-        [
-          "!in", "typegebouw", "kerk", "moskee"
-        ]
+        "in", "typegebouw", "klokkentoren", "luchtwachttoren", "radartoren", "radiotoren, televisietoren", "telecommunicatietoren", "toren", "uitzichttoren"
       ],
       "layout": 
       {
@@ -8280,13 +8262,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "all", 
-        [
-          "in", "typegebouw", "brandweerkazerne|toren", "bunker|luchtwachttoren", "gemaal|uitzichttoren", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|toren", "huizenblok|kapel|toren", "huizenblok|kerk|toren", "huizenblok|klokkentoren", "huizenblok|klokkentoren|politiebureau", "huizenblok|paleis|toren", "huizenblok|radarpost|toren", "huizenblok|telecommunicatietoren", "huizenblok|toren", "kapel|toren", "kasteel|ruïne|toren", "kasteel|toren", "kerk|klokkentoren", "kerk|klooster, abdij|toren", "kerk|toren", "kliniek, inrichting, sanatorium|luchtwachttoren", "klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "klokkentoren|vuurtoren", "klooster, abdij|toren", "koeltoren", "luchtwachttoren", "luchtwachttoren|uitzichttoren", "luchtwachttoren|watertoren", "radarpost|verkeerstoren", "radartoren", "radiotoren, televisietoren", "radiotoren, televisietoren|toren", "ruïne|toren", "school|toren", "stationsgebouw|toren", "telecommunicatietoren", "toren", "uitzichttoren", "verkeerstoren"
-        ], 
-        [
-          "!in", "typegebouw", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "huizenblok|kerk", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|koepel", "huizenblok|kerk|overig religieus gebouw", "huizenblok|kerk|postkantoor", "huizenblok|kerk|school", "huizenblok|kerk|school|universiteit", "huizenblok|kerk|toren", "huizenblok|kerk|universiteit", "huizenblok|klooster, abdij", "huizenblok|klooster, abdij|museum", "huizenblok|moskee", "huizenblok|overig religieus gebouw", "huizenblok|synagoge", "kapel|kerk", "kapel|klooster, abdij", "kasteel|klooster, abdij", "kasteel|overig religieus gebouw", "kerk", "kerk|kliniek, inrichting, sanatorium", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|koepel", "kerk|moskee|universiteit", "kerk|overig religieus gebouw", "kerk|politiebureau", "kerk|politiebureau|school", "kerk|postkantoor", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|school", "kerk|school|sporthal", "kerk|school|zwembad", "kerk|sporthal", "kerk|sporthal|zwembad", "kerk|stadskantoor, hulpsecretarie", "kerk|synagoge", "kerk|toren", "kerk|universiteit", "kerk|ziekenhuis", "kerk|zwembad", "klooster, abdij", "klooster, abdij|school", "klooster, abdij|toren", "moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "overig religieus gebouw|school", "synagoge"
-        ]
+        "in", "typegebouw", "brandweerkazerne|toren", "bunker|luchtwachttoren", "gemaal|uitzichttoren", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|toren", "huizenblok|kapel|toren", "huizenblok|klokkentoren", "huizenblok|klokkentoren|politiebureau", "huizenblok|paleis|toren", "huizenblok|radarpost|toren", "huizenblok|telecommunicatietoren", "huizenblok|toren", "kapel|toren", "kasteel|ruïne|toren", "kasteel|toren", "kliniek, inrichting, sanatorium|luchtwachttoren", "klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "klokkentoren|vuurtoren", "koeltoren", "luchtwachttoren", "luchtwachttoren|uitzichttoren", "luchtwachttoren|watertoren", "radarpost|verkeerstoren", "radartoren", "radiotoren, televisietoren", "radiotoren, televisietoren|toren", "ruïne|toren", "school|toren", "stationsgebouw|toren", "telecommunicatietoren", "toren", "uitzichttoren", "verkeerstoren"
       ],
       "layout": 
       {
@@ -8301,13 +8277,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "all", 
-        [
-          "in", "typegebouw", "kerk", "moskee"
-        ], 
-        [
-          "!in", "typegebouw", "klokkentoren", "toren"
-        ]
+        "in", "typegebouw", "kerk", "moskee"
       ],
       "layout": 
       {
@@ -8322,13 +8292,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "all", 
-        [
-          "in", "typegebouw", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "huizenblok|kerk", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|koepel", "huizenblok|kerk|overig religieus gebouw", "huizenblok|kerk|postkantoor", "huizenblok|kerk|school", "huizenblok|kerk|school|universiteit", "huizenblok|kerk|toren", "huizenblok|kerk|universiteit", "huizenblok|moskee", "huizenblok|overig religieus gebouw", "huizenblok|synagoge", "kapel|kerk", "kasteel|overig religieus gebouw", "kerk", "kerk|kliniek, inrichting, sanatorium", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|koepel", "kerk|moskee|universiteit", "kerk|overig religieus gebouw", "kerk|politiebureau", "kerk|politiebureau|school", "kerk|postkantoor", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|school", "kerk|school|sporthal", "kerk|school|zwembad", "kerk|sporthal", "kerk|sporthal|zwembad", "kerk|stadskantoor, hulpsecretarie", "kerk|synagoge", "kerk|toren", "kerk|universiteit", "kerk|ziekenhuis", "kerk|zwembad", "moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "overig religieus gebouw|school", "synagoge"
-        ], 
-        [
-          "!in", "typegebouw", "brandweerkazerne|toren", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|toren", "huizenblok|kapel|toren", "huizenblok|kerk|klooster, abdij", "huizenblok|kerk|toren", "huizenblok|klokkentoren", "huizenblok|klokkentoren|politiebureau", "huizenblok|klooster, abdij", "huizenblok|klooster, abdij|museum", "huizenblok|paleis|toren", "huizenblok|radarpost|toren", "huizenblok|toren", "kapel|klooster, abdij", "kapel|toren", "kasteel|klooster, abdij", "kasteel|ruïne|toren", "kasteel|toren", "kerk|klokkentoren", "kerk|klooster, abdij", "kerk|klooster, abdij|toren", "kerk|toren", "klokkentoren", "klokkentoren|stadskantoor, hulpsecretarie", "klokkentoren|vuurtoren", "klooster, abdij", "klooster, abdij|school", "klooster, abdij|toren", "radiotoren, televisietoren|toren", "ruïne|toren", "school|toren", "stationsgebouw|toren", "toren"
-        ]
+        "in", "typegebouw", "bezoekerscentrum|kerk", "brandweerkazerne|kerk", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "huizenblok|kerk", "huizenblok|kerk|koepel", "huizenblok|kerk|overig religieus gebouw", "huizenblok|kerk|postkantoor", "huizenblok|kerk|school", "huizenblok|kerk|school|universiteit", "huizenblok|kerk|universiteit", "huizenblok|moskee", "huizenblok|overig religieus gebouw", "huizenblok|synagoge", "kapel|kerk", "kasteel|overig religieus gebouw", "kerk", "kerk|kliniek, inrichting, sanatorium", "kerk|koepel", "kerk|moskee|universiteit", "kerk|overig religieus gebouw", "kerk|politiebureau", "kerk|politiebureau|school", "kerk|postkantoor", "kerk|psychiatrisch ziekenhuis, psychiatrisch centrum", "kerk|school", "kerk|school|sporthal", "kerk|school|zwembad", "kerk|sporthal", "kerk|sporthal|zwembad", "kerk|stadskantoor, hulpsecretarie", "kerk|synagoge", "kerk|universiteit", "kerk|ziekenhuis", "kerk|zwembad", "moskee", "moskee|school", "moskee|universiteit", "overig religieus gebouw", "overig religieus gebouw|school", "synagoge"
       ],
       "layout": 
       {
@@ -8438,7 +8402,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "watertoren"
+        "==", "typegebouw", "watertoren"
       ],
       "layout": 
       {
@@ -8477,7 +8441,7 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_bunker",
+      "id": "gebouw_vlak_bunker_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
@@ -8492,7 +8456,7 @@
       }
     }, 
     {
-      "id": "gebouw_punt_ruine",
+      "id": "gebouw_punt_ruine_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
@@ -8507,7 +8471,7 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_ruine",
+      "id": "gebouw_vlak_ruine_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
@@ -8522,7 +8486,7 @@
       }
     }, 
     {
-      "id": "gebouw_punt_tankstation",
+      "id": "gebouw_punt_tankstation_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
@@ -8537,7 +8501,7 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_tankstation",
+      "id": "gebouw_vlak_tankstation_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
@@ -8552,7 +8516,7 @@
       }
     }, 
     {
-      "id": "gebouw_punt_parkeerplaats",
+      "id": "gebouw_punt_parkeerplaats_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
@@ -8567,28 +8531,32 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_parkeerplaats",
+      "id": "gebouw_vlak_parkeerplaats_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "==", "typegebouw", "parkeerdak, parkeerdek, parkeergarage"
+        "in", "typegebouw", "bezoekerscentrum|parkeerdak, parkeerdek, parkeergarage", "brandweerkazerne|parkeerdak, parkeerdek, parkeergarage", "gemeentehuis|parkeerdak, parkeerdek, parkeergarage", "huizenblok|parkeerdak, parkeerdek, parkeergarage", "huizenblok|parkeerdak, parkeerdek, parkeergarage|postkantoor", "kliniek, inrichting, sanatorium|parkeerdak, parkeerdek, parkeergarage", "parkeerdak, parkeerdek, parkeergarage", "parkeerdak, parkeerdek, parkeergarage|postkantoor", "parkeerdak, parkeerdek, parkeergarage|remise", "parkeerdak, parkeerdek, parkeergarage|school", "parkeerdak, parkeerdek, parkeergarage|school|universiteit", "parkeerdak, parkeerdek, parkeergarage|sporthal", "parkeerdak, parkeerdek, parkeergarage|stationsgebouw", "parkeerdak, parkeerdek, parkeergarage|tankstation", "parkeerdak, parkeerdek, parkeergarage|universiteit", "parkeerdak, parkeerdek, parkeergarage|veiling", "parkeerdak, parkeerdek, parkeergarage|ziekenhuis"
       ],
       "layout": 
       {
         "icon-image": "parkeerplaats",
-        "icon-allow-overlap": true
+        "icon-allow-overlap": true,
+        "icon-offset": 
+        [
+          0, 5
+        ]
       }
     }, 
     {
-      "id": "gebouw_vlak_gemeentehuis",
+      "id": "gebouw_vlak_gemeentehuis_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "gemeentehuis", "gemeentehuis|huizenblok", "gemeentehuis|huizenblok|postkantoor", "gemeentehuis|huizenblok|toren", "gemeentehuis|kerk", "gemeentehuis|parkeerdak, parkeerdek, parkeergarage", "gemeentehuis|politiebureau", "gemeentehuis|school", "gemeentehuis|stadskantoor, hulpsecretarie", "gemeentehuis|toren"
+        "in", "typegebouw", "bezoekerscentrum|gemeentehuis", "gemeentehuis", "gemeentehuis|huizenblok", "gemeentehuis|huizenblok|klokkentoren", "gemeentehuis|huizenblok|politiebureau", "gemeentehuis|kasteel", "gemeentehuis|kasteel|stadskantoor, hulpsecretarie", "gemeentehuis|kerk", "gemeentehuis|kerk|school", "gemeentehuis|kliniek, inrichting, sanatorium", "gemeentehuis|klokkentoren", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|paleis", "gemeentehuis|parkeerdak, parkeerdek, parkeergarage", "gemeentehuis|politiebureau", "gemeentehuis|politiebureau|school", "gemeentehuis|politiebureau|stadskantoor, hulpsecretarie", "gemeentehuis|postkantoor", "gemeentehuis|sporthal", "gemeentehuis|stadskantoor, hulpsecretarie", "gemeentehuis|stationsgebouw", "gemeentehuis|toren"
       ],
       "layout": 
       {
@@ -8601,13 +8569,13 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_postkantoor",
+      "id": "gebouw_vlak_postkantoor_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "postkantoor", "postkantoor|stadion", "postkantoor|stationsgebouw", "postkantoor|tankstation", "postkantoor|ziekenhuis"
+        "in", "typegebouw", "bezoekerscentrum|postkantoor", "gemeentehuis|postkantoor", "huizenblok|kerk|postkantoor", "huizenblok|parkeerdak, parkeerdek, parkeergarage|postkantoor", "huizenblok|postkantoor", "huizenblok|postkantoor|school", "huizenblok|postkantoor|universiteit", "kerk|postkantoor", "parkeerdak, parkeerdek, parkeergarage|postkantoor", "politiebureau|postkantoor|stationsgebouw", "postkantoor", "postkantoor|school", "postkantoor|school|universiteit", "postkantoor|school|universiteit|ziekenhuis", "postkantoor|school|ziekenhuis", "postkantoor|stadskantoor, hulpsecretarie", "postkantoor|stationsgebouw"
       ],
       "layout": 
       {
@@ -8620,13 +8588,13 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_politiebureau",
+      "id": "gebouw_vlak_politiebureau_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "politiebureau", "politiebureau|sporthal", "politiebureau|stadskantoor, hulpsecretarie"
+        "in", "typegebouw", "brandweerkazerne|politiebureau", "gemeentehuis|huizenblok|politiebureau", "gemeentehuis|klokkentoren|politiebureau", "gemeentehuis|politiebureau", "gemeentehuis|politiebureau|school", "gemeentehuis|politiebureau|stadskantoor, hulpsecretarie", "huizenblok|klokkentoren|politiebureau", "huizenblok|politiebureau", "kerk|politiebureau", "kerk|politiebureau|school", "politiebureau", "politiebureau|postkantoor|stationsgebouw", "politiebureau|psychiatrisch ziekenhuis, psychiatrisch centrum", "politiebureau|school", "politiebureau|sporthal", "politiebureau|stadskantoor, hulpsecretarie"
       ],
       "layout": 
       {
@@ -8645,7 +8613,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "==", "typegebouw", "gemaal"
+        "in", "typegebouw", "gemaal", "gemaal|windmolen: watermolen"
       ],
       "layout": 
       {
@@ -8658,13 +8626,13 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_gemaal",
+      "id": "gebouw_vlak_gemaal_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "gemaal"
+        "in", "typegebouw", "gemaal", "gemaal|pompstation", "gemaal|uitzichttoren", "gemaal|windmolen: watermolen"
       ],
       "layout": 
       {
@@ -8677,13 +8645,13 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_windturbine",
+      "id": "gebouw_vlak_windturbine_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "windturbine"
+        "==", "typegebouw", "windturbine"
       ],
       "layout": 
       {
@@ -8696,7 +8664,7 @@
       }
     }, 
     {
-      "id": "gebouw_punt_watermolen",
+      "id": "gebouw_punt_watermolen_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
@@ -8715,13 +8683,13 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_watermolen",
+      "id": "gebouw_vlak_watermolen_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "waterradmolen", "huizenblok|waterradmolen", "kasteel|waterradmolen", "museum|waterradmolen"
+        "in", "typegebouw", "elektriciteitscentrale|waterradmolen", "huizenblok|waterradmolen", "kasteel|waterradmolen", "waterradmolen"
       ],
       "layout": 
       {
@@ -8740,7 +8708,7 @@
       "source-layer": "top10nl_gebouw_punt",
       "filter": 
       [
-        "in", "typegebouw", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
+        "in", "typegebouw", "gemaal|windmolen: watermolen", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
       ],
       "layout": 
       {
@@ -8759,7 +8727,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "gemaal|windmolen", "gemaal|windmolen: watermolen", "overig|windmolen", "ruïne|windmolen: korenmolen", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
+        "in", "typegebouw", "gemaal|windmolen: watermolen", "school|windmolen: watermolen", "windmolen", "windmolen: korenmolen", "windmolen: watermolen"
       ],
       "layout": 
       {
@@ -8772,7 +8740,7 @@
       }
     }, 
     {
-      "id": "gebouw_punt_kapel",
+      "id": "gebouw_punt_kapel_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_punt",
@@ -8790,7 +8758,7 @@
       }
     }, 
     {
-      "id": "gebouw_vlak_kapel",
+      "id": "gebouw_vlak_kapel_10",
       "type": "symbol",
       "source": "brt_topnl",
       "source-layer": "top10nl_gebouw_vlak",
@@ -8814,7 +8782,7 @@
       "source-layer": "top10nl_gebouw_vlak",
       "filter": 
       [
-        "in", "typegebouw", "ziekenhuis", "ziekenhuis|school", "ziekenhuis|school|universiteit", "ziekenhuis|universiteit"
+        "in", "typegebouw", "kerk|ziekenhuis", "kliniek, inrichting, sanatorium|ziekenhuis", "parkeerdak, parkeerdek, parkeergarage|ziekenhuis", "postkantoor|school|universiteit|ziekenhuis", "postkantoor|school|ziekenhuis", "psychiatrisch ziekenhuis, psychiatrisch centrum|universiteit|ziekenhuis", "psychiatrisch ziekenhuis, psychiatrisch centrum|ziekenhuis", "school|ziekenhuis", "universiteit|ziekenhuis", "ziekenhuis", "ziekenhuis|zwembad"
       ],
       "layout": 
       {
@@ -8833,7 +8801,7 @@
       "source-layer": "top10nl_wegdeel_vlak",
       "filter": 
       [
-        "in", "typeweg", "parkeerplaats", "parkeerplaats: carpool", "parkeerplaats: P+R"
+        "in", "typeweg", "parkeerplaats", "parkeerplaats: P+R", "parkeerplaats: carpool"
       ],
       "layout": 
       {
@@ -10095,7 +10063,7 @@
       "source-layer": "top10nl_inrichtingselement_lijn",
       "filter": 
       [
-        "in", "typeinrichtingselement", "paalwerk"
+        "==", "typeinrichtingselement", "paalwerk"
       ],
       "layout": 
       {
@@ -12972,7 +12940,7 @@
       "source-layer": "top10nl_waterdeel_vlak",
       "filter": 
       [
-        "in", "typewater", "waterloop"
+        "==", "typewater", "waterloop"
       ],
       "layout": 
       {
@@ -13000,7 +12968,7 @@
       "source-layer": "top10nl_waterdeel_vlak",
       "filter": 
       [
-        "in", "typewater", "meer, plas"
+        "==", "typewater", "meer, plas"
       ],
       "layout": 
       {
@@ -13363,7 +13331,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "bosgebied"
+        "==", "typegeografischgebied", "bosgebied"
       ],
       "layout": 
       {
@@ -13403,7 +13371,7 @@
       "source-layer": "top10nl_geografisch_gebied_multivlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "bosgebied"
+        "==", "typegeografischgebied", "bosgebied"
       ],
       "layout": 
       {
@@ -13443,7 +13411,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "heidegebied"
+        "==", "typegeografischgebied", "heidegebied"
       ],
       "layout": 
       {
@@ -13483,7 +13451,7 @@
       "source-layer": "top10nl_geografisch_gebied_multivlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "heidegebied"
+        "==", "typegeografischgebied", "heidegebied"
       ],
       "layout": 
       {
@@ -13523,7 +13491,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "duingebied"
+        "==", "typegeografischgebied", "duingebied"
       ],
       "layout": 
       {
@@ -13563,7 +13531,7 @@
       "source-layer": "top10nl_geografisch_gebied_multivlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "duingebied"
+        "==", "typegeografischgebied", "duingebied"
       ],
       "layout": 
       {
@@ -13603,7 +13571,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "heuvel, berg"
+        "==", "typegeografischgebied", "heuvel, berg"
       ],
       "layout": 
       {
@@ -13643,7 +13611,7 @@
       "source-layer": "top10nl_geografisch_gebied_multivlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "heuvel, berg"
+        "==", "typegeografischgebied", "heuvel, berg"
       ],
       "layout": 
       {
@@ -13683,7 +13651,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "kaap, hoek"
+        "==", "typegeografischgebied", "kaap, hoek"
       ],
       "layout": 
       {
@@ -13723,7 +13691,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "streek, veld"
+        "==", "typegeografischgebied", "streek, veld"
       ],
       "layout": 
       {
@@ -13763,7 +13731,7 @@
       "source-layer": "top10nl_geografisch_gebied_multivlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "streek, veld"
+        "==", "typegeografischgebied", "streek, veld"
       ],
       "layout": 
       {
@@ -13803,7 +13771,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "polder"
+        "==", "typegeografischgebied", "polder"
       ],
       "layout": 
       {
@@ -13843,7 +13811,7 @@
       "source-layer": "top10nl_geografisch_gebied_multivlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "polder"
+        "==", "typegeografischgebied", "polder"
       ],
       "layout": 
       {
@@ -13883,7 +13851,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "terp, wierde"
+        "==", "typegeografischgebied", "terp, wierde"
       ],
       "layout": 
       {
@@ -13923,7 +13891,7 @@
       "source-layer": "top10nl_geografisch_gebied_vlak",
       "filter": 
       [
-        "in", "typegeografischgebied", "overig"
+        "==", "typegeografischgebied", "overig"
       ],
       "layout": 
       {
@@ -13992,7 +13960,7 @@
       "minzoom": 15.0,
       "filter": 
       [
-        "!in", "typefunctioneelgebied", "sluizencomplex"
+        "!=", "typefunctioneelgebied", "sluizencomplex"
       ],
       "layout": 
       {
@@ -14024,7 +13992,7 @@
       "minzoom": 15.0,
       "filter": 
       [
-        "!in", "typefunctioneelgebied", "sluizencomplex"
+        "!=", "typefunctioneelgebied", "sluizencomplex"
       ],
       "layout": 
       {
