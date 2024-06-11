@@ -143,6 +143,7 @@ public class FilterExtensionTest
                      "[\"!_IN\",\"typegebouw\",\"kerk\",\"moskee\",\"synagoge\"]]", layers.get(3).getFilter().toString());
         assertEquals("[\"in\",\"typeweg\",\"parkeerplaats\",\"parkeerplaats: carpool\",\"parkeerplaats: P+R\"]", layers.get(5).getFilter().toString());        
         assertEquals("[\"in\",\"typegebouw\",\"vuurtoren\"]", layers.get(6).getFilter().toString());        
+        assertNull(layers.get(7).getFilter());
         
         FilterExtension instance = new FilterExtension();
         instance.processFilters(layers);
@@ -156,7 +157,8 @@ public class FilterExtensionTest
         assertNull(layers.get(0).getFilter());
         assertEquals("[\"in\",\"typegebouw\",\"toren\",\"watertoren\"]", layers.get(2).getFilter().toString());
         assertEquals("[\"in\",\"typeweg\",\"parkeerplaats\",\"parkeerplaats: carpool\",\"parkeerplaats: P+R\"]", layers.get(5).getFilter().toString());
-
+        assertNull(layers.get(7).getFilter());
+        
     }
 
     /**
