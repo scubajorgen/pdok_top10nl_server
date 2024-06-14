@@ -262,30 +262,38 @@ public class FilterExtension
         {
             List<String> distinctAttributeValues=getDistinctAttributeValues(filename, gpkgLayer, gpkgAttribute);
             List<String> filteredValues         =filterDistinctValues(distinctAttributeValues, filterValues);
+            List<String> values;
             if (filteredValues.size()>0)
             {
-                // Create new filter
-                List<String> result=new ArrayList<>();
-                if (negate)
-                {
-                    result.add("!in");
-                }
-                else
-                {
-                    result.add("in");
-                }
-                result.add(gpkgAttribute);
-                result.addAll(filteredValues);
-                ObjectMapper mapper=new ObjectMapper();
-                newFilter = mapper.valueToTree(result);
-                LOGGER.debug("Filter processed: {}", newFilter.toString());                
+                // Okay, we have a list of values from the database; take these values
+                values=filteredValues;
             }
             else
             {
-                LOGGER.fatal("Processing _IN filter results in empty filter. Layer: {} Attribute: {} Values: {} - EXIT", 
+                // We do not have a list of values from the database; this means the filter won't result 
+                // in any results.
+                // We take the original list of filter values and fill these in, in order to have some filter, though inefficient
+                LOGGER.warn("Processing _IN filter results in empty filter. Layer: {} Attribute: {} Values: {}", 
                              gpkgLayer, gpkgAttribute, filterValues);
-                System.exit(0);
+                LOGGER.warn("You might choose to remove the layer entirely since it won't result in any features");
+
+                values=filterValues;
             }
+            // Create new filter
+            List<String> result=new ArrayList<>();
+            if (negate)
+            {
+                result.add("!in");
+            }
+            else
+            {
+                result.add("in");
+            }
+            result.add(gpkgAttribute);
+            result.addAll(values);
+            ObjectMapper mapper=new ObjectMapper();
+            newFilter = mapper.valueToTree(result);
+            LOGGER.debug("Filter processed: {}", newFilter.toString());                
         } 
         else
         {

@@ -121,6 +121,16 @@ public class FilterExtensionTest
         assertEquals("[\"in\",\"typegebouw\",\"brandweerkazerne|moskee\",\"school|synagoge|kerk|moskee\","+
                      "\"school|synagoge|zwembad\"]", result.toString());
 
+        // Values that should create an empty filter
+        values = new ArrayList<>();
+        values.add("bullshit");
+        values.add("more bullshit");
+        result = instance.filterReplacementIn(gpkgLayer, gpkgAttribute, values, false);
+        assertEquals(4, result.size());
+        assertEquals("[\"in\",\"typegebouw\",\"bullshit\",\"more bullshit\"]", result.toString());
+        result = instance.filterReplacementIn(gpkgLayer, gpkgAttribute, values, true);
+        assertEquals(4, result.size());
+        assertEquals("[\"!in\",\"typegebouw\",\"bullshit\",\"more bullshit\"]", result.toString());
     }
 
     /**
