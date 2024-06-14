@@ -151,6 +151,8 @@ As described in the [readme](readme.md), we use various PDOK BRT TopNL maps at v
   * 'overig': dark grey 
 * Building names are small and blue
 * When zooming in to zoomlevel 15, ```functioneel_gebied``` is shown in red, together with the type in braces, like 'Antillenstraat (bedrijventerrein)'. If no name is available, only the type is shown in braces.
+* Apart from 'waterloop, smaller dan 3 m' en 'waterloop, 3-6 m' ditches with indication 'greppel, droge sloot' are also shown as black line.
+* Roadnames are shown
 
 ![](images/LegendAdendum.png)\
 **Differences and extras**
